@@ -10,5 +10,5 @@ export const metadata = generatePageMetadata({
 });
 
 export default function FAQPage() {
-  return <FAQComponent items={faqItems} title="Frequently Asked Questions" />;
+  return <FAQComponent items={faqItems} title="Questions we get a lot" />;
 }

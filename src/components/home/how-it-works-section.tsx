@@ -11,12 +11,10 @@ export function HowItWorksSection() {
           <p className="text-sm font-medium uppercase tracking-wider text-primary">
             How it works
           </p>
-          <h2 className="section-heading mt-2">
-            One routine. Three focused technologies.
-          </h2>
+          <h2 className="section-heading mt-2">Three devices, one weekly routine</h2>
           <p className="mx-auto mt-2 max-w-2xl text-sm text-muted-foreground">
-            Each CrownMate device targets a specific scalp or skin need. Use them
-            separately or combine them into a full weekly protocol.
+            Pick what fits your goal. Add the others later if you want — they stack
+            nicely but each works on its own.
           </p>
         </div>
 
@@ -34,7 +32,7 @@ export function HowItWorksSection() {
                   alt={step.product}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover"
+                  className="object-contain p-3"
                   loading="lazy"
                 />
               </div>

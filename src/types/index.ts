@@ -14,6 +14,16 @@ export interface ProductOption {
   values: string[];
 }
 
+export interface ProductSpec {
+  label: string;
+  value: string;
+}
+
+export interface ProductFaq {
+  question: string;
+  answer: string;
+}
+
 export interface Product {
   id: string;
   slug: string;
@@ -21,10 +31,13 @@ export interface Product {
   description: string;
   fullDescription: string;
   vendor: string;
+  category?: string;
   tags: string[];
   images: string[];
   variants: ProductVariant[];
   options: ProductOption[];
+  specs?: ProductSpec[];
+  productFaqs?: ProductFaq[];
   reviewCount: number;
   rating: number;
 }
@@ -64,6 +77,8 @@ export interface Testimonial {
   id: string;
   author: string;
   content: string;
+  location?: string;
+  product?: string;
   image?: string;
 }
 

@@ -1,43 +1,71 @@
-import { CROWNMATE_BASE } from "@/constants/assets";
-
-const cm = (path: string) => `${CROWNMATE_BASE}${path}`;
+/** Local CrownMate assets under public/images/crownmate/ */
+const img = (path: string) => `/images/crownmate/${path}`;
 
 export const images = {
   brand: {
-    logo: cm("/crownmate-logo.png"),
-    loader: cm("/crownmate-logo.png"),
+    logo: img("brand/logo.png"),
+    loader: img("brand/logo.png"),
   },
   hero: {
-    helmet: cm("/banners/Helmet_Banner.png"),
-    hfWand: cm("/banners/HF_WAND_Banner.png"),
-    massager: cm("/banners/Massager_Banner.png"),
-    brandStory: cm("/images/helmet/2.Woman%20Wearing%20It.png"),
+    helmet: img("banners/helmet-banner.png"),
+    hfWand: img("banners/hf-wand-banner.png"),
+    massager: img("banners/massager-banner.png"),
+    brandStory: img("helmet/02-woman-wearing.png"),
   },
   categories: {
-    redlightHelmet: cm("/images/helmet/1.Hero%20Product%20shot.png"),
-    hfWand: cm("/images/hf-wand/1.Hero%20shot.png"),
-    scalpMassager: cm("/images/pro-massager/1%20Hero%20Shot.png"),
+    redlightHelmet: img("helmet/01-hero-product-shot.png"),
+    hfWand: img("hf-wand/01-hero-shot.png"),
+    scalpMassager: img("pro-massager/01-hero-shot.png"),
   },
   products: {
-    redlightHelmet: cm("/images/helmet/1.Hero%20Product%20shot.png"),
-    hfWand: cm("/images/hf-wand/1.Hero%20shot.png"),
-    scalpMassager: cm("/images/pro-massager/1%20Hero%20Shot.png"),
+    redlightHelmet: img("helmet/01-hero-product-shot.png"),
+    hfWand: img("hf-wand/01-hero-shot.png"),
+    scalpMassager: img("pro-massager/01-hero-shot.png"),
   },
   howItWorks: {
-    helmet: cm("/images/helmet/1.Hero%20Product%20shot.png"),
-    hfWand: cm("/images/hf-wand/1.Hero%20shot.png"),
-    massager: cm("/images/pro-massager/1%20Hero%20Shot.png"),
+    helmet: img("helmet/01-hero-product-shot.png"),
+    hfWand: img("hf-wand/01-hero-shot.png"),
+    massager: img("pro-massager/01-hero-shot.png"),
   },
   marketing: {
-    brandStory: cm("/images/helmet/2.Woman%20Wearing%20It.png"),
-    whyChooseUs: cm("/images/helmet/3.What%20It%20Does%20%20Key%20Benefit.png"),
+    brandStory: img("helmet/02-woman-wearing.png"),
+    whyChooseUs: img("helmet/03-key-benefit.png"),
   },
   benefits: {
-    trustedQuality: cm("/images/helmet/5.%20Components%20%20Build%20Quality.png"),
-    secureCheckout: cm("/images/hf-wand/4.Attachments%20explained.png"),
-    freeDelivery: cm("/images/pro-massager/1%20Hero%20Shot.png"),
-    warranty: cm("/images/helmet/6.%20Power%20Options%20Adaptor%20and%20Powerbank.png"),
+    trustedQuality: img("helmet/05-build-quality.png"),
+    secureCheckout: img("hf-wand/04-attachments.png"),
+    freeDelivery: img("pro-massager/01-hero-shot.png"),
+    warranty: img("helmet/06-power-options.png"),
   },
 } as const;
+
+export const helmetImages = [
+  img("helmet/01-hero-product-shot.png"),
+  img("helmet/02-woman-wearing.png"),
+  img("helmet/03-key-benefit.png"),
+  img("helmet/04-laser-vs-led.png"),
+  img("helmet/05-build-quality.png"),
+  img("helmet/06-power-options.png"),
+  img("helmet/07-results-before-after-1.png"),
+  img("helmet/08-results-before-after-2.png"),
+  img("helmet/09-size-fit-guide.png"),
+] as const;
+
+export const hfWandImages = [
+  img("hf-wand/01-hero-shot.png"),
+  img("hf-wand/02-woman-using.png"),
+  img("hf-wand/03-how-it-works.png"),
+  img("hf-wand/04-attachments.png"),
+  img("hf-wand/05-how-to-use.png"),
+  img("hf-wand/06-results-expectations.png"),
+] as const;
+
+export const massagerImages = [
+  img("pro-massager/01-hero-shot.png"),
+  img("pro-massager/02-woman-using.png"),
+  img("pro-massager/03-how-it-works.png"),
+  img("pro-massager/04-modes.png"),
+  img("pro-massager/05-charging-buttons.png"),
+] as const;
 
 export type ImageKey = keyof typeof images;

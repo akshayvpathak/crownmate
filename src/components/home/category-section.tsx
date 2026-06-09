@@ -7,9 +7,7 @@ export function CategorySection() {
   return (
     <section className="section-padding bg-white">
       <div className="container-frizty">
-        <h2 className="section-heading mb-1 text-center">
-          Upgrade your personal care routine
-        </h2>
+        <h2 className="section-heading mb-1 text-center">Pick a device</h2>
         <p className="mb-6 text-center text-sm text-muted-foreground md:mb-10">
           Shop by Category
         </p>
@@ -29,7 +27,7 @@ export function CategorySection() {
                     alt={cat.title}
                     fill
                     sizes="120px"
-                    className="object-cover"
+                    className="object-contain p-1"
                     loading="lazy"
                   />
                 </div>
@@ -60,7 +58,7 @@ export function CategorySection() {
                   alt={cat.title}
                   fill
                   sizes="160px"
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  className="object-contain p-2 transition-transform duration-300 group-hover:scale-105"
                   loading="lazy"
                 />
               </div>

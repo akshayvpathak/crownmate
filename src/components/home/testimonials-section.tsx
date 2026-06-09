@@ -15,7 +15,7 @@ export function TestimonialsSection() {
     <section className="section-padding bg-secondary">
       <div className="container-frizty">
         <h2 className="section-heading mb-6 text-center md:mb-10">
-          Reviews from real customers
+          What customers actually say
         </h2>
         <Carousel opts={{ align: "start", loop: true }}>
           <CarouselContent className="-ml-3 md:-ml-4">

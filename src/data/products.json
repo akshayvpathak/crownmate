@@ -3,20 +3,21 @@
     "id": "cm-redlight-helmet",
     "slug": "laser-hair-growth-helmet",
     "title": "Crownmate RedLight Helmet™",
-    "description": "A home-use LLLT helmet with 40 laser diodes to support scalp stimulation and improve consistency in hair-care routines.",
-    "fullDescription": "The Crownmate RedLight Helmet™ is designed for people who want a structured, low-effort way to include red-light scalp sessions at home. Using 40 laser diodes at 650nm, the helmet delivers uniform light exposure across the scalp surface. This approach is commonly used in low-level laser therapy routines. It is lightweight, hands-free, and easy to repeat. A standard routine is 20 minutes per session, three times per week.",
+    "description": "Home-use LLLT helmet with 40 laser diodes. Put it on, sit for 20 minutes, done — no clinic visits.",
+    "fullDescription": "The RedLight Helmet is for anyone who wants red-light scalp sessions without booking appointments or holding a device in place. Forty laser diodes at 650nm cover the whole scalp evenly. It weighs about 520g, runs hands-free, and fits into a normal evening — most people do 20 minutes, three nights a week. Plug in the adaptor or use a power bank if you're moving around the house.",
     "vendor": "CrownMate",
+    "category": "Advanced Tech",
     "tags": ["advanced-tech", "hair-growth"],
     "images": [
-      "https://www.crownmate.in/images/helmet/1.Hero%20Product%20shot.png",
-      "https://www.crownmate.in/images/helmet/2.Woman%20Wearing%20It.png",
-      "https://www.crownmate.in/images/helmet/3.What%20It%20Does%20%20Key%20Benefit.png",
-      "https://www.crownmate.in/images/helmet/4.Laser%20vs%20LED%20Difference.png",
-      "https://www.crownmate.in/images/helmet/5.%20Components%20%20Build%20Quality.png",
-      "https://www.crownmate.in/images/helmet/6.%20Power%20Options%20Adaptor%20and%20Powerbank.png",
-      "https://www.crownmate.in/images/helmet/7.%20Results%20%20Before-After%20%20Improvement%20Proof.png",
-      "https://www.crownmate.in/images/helmet/8.%20Results%20%20Before-After%20%20Improvement%20Proof.png",
-      "https://www.crownmate.in/images/helmet/9.%20Size%20%20Measurements%20%20Fit%20Guide.png"
+      "/images/crownmate/helmet/01-hero-product-shot.png",
+      "/images/crownmate/helmet/02-woman-wearing.png",
+      "/images/crownmate/helmet/03-key-benefit.png",
+      "/images/crownmate/helmet/04-laser-vs-led.png",
+      "/images/crownmate/helmet/05-build-quality.png",
+      "/images/crownmate/helmet/06-power-options.png",
+      "/images/crownmate/helmet/07-results-before-after-1.png",
+      "/images/crownmate/helmet/08-results-before-after-2.png",
+      "/images/crownmate/helmet/09-size-fit-guide.png"
     ],
     "variants": [
       {
@@ -26,10 +27,39 @@
         "compareAtPrice": null,
         "available": true,
         "sku": "CM-REDLIGHT-HELMET",
-        "image": "https://www.crownmate.in/images/helmet/1.Hero%20Product%20shot.png"
+        "image": "/images/crownmate/helmet/01-hero-product-shot.png"
       }
     ],
     "options": [],
+    "specs": [
+      { "label": "Laser Diodes", "value": "40" },
+      { "label": "Wavelength", "value": "650nm" },
+      { "label": "Treatment Time", "value": "20 Minutes" },
+      { "label": "Frequency", "value": "3x per Week" },
+      { "label": "Weight", "value": "520g" }
+    ],
+    "productFaqs": [
+      {
+        "question": "How long before I see results?",
+        "answer": "Most people notice less hair in the drain around week 4–6. Thickness and new growth usually take 12–16 weeks if you're consistent — three sessions a week, no skipping."
+      },
+      {
+        "question": "Is LLLT safe to use at home?",
+        "answer": "Yes. It's low-level laser therapy at 650nm, the same wavelength used in clinic devices. Follow the 20-minute session limit and don't use it on broken or irritated skin."
+      },
+      {
+        "question": "How long is each session?",
+        "answer": "20 minutes. That's it. Three times a week is what we recommend — more isn't better."
+      },
+      {
+        "question": "Can women use this too?",
+        "answer": "Absolutely. Works the same for men and women dealing with thinning or early-stage hair loss."
+      },
+      {
+        "question": "Does it work on a completely bald scalp?",
+        "answer": "It helps most where follicles are still there but weak. Areas that have been smooth bald for years won't respond much — LLLT isn't a hair transplant."
+      }
+    ],
     "reviewCount": 16,
     "rating": 4.8
   },
@@ -37,17 +67,18 @@
     "id": "cm-hf-wand",
     "slug": "high-frequency-wand",
     "title": "Crownmate High Frequency Wand™",
-    "description": "A 4-in-1 high-frequency wand with interchangeable electrodes for scalp stimulation, targeted facial care, and routine versatility.",
-    "fullDescription": "The Crownmate High Frequency Wand™ is built for users who want one tool for multiple treatment areas. The neon-gas electrode system allows targeted use with adjustable intensity, while four attachments help you treat scalp and facial zones with more precision. Use it as a short-session add-on before or after your existing routine depending on your comfort and schedule.",
+    "description": "4-in-1 high-frequency wand with swap-in glass electrodes. Scalp, face, neck — one tool, short sessions.",
+    "fullDescription": "The HF Wand runs a neon-gas electrode system with adjustable intensity. You get four glass heads for different zones — scalp, spot treatment, broader facial areas. Sessions are short, usually 3–5 minutes per area. A lot of customers use it right before oil or serum so the scalp feels more receptive. Good add-on if you already have a basic hair routine and want something extra without a big time commitment.",
     "vendor": "CrownMate",
+    "category": "Scalp Therapy",
     "tags": ["scalp-therapy", "high-frequency"],
     "images": [
-      "https://www.crownmate.in/images/hf-wand/1.Hero%20shot.png",
-      "https://www.crownmate.in/images/hf-wand/2.Woman%20using%20it.png",
-      "https://www.crownmate.in/images/hf-wand/3.How%20it%20works,Benifits.png",
-      "https://www.crownmate.in/images/hf-wand/4.Attachments%20explained.png",
-      "https://www.crownmate.in/images/hf-wand/5.How%20to%20use.png",
-      "https://www.crownmate.in/images/hf-wand/6.Results%20%20expectations.png"
+      "/images/crownmate/hf-wand/01-hero-shot.png",
+      "/images/crownmate/hf-wand/02-woman-using.png",
+      "/images/crownmate/hf-wand/03-how-it-works.png",
+      "/images/crownmate/hf-wand/04-attachments.png",
+      "/images/crownmate/hf-wand/05-how-to-use.png",
+      "/images/crownmate/hf-wand/06-results-expectations.png"
     ],
     "variants": [
       {
@@ -57,10 +88,39 @@
         "compareAtPrice": null,
         "available": true,
         "sku": "CM-HF-WAND",
-        "image": "https://www.crownmate.in/images/hf-wand/1.Hero%20shot.png"
+        "image": "/images/crownmate/hf-wand/01-hero-shot.png"
       }
     ],
     "options": [],
+    "specs": [
+      { "label": "Technology", "value": "High-Frequency Neon Gas" },
+      { "label": "Electrodes", "value": "4 Interchangeable Heads" },
+      { "label": "Intensity", "value": "Variable Control" },
+      { "label": "Usage", "value": "3–5 Min Per Zone" },
+      { "label": "Suitable For", "value": "Scalp, Face & Neck" }
+    ],
+    "productFaqs": [
+      {
+        "question": "How often should I use it?",
+        "answer": "2–3 times a week is plenty. Keep each zone to 3–5 minutes — you'll feel a mild tingle, that's normal."
+      },
+      {
+        "question": "Is high-frequency safe for home use?",
+        "answer": "Yes, if you start low and work up. Avoid open cuts, active acne, or metal jewellery in the area you're treating."
+      },
+      {
+        "question": "Which electrode should I use?",
+        "answer": "The comb-shaped one for scalp, the mushroom head for larger areas, the smaller points for spots. All four are in the box — check the manual for photos."
+      },
+      {
+        "question": "Can I use it with oils or serums?",
+        "answer": "Better after a session on clean skin, or before applying product so your scalp is warmed up. Don't coat the electrode in oil."
+      },
+      {
+        "question": "Is it suitable for sensitive skin?",
+        "answer": "Start on the lowest setting for 2 minutes. If it stings, drop the intensity. Most people with sensitive skin are fine on level 1–2."
+      }
+    ],
     "reviewCount": 16,
     "rating": 4.7
   },
@@ -68,16 +128,17 @@
     "id": "cm-pulse-pro",
     "slug": "electric-scalp-massager",
     "title": "Crownmate Pulse Pro Massager™",
-    "description": "A rechargeable scalp massager with soft silicone nodes to improve comfort, circulation, and serum application in daily routines.",
-    "fullDescription": "The Crownmate Pulse Pro Massager™ is made for quick daily use. Soft silicone nodes create a gentle kneading motion that helps relax the scalp and reduce tension. It can be used before applying oil or serum to improve spread and scalp contact. The device is waterproof, rechargeable, and travel-friendly. Typical use is 5 to 10 minutes per day.",
+    "description": "Rechargeable scalp massager with silicone kneading nodes. Waterproof, fits in your palm, works in the shower.",
+    "fullDescription": "Pulse Pro is the everyday piece of the lineup. Soft silicone nodes knead the scalp in a slow rotation — feels good after a long day and helps work oil or serum through the roots. IPX7 waterproof so you can use it in the shower. Charge once and it runs for several sessions. Most people do 5–10 minutes a day, either morning or before bed.",
     "vendor": "CrownMate",
+    "category": "Scalp Care",
     "tags": ["scalp-care", "massager"],
     "images": [
-      "https://www.crownmate.in/images/pro-massager/1%20Hero%20Shot.png",
-      "https://www.crownmate.in/images/pro-massager/2.Women%20using%20it.png",
-      "https://www.crownmate.in/images/pro-massager/3.How%20it%20Works.png",
-      "https://www.crownmate.in/images/pro-massager/4.Modes%20of%20Massager.png",
-      "https://www.crownmate.in/images/pro-massager/5.Charging,Buttons,Heads%20explained.png"
+      "/images/crownmate/pro-massager/01-hero-shot.png",
+      "/images/crownmate/pro-massager/02-woman-using.png",
+      "/images/crownmate/pro-massager/03-how-it-works.png",
+      "/images/crownmate/pro-massager/04-modes.png",
+      "/images/crownmate/pro-massager/05-charging-buttons.png"
     ],
     "variants": [
       {
@@ -87,10 +148,39 @@
         "compareAtPrice": null,
         "available": true,
         "sku": "CM-PULSE-PRO",
-        "image": "https://www.crownmate.in/images/pro-massager/1%20Hero%20Shot.png"
+        "image": "/images/crownmate/pro-massager/01-hero-shot.png"
       }
     ],
     "options": [],
+    "specs": [
+      { "label": "Material", "value": "Food-Grade Silicone" },
+      { "label": "Mode", "value": "Vibration + Kneading" },
+      { "label": "Water Resistance", "value": "IPX7 Waterproof" },
+      { "label": "Usage", "value": "5–10 Min Daily" },
+      { "label": "Suitable For", "value": "All Hair & Scalp Types" }
+    ],
+    "productFaqs": [
+      {
+        "question": "How long should each session be?",
+        "answer": "5–10 minutes is the sweet spot. Longer won't hurt, but you don't need to sit there for half an hour."
+      },
+      {
+        "question": "Is it waterproof?",
+        "answer": "Yes — IPX7. Fine in the shower. Just don't dunk the charging port underwater."
+      },
+      {
+        "question": "Can I use it on dry or oiled hair?",
+        "answer": "Both work. A lot of people massage first, then apply oil so it spreads easier."
+      },
+      {
+        "question": "How do I clean it?",
+        "answer": "Rinse the nodes under tap water, wipe dry. Comes with a cover for travel."
+      },
+      {
+        "question": "Is it suitable for all hair types?",
+        "answer": "Yes. The silicone is soft enough for fine hair and thick curls alike."
+      }
+    ],
     "reviewCount": 16,
     "rating": 4.6
   }

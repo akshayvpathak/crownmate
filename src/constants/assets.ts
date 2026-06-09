@@ -1,8 +1,6 @@
-export const CROWNMATE_BASE = "https://www.crownmate.in";
-
 export const SITE_CONFIG = {
   name: "CrownMate",
-  tagline: "Hair Growth Devices — Science Meets Simplicity",
+  tagline: "Hair growth devices for home use",
   url: "https://www.crownmate.in",
   email: "support@crownmate.in",
   phone: "+91 97120 78733",

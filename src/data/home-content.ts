@@ -4,50 +4,50 @@ import type { CategoryCard, Feature, HeroSlide, Testimonial } from "@/types";
 export const heroSlides: HeroSlide[] = [
   {
     id: "redlight-helmet",
-    eyebrow: "40 Medical-Grade Laser Diodes",
-    title: "Support Healthier-Looking Hair at Home",
-    subtitle: "Structured red-light scalp sessions in just 20 minutes.",
+    eyebrow: "40 laser diodes · 650nm",
+    title: "Red-light scalp sessions at home",
+    subtitle: "20 minutes, three nights a week. No clinic queue.",
     ctaText: "SHOP NOW",
     ctaLink: "/products/laser-hair-growth-helmet",
     image: images.hero.helmet,
     mobileImage: images.hero.helmet,
     backgroundColor: "#834fd9",
     benefits: [
-      { icon: "sparkles", label: "LLLT Technology" },
-      { icon: "droplet", label: "650nm Wavelength" },
-      { icon: "brain", label: "Hands-Free Routine" },
+      { icon: "sparkles", label: "LLLT" },
+      { icon: "droplet", label: "650nm" },
+      { icon: "brain", label: "Hands-free" },
     ],
   },
   {
     id: "hf-wand",
-    eyebrow: "4-in-1 Neon Gas Electrode System",
-    title: "Scalp Therapy & Targeted Facial Care",
-    subtitle: "One wand for multiple treatment zones.",
+    eyebrow: "4 glass electrodes included",
+    title: "Scalp + face in one wand",
+    subtitle: "Short sessions. Swap the head, move on.",
     ctaText: "SHOP NOW",
     ctaLink: "/products/high-frequency-wand",
     image: images.hero.hfWand,
     mobileImage: images.hero.hfWand,
     backgroundColor: "#834fd9",
     benefits: [
-      { icon: "sparkles", label: "Scalp Purification" },
-      { icon: "droplet", label: "Serum Synergy" },
-      { icon: "flower", label: "Variable Intensity" },
+      { icon: "sparkles", label: "Scalp" },
+      { icon: "droplet", label: "Serum prep" },
+      { icon: "flower", label: "Adjustable" },
     ],
   },
   {
     id: "pulse-pro",
-    eyebrow: "Smart Scalp Massage Technology",
-    title: "Relax Your Scalp. Support Healthier-Looking Hair.",
-    subtitle: "Daily kneading massage with soft silicone nodes.",
+    eyebrow: "IPX7 · rechargeable",
+    title: "A scalp massage you'll actually use",
+    subtitle: "5 minutes in the shower. Silicone nodes, not hard plastic.",
     ctaText: "SHOP NOW",
     ctaLink: "/products/electric-scalp-massager",
     image: images.hero.massager,
     mobileImage: images.hero.massager,
     backgroundColor: "#834fd9",
     benefits: [
-      { icon: "sparkles", label: "Red Light Therapy" },
-      { icon: "droplet", label: "Deep Scalp Stimulation" },
-      { icon: "heart", label: "Relaxing Massage" },
+      { icon: "sparkles", label: "Waterproof" },
+      { icon: "droplet", label: "Kneading" },
+      { icon: "heart", label: "Portable" },
     ],
   },
 ];
@@ -87,24 +87,24 @@ export const howItWorksSteps = [
     id: "01",
     product: "Crownmate RedLight Helmet™",
     productSlug: "laser-hair-growth-helmet",
-    eyebrow: "40 Medical-Grade Laser Diodes",
-    title: "LLLT Technology",
+    eyebrow: "40 laser diodes",
+    title: "Low-level laser therapy",
     image: images.howItWorks.helmet,
     features: [
       {
-        title: "Light Penetration",
+        title: "Light gets to the follicle",
         description:
-          "650nm red laser light penetrates the scalp dermis, reaching hair follicles deep beneath the surface.",
+          "650nm red laser reaches into the scalp — not just the surface. That's the wavelength clinics use for LLLT.",
       },
       {
-        title: "Cellular ATP Boost",
+        title: "More energy for growing cells",
         description:
-          "Stimulates mitochondria to produce ATP — the energy your hair cells need to stay in the active growth phase.",
+          "The light nudges mitochondria to make more ATP. Healthier follicles tend to stay in the growth phase longer.",
       },
       {
-        title: "Follicle Revival",
+        title: "Consistency beats intensity",
         description:
-          "Awakens dormant follicles, extends the Anagen growth phase, and supports visibly thicker, denser hair over time.",
+          "You won't see change in a week. Stick to 20 minutes, three times a week, for a few months — that's when people start noticing thickness.",
       },
     ],
   },
@@ -112,24 +112,24 @@ export const howItWorksSteps = [
     id: "02",
     product: "Crownmate High Frequency Wand™",
     productSlug: "high-frequency-wand",
-    eyebrow: "4-in-1 Neon Gas Electrode System",
-    title: "High-Frequency Electrode Therapy",
+    eyebrow: "Neon gas electrode",
+    title: "High-frequency scalp therapy",
     image: images.howItWorks.hfWand,
     features: [
       {
-        title: "Neon Ionization",
+        title: "Warmth and circulation",
         description:
-          "High-frequency current passes through neon gas, creating a therapeutic glow that stimulates blood flow to the scalp.",
+          "The electrode creates a gentle ozone-rich glow. Scalp feels tingly and warm — blood flow picks up in that area.",
       },
       {
-        title: "Scalp Purification",
+        title: "Cleaner scalp surface",
         description:
-          "Generates enriched oxygen to eliminate bacteria and reduce inflammation that blocks healthy hair growth.",
+          "Oxygen from the reaction helps with bacteria and buildup that can clog follicles. Useful if your scalp runs oily.",
       },
       {
-        title: "Serum Synergy",
+        title: "Better product absorption",
         description:
-          "Increases scalp permeability so hair serums and oils absorb up to 5 times deeper for maximum effect.",
+          "Use before your oil or serum. A warmed-up scalp takes product in more evenly — customers tell us they use less product over time.",
       },
     ],
   },
@@ -137,24 +137,24 @@ export const howItWorksSteps = [
     id: "03",
     product: "Crownmate Pulse Pro Massager™",
     productSlug: "electric-scalp-massager",
-    eyebrow: "Portable Rechargeable Massager",
-    title: "Deep-Kneading Scalp Massage",
+    eyebrow: "Silicone kneading nodes",
+    title: "Daily scalp massage",
     image: images.howItWorks.massager,
     features: [
       {
-        title: "Circulation Boost",
+        title: "Blood flow without effort",
         description:
-          "Rhythmic kneading motions increase blood flow to follicles, delivering more oxygen and nutrients directly to hair roots.",
+          "The nodes rotate and knead — you don't have to tire out your fingers doing it manually.",
       },
       {
-        title: "Scalp Detox",
+        title: "Loosens buildup",
         description:
-          "Gently loosens product buildup, dead skin cells, and excess oil — creating a clean, healthy base for hair growth.",
+          "Dry shampoo, wax, excess oil — a few minutes of massage breaks that up before you wash or oil.",
       },
       {
-        title: "Absorption Prep",
+        title: "Prep step for everything else",
         description:
-          "Use before applying serums or oils to dramatically improve how deep active ingredients penetrate the scalp.",
+          "Massage first, then helmet or wand or serum. It's the cheapest way to make the rest of your routine work harder.",
       },
     ],
   },
@@ -163,30 +163,30 @@ export const howItWorksSteps = [
 export const whyChooseUsFeatures: Feature[] = [
   {
     id: "1",
-    title: "Made",
-    subtitle: "with quality & durability",
+    title: "Built to last",
+    subtitle: "solid hardware, not gimmicks",
     description: "",
     icon: "quality",
   },
   {
     id: "2",
-    title: "Safe",
-    subtitle: "to use on all skin types",
+    title: "Gentle by design",
+    subtitle: "start low, build up",
     description: "",
     icon: "safe",
   },
   {
     id: "3",
-    title: "Smart",
-    subtitle: "tech for next-level experience",
+    title: "Actually usable",
+    subtitle: "short sessions, clear instructions",
     description: "",
     icon: "smart",
   },
   {
     id: "4",
-    title: "1 Year* Warranty",
-    subtitle: "on all Products",
-    description: "CrownMate's Promise",
+    title: "1 Year Warranty",
+    subtitle: "on every device",
+    description: "we stand behind what we ship",
     icon: "warranty",
   },
 ];
@@ -194,27 +194,27 @@ export const whyChooseUsFeatures: Feature[] = [
 export const benefitFeatures: Feature[] = [
   {
     id: "1",
-    title: "Trusted Quality",
+    title: "Tested before dispatch",
     description:
-      "Enjoy reliable performance with our professionally designed devices and all products.",
+      "Every unit goes through a basic function check. If something's off, we catch it.",
     icon: "shield",
   },
   {
     id: "2",
-    title: "Secure Checkout",
-    description: "Shop safely with our Secure Checkout, your privacy matters!",
+    title: "Secure payments",
+    description: "UPI, cards, COD — whatever you prefer. Razorpay handles checkout.",
     icon: "lock",
   },
   {
     id: "3",
-    title: "Free Delivery",
-    description: "Get free shipping on your order delivered to your doorstep!",
+    title: "Free shipping",
+    description: "On orders above ₹499. Delivered to your door across India.",
     icon: "truck",
   },
   {
     id: "4",
-    title: "1 Year Warranty",
-    description: "Enjoy peace of mind with our 1-Year Warranty on every product.",
+    title: "1-year warranty",
+    description: "Manufacturing defects covered. WhatsApp us if anything breaks early.",
     icon: "badge",
   },
 ];
@@ -223,55 +223,58 @@ export const testimonials: Testimonial[] = [
   {
     id: "1",
     author: "Rahul M.",
+    location: "Mumbai",
+    product: "RedLight Helmet™",
     content:
-      "After regular sessions, I noticed less shedding and my routine became much more consistent.",
-    image: undefined,
+      "Honestly thought it would be another gadget I'd stop using. Six weeks in, way less hair in the shower drain. I do it while watching cricket.",
   },
   {
     id: "2",
     author: "Priya S.",
+    location: "Bengaluru",
+    product: "HF Wand™",
     content:
-      "The multiple electrodes made it easy to use on scalp and face without changing my whole schedule.",
-    image: undefined,
+      "I use the comb attachment on my scalp and the round one on my face. Takes maybe 10 minutes total. My bhringraj oil actually feels like it's going in now.",
   },
   {
     id: "3",
     author: "Arjun K.",
+    location: "Delhi",
+    product: "Pulse Pro Massager™",
     content:
-      "Simple to use daily and it made applying oils and serum much more effective for me.",
-    image: undefined,
+      "Keeps it in the bathroom. Quick massage before bed — helps me wind down and my scalp isn't as tight in the mornings.",
   },
 ];
 
 export const faqItems = [
   {
     id: "1",
-    question: "How long before I see results with the RedLight Helmet?",
+    question: "When will I see results with the RedLight Helmet?",
     answer:
-      "Most users notice reduced shedding within 4 to 6 weeks. Visible regrowth and thickness improvements are typically seen between 12 and 16 weeks of consistent use, 3 times per week.",
+      "Less shedding around 4–6 weeks if you're doing three sessions a week. Visible thickness usually needs 3–4 months. Hair grows slowly — anyone promising overnight results is selling something else.",
   },
   {
     id: "2",
     question: "Is LLLT safe to use at home?",
     answer:
-      "Yes. CrownMate devices are designed for safe home use. The RedLight Helmet uses low-level laser therapy at 650nm, a wavelength commonly used in professional scalp care routines.",
+      "Yes. It's the same low-level laser approach used in clinics, just in a helmet you wear at home. Don't exceed 20 minutes per session and skip it on irritated skin.",
   },
   {
     id: "3",
-    question: "What is the warranty policy?",
+    question: "What's the warranty?",
     answer:
-      "All CrownMate products come with a 1 Year Warranty covering manufacturing defects. We also offer easy exchange and returns within our policy window.",
+      "One year on manufacturing defects. Message support@crownmate.in with your order number and we'll sort it out.",
   },
   {
     id: "4",
-    question: "What are the shipping and return policies?",
+    question: "Shipping and returns?",
     answer:
-      "We provide Pan-India delivery. Orders are usually processed within 24 hours, with delivery in 3 to 9 working days. Free shipping applies on orders above ₹499.",
+      "We dispatch within 24 hours on most orders. Delivery is 4–9 working days depending on your pin code. Free shipping above ₹499. Damaged on arrival? Tell us within 48 hours.",
   },
   {
     id: "5",
-    question: "Which device should I start with?",
+    question: "Which device should I buy first?",
     answer:
-      "Start with the device that matches your primary goal: RedLight Helmet for laser scalp support, HF Wand for scalp therapy and purification, or Pulse Pro Massager for daily massage and serum prep. Contact support if you need help choosing.",
+      "Helmet if thinning/shedding is the main worry. Wand if you want scalp stimulation plus facial use. Massager if you want something cheap and daily to start with. Not sure? WhatsApp us — we'll ask two questions and point you right.",
   },
 ];

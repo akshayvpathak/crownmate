@@ -1,5 +1,9 @@
 import { notFound } from "next/navigation";
-import { getProductBySlug, getProducts } from "@/services/product-service";
+import {
+  getProductBySlug,
+  getProducts,
+  getRelatedProducts,
+} from "@/services/product-service";
 import { getReviews } from "@/services/review-service";
 import { generatePageMetadata, generateProductJsonLd } from "@/lib/seo";
 import { ProductDetail } from "@/components/product/product-detail";
@@ -30,7 +34,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const product = await getProductBySlug(slug);
   if (!product) notFound();
 
-  const reviews = await getReviews(slug);
+  const [reviews, relatedProducts] = await Promise.all([
+    getReviews(slug),
+    getRelatedProducts(slug),
+  ]);
   const jsonLd = generateProductJsonLd(product);
 
   return (
@@ -39,7 +46,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <ProductDetail product={product} reviews={reviews} />
+      <ProductDetail
+        product={product}
+        reviews={reviews}
+        relatedProducts={relatedProducts}
+      />
     </>
   );
 }

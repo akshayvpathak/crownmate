@@ -20,11 +20,11 @@ export function BrandStory() {
           </div>
           <div className="text-center md:text-left">
             <h2 className="section-heading leading-snug">
-              Everyone deserves a simple, effective self-care routine.
+              Hair care shouldn&apos;t need a clinic appointment.
             </h2>
             <p className="mt-4 text-sm text-muted-foreground md:text-base">
-              CrownMate combines science and simplicity to create devices that fit into
-              your daily life.
+              We make devices you can use at home — short sessions, clear instructions,
+              no complicated setup. Started in Surat, shipping across India.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:justify-center md:justify-start">
               <Button asChild className="min-w-[140px]">

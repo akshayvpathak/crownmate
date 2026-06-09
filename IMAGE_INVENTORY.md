@@ -1,45 +1,31 @@
 # IMAGE_INVENTORY.md
 
-> All images are centrally managed in `src/data/images.ts` and `src/constants/assets.ts`.
-> Replace URLs in those files to update images site-wide.
+> All CrownMate images are stored locally under `public/images/crownmate/`.
+> Paths are defined in `src/data/images.ts` and `src/data/products.json`.
 
-| Image URL                                                                                                                                        | Page Used     | Component Used      | Suggested Local Filename            |
-| ------------------------------------------------------------------------------------------------------------------------------------------------ | ------------- | ------------------- | ----------------------------------- |
-| https://friztyretail.com/cdn/shop/files/Isolation_Mode.svg                                                                                       | All pages     | Header/Logo         | `brand-logo.svg`                    |
-| https://friztyretail.com/cdn/shop/files/home_mobile.webp                                                                                         | Home          | HeroBanner          | `hero-gua-sha-mobile.webp`          |
-| https://friztyretail.com/cdn/shop/files/Head_Massager_Banner_-_MOBILE.webp                                                                       | Home          | HeroBanner          | `hero-head-massager.webp`           |
-| https://friztyretail.com/cdn/shop/files/Personal_Care_2e5b01ee-5a81-4950-9acd-915059a56598.webp                                                  | Home          | CategorySection     | `category-personal-care.webp`       |
-| https://friztyretail.com/cdn/shop/files/Pill_Organizer_348823a7-2be3-4511-9750-dbb4e64a9459.webp                                                 | Home          | CategorySection     | `category-pill-organizer.webp`      |
-| https://friztyretail.com/cdn/shop/files/Essential_Oil.png                                                                                        | Home          | CategorySection     | `category-essential-oil.png`        |
-| https://friztyretail.com/cdn/shop/files/Face_Massager_53013054-c262-4b9a-acb8-203eb8757d99.webp                                                  | Home          | CategorySection     | `category-face-massager.webp`       |
-| https://friztyretail.com/cdn/shop/files/Massager.webp                                                                                            | Home          | CategorySection     | `category-massager.webp`            |
-| https://friztyretail.com/cdn/shop/files/Trimmers_3c40283d-745d-4c52-8a19-e8702b7a01f9.webp                                                       | Home          | CategorySection     | `category-trimmers.webp`            |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/FaceMassager-Men.webp                                                                     | Home/Products | ProductCard/Hero    | `product-gua-sha.webp`              |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/HeadMasagger.webp                                                                         | Home/Products | ProductCard         | `product-scalp-massager.webp`       |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/4in1SlixyTrimmer.webp                                                                     | Home/Products | ProductCard         | `product-slixy-trimmer.webp`        |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/CallusRemover.webp                                                                        | Home/Products | ProductCard         | `product-callus-remover.webp`       |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/WellnessCombo-Guasha_HeadMassagerand4in1Trimmer_a2e9b135-5c0c-4afa-a011-4cf0ceec4117.webp | Home          | CombosSection       | `product-wellness-combo.webp`       |
-| https://friztyretail.com/cdn/shop/files/Frame_162_22c0466e-2e5c-4afe-96a2-679db86f5390.webp                                                      | Home          | BrandStory          | `marketing-express-yourself.webp`   |
-| https://friztyretail.com/cdn/shop/files/Frame_161_c0ef1a47-2ab2-443b-b5c4-ccf01ee1f59a.webp                                                      | Home          | BrandStory          | `marketing-brand-story.webp`        |
-| https://friztyretail.com/cdn/shop/files/interviewer.png                                                                                          | Home/Products | PressSection        | `press-interviewer.png`             |
-| https://friztyretail.com/cdn/shop/files/indian_business_times.png                                                                                | Home/Products | PressSection        | `press-indian-business-times.png`   |
-| https://friztyretail.com/cdn/shop/files/media_hindustan.png                                                                                      | Home/Products | PressSection        | `press-media-hindustan.png`         |
-| https://friztyretail.com/cdn/shop/files/blue-back-img.svg                                                                                        | Home          | WhyChooseUs         | `marketing-why-choose-bg.svg`       |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/review_5.png                                                                              | Home          | TestimonialsSection | `testimonial-saurabh.png`           |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/review_4.webp                                                                             | Home          | TestimonialsSection | `testimonial-vibha.webp`            |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/akash.png                                                                                 | Home          | TestimonialsSection | `testimonial-aakash.png`            |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/8.png                                                                                     | Home          | TestimonialsSection | `testimonial-kashish.png`           |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/1_e207f877-d8e4-4209-a4ef-cd9702797bbf.webp                                               | Home          | TestimonialsSection | `testimonial-edwina.webp`           |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/1_83134efd-e6bc-4f02-8625-a2c6d111910e.jpg                                                | Home          | TestimonialsSection | `testimonial-tanya.jpg`             |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/5_c37d952d-e2ad-49f4-911d-e8ce43ac3ec9.png                                                | Home          | TestimonialsSection | `testimonial-ankita.png`            |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/WhatsApp_Image_2025-05-12_at_16.07.22_43fcae9b.jpg                                        | About         | FounderSection      | `about-founder-kishan.jpg`          |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/5_6a92111e-7f85-4d96-a743-6429c07037e3.png                                                | About         | FounderSection      | `about-founder-bhavik.png`          |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/Group69_f802523f-be30-441c-ba6d-ac866021c85d.png                                          | Collections   | CategoryCard        | `category-heating-pad.png`          |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/08_6663965c-fcaf-4b8e-ad5f-805ee38c4799.png                                               | Products      | ProductCard         | `product-foot-mask.png`             |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/05_610f8a16-49b0-40f4-9e1f-c48d82f15513.webp                                              | Products      | ProductCard         | `product-rosemary-oil.webp`         |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/HeadMassagerwithRosemaryOil_f67d5d80-7126-4996-96b7-1595064c3217.webp                     | Home          | CombosSection       | `product-relaxation-combo.webp`     |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/Grooming_MassagerDuo-4in1Trimmer_HeadMassager.webp                                        | Products      | ProductCard         | `product-trimmer-scalp-combo.webp`  |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/Grooming_Skincare_Duo_-_4_In_1_Trimmer_Face_Massager.png                                  | Products      | ProductCard         | `product-gua-sha-trimmer-combo.png` |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/MassagerkaBaap_addaac72-9659-4f5e-ab13-971a58aea140.webp                                  | Products      | ProductCard         | `product-scalp-face-combo.webp`     |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/05_674f5c0f-b68b-4620-982a-2af1f22a861b.png                                               | Products      | ProductCard         | `product-medicine-organizer.png`    |
-| https://cdn.shopify.com/s/files/1/0688/0926/1357/files/1000100650.webp                                                                           | Products      | ProductCard         | `product-pill-organizer.webp`       |
+| Local Path                                                     | Used For                      |
+| -------------------------------------------------------------- | ----------------------------- |
+| `public/images/crownmate/brand/logo.png`                       | Header logo, loader           |
+| `public/images/crownmate/banners/helmet-banner.png`            | Home hero slide               |
+| `public/images/crownmate/banners/hf-wand-banner.png`           | Home hero slide               |
+| `public/images/crownmate/banners/massager-banner.png`          | Home hero slide               |
+| `public/images/crownmate/helmet/01-hero-product-shot.png`      | Product, category, collection |
+| `public/images/crownmate/helmet/02-woman-wearing.png`          | Product gallery, brand story  |
+| `public/images/crownmate/helmet/03-key-benefit.png`            | Product gallery, marketing    |
+| `public/images/crownmate/helmet/04-laser-vs-led.png`           | Product gallery               |
+| `public/images/crownmate/helmet/05-build-quality.png`          | Product gallery, benefits     |
+| `public/images/crownmate/helmet/06-power-options.png`          | Product gallery, benefits     |
+| `public/images/crownmate/helmet/07-results-before-after-1.png` | Product gallery               |
+| `public/images/crownmate/helmet/08-results-before-after-2.png` | Product gallery               |
+| `public/images/crownmate/helmet/09-size-fit-guide.png`         | Product gallery               |
+| `public/images/crownmate/hf-wand/01-hero-shot.png`             | Product, category, collection |
+| `public/images/crownmate/hf-wand/02-woman-using.png`           | Product gallery               |
+| `public/images/crownmate/hf-wand/03-how-it-works.png`          | Product gallery               |
+| `public/images/crownmate/hf-wand/04-attachments.png`           | Product gallery, benefits     |
+| `public/images/crownmate/hf-wand/05-how-to-use.png`            | Product gallery               |
+| `public/images/crownmate/hf-wand/06-results-expectations.png`  | Product gallery               |
+| `public/images/crownmate/pro-massager/01-hero-shot.png`        | Product, category, collection |
+| `public/images/crownmate/pro-massager/02-woman-using.png`      | Product gallery               |
+| `public/images/crownmate/pro-massager/03-how-it-works.png`     | Product gallery               |
+| `public/images/crownmate/pro-massager/04-modes.png`            | Product gallery               |
+| `public/images/crownmate/pro-massager/05-charging-buttons.png` | Product gallery               |

@@ -5,7 +5,7 @@ import { generatePageMetadata } from "@/lib/seo";
 export const metadata = generatePageMetadata({
   title: "Products",
   description:
-    "Browse all CrownMate hair growth devices — RedLight Helmet, HF Wand, and Pulse Pro Massager.",
+    "RedLight Helmet, HF Wand, and Pulse Pro Massager — all CrownMate devices in one place.",
   path: "/products",
 });
 

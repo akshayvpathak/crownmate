@@ -49,7 +49,7 @@ export function HeroBanner() {
                       fill
                       priority
                       sizes="100vw"
-                      className="object-cover object-top"
+                      className="object-contain object-center md:object-cover md:object-top"
                     />
                   )}
                   {/* Bottom gradient overlay */}

@@ -36,7 +36,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
       compareAtPrice: variant.compareAtPrice,
       image,
     });
-    toast.success("Added to cart");
+    toast.success("Added to bag");
   };
 
   const hasMultipleVariants = product.variants.length > 1;
@@ -45,7 +45,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
     <article className={cn("group flex min-w-0 flex-col", className)}>
       <Link
         href={`/products/${product.slug}`}
-        className="relative mb-3 block aspect-square overflow-hidden rounded-lg bg-secondary"
+        className="relative mb-3 block aspect-[4/5] overflow-hidden rounded-lg bg-secondary sm:aspect-square"
       >
         {image && (
           <>
@@ -54,7 +54,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
               alt={product.title}
               fill
               sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-              className="object-cover transition-opacity duration-300 group-hover:opacity-0"
+              className="object-contain p-2 transition-opacity duration-300 group-hover:opacity-0"
               loading="lazy"
             />
             {hoverImage !== image && (
@@ -63,7 +63,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
                 alt=""
                 fill
                 sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
-                className="object-cover opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                className="object-contain p-2 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 loading="lazy"
                 aria-hidden
               />

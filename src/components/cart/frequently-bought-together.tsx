@@ -54,7 +54,7 @@ export function FrequentlyBoughtTogether({
 
   return (
     <div className={compact ? "mt-4" : "border-t border-border p-4"}>
-      <p className="mb-3 text-sm font-semibold">⭐ Frequently Bought Together!</p>
+      <p className="mb-3 text-sm font-semibold">Others also picked</p>
       <div className="space-y-3">
         {suggestions.map((product) => {
           const variant = product.variants[0];
@@ -74,7 +74,7 @@ export function FrequentlyBoughtTogether({
                     alt={product.title}
                     fill
                     sizes="56px"
-                    className="object-cover"
+                    className="object-contain p-0.5"
                   />
                 )}
               </Link>

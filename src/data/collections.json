@@ -3,7 +3,7 @@
     "id": "cm-shop-all",
     "slug": "shop-all",
     "title": "All Products",
-    "description": "Browse all CrownMate hair growth and scalp care devices.",
+    "description": "Helmet, wand, and massager — the full CrownMate lineup.",
     "image": null,
     "productCount": 3
   },
@@ -11,7 +11,7 @@
     "id": "cm-best-sellers",
     "slug": "best-sellers",
     "title": "Best Sellers",
-    "description": "",
+    "description": "What most customers order first.",
     "image": null,
     "productCount": 3
   },
@@ -19,24 +19,24 @@
     "id": "cm-redlight-helmet",
     "slug": "redlight-helmet",
     "title": "RedLight Helmet",
-    "description": "Home-use LLLT helmet with 40 laser diodes for scalp stimulation.",
-    "image": "https://www.crownmate.in/images/helmet/1.Hero%20Product%20shot.png",
+    "description": "40 laser diodes, 20-minute sessions, hands-free.",
+    "image": "/images/crownmate/helmet/01-hero-product-shot.png",
     "productCount": 1
   },
   {
     "id": "cm-hf-wand",
     "slug": "hf-wand",
     "title": "HF Wand",
-    "description": "4-in-1 high-frequency wand with interchangeable electrodes.",
-    "image": "https://www.crownmate.in/images/hf-wand/1.Hero%20shot.png",
+    "description": "High-frequency wand with four swap-in electrodes.",
+    "image": "/images/crownmate/hf-wand/01-hero-shot.png",
     "productCount": 1
   },
   {
     "id": "cm-scalp-massager",
     "slug": "scalp-massager",
     "title": "Scalp Massager",
-    "description": "Rechargeable scalp massager with soft silicone kneading nodes.",
-    "image": "https://www.crownmate.in/images/pro-massager/1%20Hero%20Shot.png",
+    "description": "Waterproof kneading massager for daily use.",
+    "image": "/images/crownmate/pro-massager/01-hero-shot.png",
     "productCount": 1
   }
 ]

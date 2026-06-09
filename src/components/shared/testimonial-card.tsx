@@ -30,9 +30,14 @@ export function TestimonialCard({ testimonial, className }: TestimonialCardProps
       <blockquote className="flex-1 text-[13px] leading-relaxed text-foreground md:text-sm">
         &ldquo;{testimonial.content}&rdquo;
       </blockquote>
-      <cite className="text-xs font-semibold not-italic md:text-sm">
-        {testimonial.author}
-      </cite>
+      <footer className="text-xs md:text-sm">
+        <cite className="font-semibold not-italic">{testimonial.author}</cite>
+        {(testimonial.location || testimonial.product) && (
+          <p className="mt-0.5 text-muted-foreground">
+            {[testimonial.location, testimonial.product].filter(Boolean).join(" · ")}
+          </p>
+        )}
+      </footer>
     </article>
   );
 }

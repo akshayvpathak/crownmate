@@ -16,7 +16,7 @@ export function BenefitsSection() {
           CrownMate&apos;s Promise
         </p>
         <h2 className="section-heading mb-8 text-center md:mb-12">
-          Elevate Your Self-Care Experience
+          What you get when you order
         </h2>
         <div className="grid grid-cols-1 gap-3 min-[400px]:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-6">
           {benefitFeatures.map((feature) => (

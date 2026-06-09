@@ -12,8 +12,7 @@ export async function BestSellers() {
         <div className="mb-6 text-center md:mb-10">
           <h2 className="section-heading">Best Selling Products</h2>
           <p className="mt-2 text-sm text-muted-foreground">
-            Discover our top products that elevate personal care with science and
-            innovation.
+            The three devices customers come back for.
           </p>
         </div>
 

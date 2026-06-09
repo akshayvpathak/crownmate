@@ -66,7 +66,7 @@ export default function CartPage() {
                     alt={item.title}
                     fill
                     sizes="96px"
-                    className="object-cover"
+                    className="object-contain p-1"
                   />
                 </div>
                 <div className="flex flex-1 flex-col">

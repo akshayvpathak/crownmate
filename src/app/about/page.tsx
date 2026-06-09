@@ -4,35 +4,34 @@ import { images } from "@/data/images";
 export const metadata = generatePageMetadata({
   title: "About Us",
   description:
-    "Learn about CrownMate Personal Care — India's trusted D2C brand for smart self-care solutions.",
+    "CrownMate started in Surat in 2019. We build scalp and hair devices you can use at home.",
   path: "/about",
 });
 
 const values = [
   {
-    title: "Innovation",
+    title: "Build useful things",
     description:
-      "From India's first Electric Gua Sha to improving everyday wellness tools, innovation drives everything we create.",
+      "We'd rather ship one device people use daily than five gadgets that collect dust.",
   },
   {
-    title: "Integrity",
+    title: "Say what it does",
     description:
-      "Honesty, transparency, and ethical practices are at the heart of our business.",
+      "No miracle claims. We tell you the session length, the wavelength, and how long results usually take.",
   },
   {
-    title: "Collaboration",
-    description:
-      "We grow together — teamwork and trust help us build better products and a better company.",
+    title: "Fix problems fast",
+    description: "Defective unit? WhatsApp us. We don't make you chase us for a week.",
   },
   {
-    title: "Diversity & Inclusion",
+    title: "For everyone",
     description:
-      "CrownMate is for everyone. We welcome different ideas, backgrounds, and perspectives.",
+      "Men, women, oily scalp, dry scalp — our devices are built for normal home use, not a lab.",
   },
   {
-    title: "Continuous Improvement",
+    title: "Keep improving",
     description:
-      "We never settle. Every challenge is an opportunity to learn, improve, and evolve.",
+      "Customer feedback goes straight to the product team. V2 of the helmet came from real user notes.",
   },
 ];
 
@@ -55,30 +54,31 @@ export default function AboutPage() {
   return (
     <div className="section-padding">
       <div className="container-frizty max-w-4xl">
-        <h1 className="mb-8 text-3xl font-bold md:text-4xl">Who we are?</h1>
+        <h1 className="mb-8 text-3xl font-bold md:text-4xl">Who we are</h1>
 
         <div className="prose prose-lg max-w-none space-y-6">
           <p>
-            CrownMate Personal Care transforms daily routines into enjoyable rituals.
-            Self-care should be more than a habit—it should be a moment of joy and
-            fulfillment. With a focus on innovation, CrownMate creates products that
-            make wellness effortless and rewarding.
+            CrownMate makes scalp and hair devices for home use — the RedLight Helmet,
+            HF Wand, and Pulse Pro Massager. We started in 2019, packing orders from a
+            room in Surat. Now we ship across India, but the idea is the same: give
+            people clinic-style tools without the clinic price or the clinic visit.
           </p>
 
-          <h2 className="text-2xl font-bold">Our Mission</h2>
+          <h2 className="text-2xl font-bold">What we&apos;re trying to do</h2>
           <p>
-            To improve the quality of daily self-care for every Indian by providing
-            affordable, innovative, and effective personal wellness tools. We aim to
-            bridge the gap between ancient self-care traditions and modern technology.
+            Most Indians deal with hair thinning or scalp issues at some point. Clinics
+            are expensive and hard to stick with. We build devices with clear session
+            times and honest instructions so you can actually keep a routine going for
+            months — because that&apos;s when results show up.
           </p>
 
-          <h2 className="text-2xl font-bold">Our Vision</h2>
+          <h2 className="text-2xl font-bold">Where we&apos;re headed</h2>
           <p>
-            To become India&apos;s most trusted D2C brand for smart self-care
-            solutions—where beauty meets science, and comfort meets results.
+            Become the brand people trust for at-home scalp care in India. Not the
+            flashiest marketing — just products that work when you use them as directed.
           </p>
 
-          <h2 className="text-2xl font-bold">Our Values</h2>
+          <h2 className="text-2xl font-bold">How we operate</h2>
           <div className="grid gap-4 sm:grid-cols-2 not-prose">
             {values.map((v) => (
               <div key={v.title} className="rounded-xl bg-secondary p-4">
@@ -88,7 +88,7 @@ export default function AboutPage() {
             ))}
           </div>
 
-          <h2 className="text-2xl font-bold">Meet The Founders</h2>
+          <h2 className="text-2xl font-bold">The founders</h2>
           <div className="grid gap-6 sm:grid-cols-2 not-prose">
             <div className="rounded-xl border border-border p-4">
               <div className="relative mb-4 aspect-square overflow-hidden rounded-lg bg-secondary">
@@ -100,10 +100,10 @@ export default function AboutPage() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="font-bold">Kishan — The Hustler with a Vision</h3>
+              <h3 className="font-bold">Kishan</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                From handling e-commerce orders from a single room in 2019 to leading
-                one of India&apos;s most exciting personal care brands.
+                Runs operations and sales. Started the business packing parcels from
+                home in 2019 — still involved in every product launch.
               </p>
             </div>
             <div className="rounded-xl border border-border p-4">
@@ -116,28 +116,22 @@ export default function AboutPage() {
                   className="object-cover"
                 />
               </div>
-              <h3 className="font-bold">Bhavik — The Mind Behind the Brand</h3>
+              <h3 className="font-bold">Bhavik</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                The calm strategist and creative thinker behind CrownMate, turning chaos
-                into structure and ideas into strategy.
+                Product and brand direction. Turns rough ideas into something we can
+                actually manufacture and support.
               </p>
             </div>
           </div>
 
-          <h2 className="text-2xl font-bold">Our Journey</h2>
+          <h2 className="text-2xl font-bold">Timeline</h2>
           <p>
-            In 2019, we began our journey from a small room at home. In 2023, we
-            officially launched CrownMate—a D2C brand dedicated to upgrading
-            India&apos;s personal care experience. We are the first brand in India to
-            launch the Electric Gua Sha.
+            2019: first orders from a home office. 2023: CrownMate brand launch. We were
+            early with the electric gua sha in India — scalp devices are where
+            we&apos;re focused now.
           </p>
-          <blockquote className="border-l-4 border-primary pl-4 italic text-lg">
-            &ldquo;Every downfall is a setup for a bigger comeback.&rdquo;
-          </blockquote>
 
-          <h2 className="text-2xl font-bold">
-            The Pillars behind a Successful Ambition
-          </h2>
+          <h2 className="text-2xl font-bold">The team</h2>
           <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 not-prose">
             {team.map((member) => (
               <div key={member.name} className="rounded-lg bg-secondary p-3">

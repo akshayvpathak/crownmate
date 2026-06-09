@@ -217,6 +217,11 @@ main {
   }
 }
 
+/* Product gallery — keep slides within viewport on small screens */
+.product-gallery-slide {
+  touch-action: pan-y pinch-zoom;
+}
+
 /* Product page sticky add-to-cart clearance */
 .has-product-sticky-bar {
   padding-bottom: 5.5rem;
