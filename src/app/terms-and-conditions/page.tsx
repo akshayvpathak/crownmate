@@ -11,13 +11,13 @@ export default function TermsPage() {
       <div className="container-frizty max-w-3xl prose prose-sm md:prose-base">
         <h1>Terms &amp; Conditions</h1>
         <p>
-          By accessing and using the Frizty website, you agree to be bound by these
+          By accessing and using the CrownMate website, you agree to be bound by these
           Terms and Conditions.
         </p>
         <h2>Products &amp; Pricing</h2>
         <p>
           All prices are listed in Indian Rupees (INR) and include applicable taxes.
-          Frizty reserves the right to change prices without prior notice.
+          CrownMate reserves the right to change prices without prior notice.
         </p>
         <h2>Shipping Policy</h2>
         <p>
@@ -26,13 +26,13 @@ export default function TermsPage() {
         </p>
         <h2>Warranty</h2>
         <p>
-          All Frizty products come with a 1-year warranty against manufacturing defects.
-          Register your product at our Warranty Registration page.
+          All CrownMate products come with a 1-year warranty against manufacturing
+          defects. Register your product at our Warranty Registration page.
         </p>
         <h2>Limitation of Liability</h2>
         <p>
-          Frizty Personal Care LLP shall not be liable for any indirect, incidental, or
-          consequential damages arising from the use of our products or website.
+          CrownMate Personal Care LLP shall not be liable for any indirect, incidental,
+          or consequential damages arising from the use of our products or website.
         </p>
         <h2>Governing Law</h2>
         <p>

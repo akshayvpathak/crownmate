@@ -13,7 +13,7 @@ export function WhyChooseUs() {
     <section className="section-padding bg-[#834fd9] text-white">
       <div className="container-frizty">
         <h2 className="section-heading mb-8 text-center text-white md:mb-12">
-          Why Choose Frizty Only?
+          Why Choose CrownMate Only?
         </h2>
         <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 md:gap-8">
           {whyChooseUsFeatures.map((feature) => (

@@ -28,7 +28,7 @@ export default function WarrantyRegistrationPage() {
       <div className="container-frizty max-w-lg">
         <h1 className="mb-2 text-3xl font-bold">Warranty Registration</h1>
         <p className="mb-8 text-muted-foreground">
-          Register your Frizty product to activate your 1-year warranty.
+          Register your CrownMate product to activate your 1-year warranty.
         </p>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <Input {...register("name")} placeholder="Full Name" />

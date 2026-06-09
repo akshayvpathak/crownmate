@@ -22,8 +22,8 @@ interface CartState {
 }
 
 const VALID_COUPONS: Record<string, number> = {
-  FRIZTY5: 5,
-  FRIZTY10: 10,
+  CROWNMATE5: 5,
+  CROWNMATE10: 10,
   WELCOME: 5,
 };
 
@@ -86,9 +86,9 @@ export const useCartStore = create<CartState>()(
         const subtotal = get().getSubtotal();
         const { couponDiscount } = get();
         let tierDiscount = 0;
-        if (subtotal >= 3099) tierDiscount = 15;
-        else if (subtotal >= 2099) tierDiscount = 10;
-        else if (subtotal >= 1099) tierDiscount = 5;
+        if (subtotal >= 2999) tierDiscount = 15;
+        else if (subtotal >= 1450) tierDiscount = 10;
+        else if (subtotal >= 799) tierDiscount = 5;
         const effective = Math.max(tierDiscount, couponDiscount);
         return (subtotal * effective) / 100;
       },
@@ -111,6 +111,6 @@ export const useCartStore = create<CartState>()(
         return tier.threshold - get().getSubtotal();
       },
     }),
-    { name: "frizty-cart" },
+    { name: "crownmate-cart" },
   ),
 );

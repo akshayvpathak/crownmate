@@ -263,8 +263,8 @@ export function ProductDetail({ product, reviews }: ProductDetailProps) {
               <AccordionItem value="safety">
                 <AccordionTrigger>Is it Safe to Use?</AccordionTrigger>
                 <AccordionContent>
-                  Yes. Frizty products are designed for safe and gentle use on all skin
-                  types.
+                  Yes. CrownMate products are designed for safe and gentle use on all
+                  skin types.
                 </AccordionContent>
               </AccordionItem>
               <AccordionItem value="warranty">

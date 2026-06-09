@@ -6,22 +6,16 @@ import { images } from "@/data/images";
 
 export const metadata = generatePageMetadata({
   title: "Collections",
-  description: "Browse Frizty product collections by category.",
+  description: "Browse CrownMate product collections by category.",
   path: "/collections",
 });
 
 const collectionImages: Record<string, string> = {
-  "personal-care": images.categories.personalCare,
-  "pill-organizer": images.categories.pillOrganizer,
-  "essential-oil": images.categories.essentialOil,
-  "electric-gua-sha-massager": images.categories.faceMassager,
-  massager: images.categories.massager,
-  "electric-trimmer": images.categories.trimmers,
-  "feet-care": images.categories.feetCare,
-  "heating-pad": images.categories.heatingPad,
-  combo: images.products.wellnessCombo,
-  "best-sellers": images.products.guaSha,
-  "shop-all": images.categories.personalCare,
+  "redlight-helmet": images.categories.redlightHelmet,
+  "hf-wand": images.categories.hfWand,
+  "scalp-massager": images.categories.scalpMassager,
+  "best-sellers": images.products.redlightHelmet,
+  "shop-all": images.products.scalpMassager,
 };
 
 export default async function CollectionsPage() {
@@ -43,7 +37,7 @@ export default async function CollectionsPage() {
                   src={
                     collectionImages[collection.slug] ??
                     collection.image ??
-                    images.categories.personalCare
+                    images.categories.redlightHelmet
                   }
                   alt={collection.title}
                   fill
@@ -57,7 +51,8 @@ export default async function CollectionsPage() {
                   {collection.title}
                 </h2>
                 <p className="text-sm text-muted-foreground">
-                  {collection.productCount} products
+                  {collection.productCount} product
+                  {collection.productCount !== 1 ? "s" : ""}
                 </p>
               </div>
             </Link>

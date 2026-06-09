@@ -117,6 +117,36 @@ export type ReviewSortOption =
   | "lowest-rating"
   | "most-helpful";
 
+export type PaymentMethod = "cod" | "upi" | "card";
+
+export interface PaymentIntent {
+  orderId: string;
+  amount: number;
+  currency: string;
+  provider: "cod" | "razorpay";
+  status: "pending" | "confirmed" | "failed";
+  razorpayOrderId?: string;
+}
+
+export interface CheckoutOrder {
+  orderId: string;
+  status: "pending" | "confirmed" | "failed";
+  items: CartItem[];
+  customer: {
+    email: string;
+    firstName: string;
+    lastName: string;
+    phone: string;
+    address: string;
+    city: string;
+    state: string;
+    pincode: string;
+  };
+  total: number;
+  paymentIntent: PaymentIntent;
+  message: string;
+}
+
 export interface ShippingEstimate {
   method: string;
   cost: number;

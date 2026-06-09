@@ -11,6 +11,7 @@ import { useUIStore } from "@/store/ui-store";
 import { MegaMenu } from "@/components/layout/mega-menu";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { SITE_CONFIG } from "@/constants/assets";
 
 export function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -48,11 +49,11 @@ export function Header() {
           <Link
             href="/"
             className="hidden items-center lg:flex"
-            aria-label="Frizty home"
+            aria-label={`${SITE_CONFIG.name} home`}
           >
             <Image
               src={images.brand.logo}
-              alt="Frizty"
+              alt={SITE_CONFIG.name}
               width={100}
               height={40}
               priority
@@ -65,11 +66,11 @@ export function Header() {
         <Link
           href="/"
           className="absolute left-1/2 -translate-x-1/2 lg:hidden"
-          aria-label="Frizty home"
+          aria-label={`${SITE_CONFIG.name} home`}
         >
           <Image
             src={images.brand.logo}
-            alt="Frizty"
+            alt={SITE_CONFIG.name}
             width={90}
             height={36}
             priority

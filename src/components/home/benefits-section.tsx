@@ -12,6 +12,9 @@ export function BenefitsSection() {
   return (
     <section className="section-padding bg-white">
       <div className="container-frizty">
+        <p className="mb-2 text-center text-sm font-medium uppercase tracking-wider text-primary">
+          CrownMate&apos;s Promise
+        </p>
         <h2 className="section-heading mb-8 text-center md:mb-12">
           Elevate Your Self-Care Experience
         </h2>

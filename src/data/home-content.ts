@@ -3,93 +3,160 @@ import type { CategoryCard, Feature, HeroSlide, Testimonial } from "@/types";
 
 export const heroSlides: HeroSlide[] = [
   {
-    id: "gua-sha",
-    eyebrow: "India's First Electric Gua Sha",
-    title: "All in one Skincare Solution",
-    subtitle: "Upgrade Your Skincare Routine!",
+    id: "redlight-helmet",
+    eyebrow: "40 Medical-Grade Laser Diodes",
+    title: "Support Healthier-Looking Hair at Home",
+    subtitle: "Structured red-light scalp sessions in just 20 minutes.",
     ctaText: "SHOP NOW",
-    ctaLink: "/products/frizty-electric-gua-sha-face-massager",
-    image: images.hero.guaShaDesktop,
-    mobileImage: images.hero.guaShaMobile,
+    ctaLink: "/products/laser-hair-growth-helmet",
+    image: images.hero.helmet,
+    mobileImage: images.hero.helmet,
     backgroundColor: "#834fd9",
     benefits: [
-      { icon: "droplet", label: "Boosts Glow" },
-      { icon: "flower", label: "Relieves Tension" },
-      { icon: "eye", label: "Reduces Puffiness" },
+      { icon: "sparkles", label: "LLLT Technology" },
+      { icon: "droplet", label: "650nm Wavelength" },
+      { icon: "brain", label: "Hands-Free Routine" },
     ],
   },
   {
-    id: "head-massager",
-    eyebrow: "India's First Head Massager",
-    title: "Your Ultimate Relaxation Partner",
-    subtitle: "Upgrade Your Self-Care Routine!",
+    id: "hf-wand",
+    eyebrow: "4-in-1 Neon Gas Electrode System",
+    title: "Scalp Therapy & Targeted Facial Care",
+    subtitle: "One wand for multiple treatment zones.",
     ctaText: "SHOP NOW",
-    ctaLink: "/products/scalp-massager",
-    image: images.hero.headMassager,
-    mobileImage: images.hero.headMassager,
+    ctaLink: "/products/high-frequency-wand",
+    image: images.hero.hfWand,
+    mobileImage: images.hero.hfWand,
     backgroundColor: "#834fd9",
     benefits: [
-      { icon: "brain", label: "Stress Relief" },
-      { icon: "sparkles", label: "Better Sleep" },
-      { icon: "heart", label: "Scalp Health" },
+      { icon: "sparkles", label: "Scalp Purification" },
+      { icon: "droplet", label: "Serum Synergy" },
+      { icon: "flower", label: "Variable Intensity" },
+    ],
+  },
+  {
+    id: "pulse-pro",
+    eyebrow: "Smart Scalp Massage Technology",
+    title: "Relax Your Scalp. Support Healthier-Looking Hair.",
+    subtitle: "Daily kneading massage with soft silicone nodes.",
+    ctaText: "SHOP NOW",
+    ctaLink: "/products/electric-scalp-massager",
+    image: images.hero.massager,
+    mobileImage: images.hero.massager,
+    backgroundColor: "#834fd9",
+    benefits: [
+      { icon: "sparkles", label: "Red Light Therapy" },
+      { icon: "droplet", label: "Deep Scalp Stimulation" },
+      { icon: "heart", label: "Relaxing Massage" },
     ],
   },
 ];
 
 export const frequentlyBoughtTogetherSlugs = [
-  "frizty-electric-gua-sha-face-massager-electric-scalp-massage",
-  "4-in-1-bikini-trimmer-head-masager-gua-sha-face-massager",
-  "scalp-massager",
-  "bikini-trimmer-and-shaver-for-women",
-  "frizty-ultimate-callus-remover-hydrating-gel-combo-smooth-feet-made-easy",
-  "frizty-pill-organizer",
-  "frizty-medicine-organizer-3-times-a-day",
-  "exfoliating-foot-peel-mask",
-  "rosemary-essential-hair-oil",
+  "laser-hair-growth-helmet",
+  "high-frequency-wand",
+  "electric-scalp-massager",
 ];
 
 export const categoryCards: CategoryCard[] = [
   {
     id: "1",
-    title: "Personal Care",
-    slug: "personal-care",
-    image: images.categories.personalCare,
-    itemCount: 7,
+    title: "RedLight Helmet",
+    slug: "redlight-helmet",
+    image: images.categories.redlightHelmet,
+    itemCount: 1,
   },
   {
     id: "2",
-    title: "Pill Organizer",
-    slug: "pill-organizer",
-    image: images.categories.pillOrganizer,
-    itemCount: 2,
+    title: "HF Wand",
+    slug: "hf-wand",
+    image: images.categories.hfWand,
+    itemCount: 1,
   },
   {
     id: "3",
-    title: "Essential Oil",
-    slug: "essential-oil",
-    image: images.categories.essentialOil,
-    itemCount: 3,
-  },
-  {
-    id: "4",
-    title: "Face Massager",
-    slug: "electric-gua-sha-massager",
-    image: images.categories.faceMassager,
+    title: "Scalp Massager",
+    slug: "scalp-massager",
+    image: images.categories.scalpMassager,
     itemCount: 1,
   },
+];
+
+export const howItWorksSteps = [
   {
-    id: "5",
-    title: "Massager",
-    slug: "massager",
-    image: images.categories.massager,
-    itemCount: 1,
+    id: "01",
+    product: "Crownmate RedLight Helmet™",
+    productSlug: "laser-hair-growth-helmet",
+    eyebrow: "40 Medical-Grade Laser Diodes",
+    title: "LLLT Technology",
+    image: images.howItWorks.helmet,
+    features: [
+      {
+        title: "Light Penetration",
+        description:
+          "650nm red laser light penetrates the scalp dermis, reaching hair follicles deep beneath the surface.",
+      },
+      {
+        title: "Cellular ATP Boost",
+        description:
+          "Stimulates mitochondria to produce ATP — the energy your hair cells need to stay in the active growth phase.",
+      },
+      {
+        title: "Follicle Revival",
+        description:
+          "Awakens dormant follicles, extends the Anagen growth phase, and supports visibly thicker, denser hair over time.",
+      },
+    ],
   },
   {
-    id: "6",
-    title: "Trimmers",
-    slug: "electric-trimmer",
-    image: images.categories.trimmers,
-    itemCount: 4,
+    id: "02",
+    product: "Crownmate High Frequency Wand™",
+    productSlug: "high-frequency-wand",
+    eyebrow: "4-in-1 Neon Gas Electrode System",
+    title: "High-Frequency Electrode Therapy",
+    image: images.howItWorks.hfWand,
+    features: [
+      {
+        title: "Neon Ionization",
+        description:
+          "High-frequency current passes through neon gas, creating a therapeutic glow that stimulates blood flow to the scalp.",
+      },
+      {
+        title: "Scalp Purification",
+        description:
+          "Generates enriched oxygen to eliminate bacteria and reduce inflammation that blocks healthy hair growth.",
+      },
+      {
+        title: "Serum Synergy",
+        description:
+          "Increases scalp permeability so hair serums and oils absorb up to 5 times deeper for maximum effect.",
+      },
+    ],
+  },
+  {
+    id: "03",
+    product: "Crownmate Pulse Pro Massager™",
+    productSlug: "electric-scalp-massager",
+    eyebrow: "Portable Rechargeable Massager",
+    title: "Deep-Kneading Scalp Massage",
+    image: images.howItWorks.massager,
+    features: [
+      {
+        title: "Circulation Boost",
+        description:
+          "Rhythmic kneading motions increase blood flow to follicles, delivering more oxygen and nutrients directly to hair roots.",
+      },
+      {
+        title: "Scalp Detox",
+        description:
+          "Gently loosens product buildup, dead skin cells, and excess oil — creating a clean, healthy base for hair growth.",
+      },
+      {
+        title: "Absorption Prep",
+        description:
+          "Use before applying serums or oils to dramatically improve how deep active ingredients penetrate the scalp.",
+      },
+    ],
   },
 ];
 
@@ -119,7 +186,7 @@ export const whyChooseUsFeatures: Feature[] = [
     id: "4",
     title: "1 Year* Warranty",
     subtitle: "on all Products",
-    description: "Frizty's Promise",
+    description: "CrownMate's Promise",
     icon: "warranty",
   },
 ];
@@ -128,7 +195,8 @@ export const benefitFeatures: Feature[] = [
   {
     id: "1",
     title: "Trusted Quality",
-    description: "Enjoy soothing relief with our portable massager and all products.",
+    description:
+      "Enjoy reliable performance with our professionally designed devices and all products.",
     icon: "shield",
   },
   {
@@ -154,84 +222,56 @@ export const benefitFeatures: Feature[] = [
 export const testimonials: Testimonial[] = [
   {
     id: "1",
-    author: "Saurabh Dwivedi",
+    author: "Rahul M.",
     content:
-      "Absolutely love this head massager! It's gentle yet effective, boosting circulation and providing deep relaxation. Even my family members are hooked on it now. A must-have in every home!",
-    image: images.testimonials.saurabh,
+      "After regular sessions, I noticed less shedding and my routine became much more consistent.",
+    image: undefined,
   },
   {
     id: "2",
-    author: "Vibha Khatri",
+    author: "Priya S.",
     content:
-      "This has genuinely improved my sleep quality. I use it nightly before bed, and the soothing sensations calm my mind instantly. So glad I discovered this little gem—definitely one of my favorite purchases.",
-    image: images.testimonials.vibha,
+      "The multiple electrodes made it easy to use on scalp and face without changing my whole schedule.",
+    image: undefined,
   },
   {
     id: "3",
-    author: "Aakash",
+    author: "Arjun K.",
     content:
-      "I started using this head massager after long workdays, and it instantly relaxes my scalp and clears my mind. The bristles are soft yet firm enough to stimulate blood flow. It feels like a mini spa session at home.",
-    image: images.testimonials.aakash,
-  },
-  {
-    id: "4",
-    author: "Kashish",
-    content:
-      "This product made hair removal so much easier for me. No more waxing appointments or shaving cuts! I love how fast and smooth the trimming is—especially on my legs.",
-    image: images.testimonials.kashish,
-  },
-  {
-    id: "5",
-    author: "Edwina gomez",
-    content:
-      "At first, I was skeptical, but the moment I used this on one side of my face—I could literally feel the difference. It was warm, soothing, and within minutes, my skin felt tighter, smoother, and more relaxed.",
-    image: images.testimonials.edwina,
-  },
-  {
-    id: "6",
-    author: "Tanya Bakshi",
-    content:
-      "I've always been the kind of person who wants to be organized… but life gets in the way. I take multivitamins, iron tablets, and a few skin supplements daily, but I kept forgetting doses until I found the Frizty Pill Box.",
-    image: images.testimonials.tanya,
-  },
-  {
-    id: "7",
-    author: "Ankita Deshmukh",
-    content:
-      "This feet mask is a game-changer! No scrubbing, no pain — just wear it and forget. I used it before my Goa trip and my feet looked flawless in sandals.",
-    image: images.testimonials.ankita,
+      "Simple to use daily and it made applying oils and serum much more effective for me.",
+    image: undefined,
   },
 ];
 
 export const faqItems = [
   {
     id: "1",
-    question: "How quickly can I expect results?",
+    question: "How long before I see results with the RedLight Helmet?",
     answer:
-      "Many users start noticing reduced puffiness and improved skin freshness within the first few uses. For best results, we recommend using the device for 10 minutes everyday, and with consistent use over time, many users start seeing visible improvements within 21 days.",
+      "Most users notice reduced shedding within 4 to 6 weeks. Visible regrowth and thickness improvements are typically seen between 12 and 16 weeks of consistent use, 3 times per week.",
   },
   {
     id: "2",
-    question: "Is it safe to use?",
+    question: "Is LLLT safe to use at home?",
     answer:
-      "Yes. Frizty products are designed for safe and gentle use. The devices use controlled heat therapy, low-level vibration technology, and red light therapy, which are commonly used in professional skincare treatments.",
+      "Yes. CrownMate devices are designed for safe home use. The RedLight Helmet uses low-level laser therapy at 650nm, a wavelength commonly used in professional scalp care routines.",
   },
   {
     id: "3",
     question: "What is the warranty policy?",
     answer:
-      "All Frizty products come with a 1 Year Warranty covering any manufacturing defects. We also offer a 90-Days Money-Back Guarantee, so you can try the product with confidence.",
+      "All CrownMate products come with a 1 Year Warranty covering manufacturing defects. We also offer easy exchange and returns within our policy window.",
   },
   {
     id: "4",
     question: "What are the shipping and return policies?",
     answer:
-      "We provide fast and reliable shipping across India. Orders are usually processed within 24 hours, and delivery typically takes 3 to 4 working days. If you receive a damaged or defective product, please contact our support team within 48 hours of delivery.",
+      "We provide Pan-India delivery. Orders are usually processed within 24 hours, with delivery in 3 to 9 working days. Free shipping applies on orders above ₹499.",
   },
   {
     id: "5",
-    question: "Do you offer free shipping?",
+    question: "Which device should I start with?",
     answer:
-      "Yes! We offer free shipping on all orders delivered across India. Arrives in 3-4 days.",
+      "Start with the device that matches your primary goal: RedLight Helmet for laser scalp support, HF Wand for scalp therapy and purification, or Pulse Pro Massager for daily massage and serum prep. Contact support if you need help choosing.",
   },
 ];

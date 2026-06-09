@@ -17,7 +17,7 @@ export function Footer() {
             <h3 className="mb-3 text-base font-semibold">Stay Connected</h3>
             <p className="mb-4 text-sm text-white/60">
               Sign up for our newsletter to receive updates on Products and events from
-              Frizty.
+              {SITE_CONFIG.name}.
             </p>
             <NewsletterForm />
             <div className="mt-6">
@@ -62,7 +62,7 @@ export function Footer() {
         </div>
 
         <div className="mt-10 border-t border-white/10 pt-6 text-center text-xs text-white/50">
-          <p>© 2026 Frizty retail. All rights reserved.</p>
+          <p>© 2026 {SITE_CONFIG.name} India. All rights reserved.</p>
         </div>
       </div>
     </footer>

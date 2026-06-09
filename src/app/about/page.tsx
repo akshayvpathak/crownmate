@@ -4,7 +4,7 @@ import { images } from "@/data/images";
 export const metadata = generatePageMetadata({
   title: "About Us",
   description:
-    "Learn about Frizty Personal Care — India's trusted D2C brand for smart self-care solutions.",
+    "Learn about CrownMate Personal Care — India's trusted D2C brand for smart self-care solutions.",
   path: "/about",
 });
 
@@ -27,7 +27,7 @@ const values = [
   {
     title: "Diversity & Inclusion",
     description:
-      "Frizty is for everyone. We welcome different ideas, backgrounds, and perspectives.",
+      "CrownMate is for everyone. We welcome different ideas, backgrounds, and perspectives.",
   },
   {
     title: "Continuous Improvement",
@@ -59,10 +59,10 @@ export default function AboutPage() {
 
         <div className="prose prose-lg max-w-none space-y-6">
           <p>
-            Frizty Personal Care transforms daily routines into enjoyable rituals.
+            CrownMate Personal Care transforms daily routines into enjoyable rituals.
             Self-care should be more than a habit—it should be a moment of joy and
-            fulfillment. With a focus on innovation, Frizty creates products that make
-            wellness effortless and rewarding.
+            fulfillment. With a focus on innovation, CrownMate creates products that
+            make wellness effortless and rewarding.
           </p>
 
           <h2 className="text-2xl font-bold">Our Mission</h2>
@@ -93,7 +93,7 @@ export default function AboutPage() {
             <div className="rounded-xl border border-border p-4">
               <div className="relative mb-4 aspect-square overflow-hidden rounded-lg bg-secondary">
                 <Image
-                  src={images.about.founderKishan}
+                  src={images.hero.helmet}
                   alt="Kishan"
                   fill
                   sizes="300px"
@@ -109,7 +109,7 @@ export default function AboutPage() {
             <div className="rounded-xl border border-border p-4">
               <div className="relative mb-4 aspect-square overflow-hidden rounded-lg bg-secondary">
                 <Image
-                  src={images.about.founderBhavik}
+                  src={images.hero.hfWand}
                   alt="Bhavik"
                   fill
                   sizes="300px"
@@ -118,7 +118,7 @@ export default function AboutPage() {
               </div>
               <h3 className="font-bold">Bhavik — The Mind Behind the Brand</h3>
               <p className="mt-2 text-sm text-muted-foreground">
-                The calm strategist and creative thinker behind Frizty, turning chaos
+                The calm strategist and creative thinker behind CrownMate, turning chaos
                 into structure and ideas into strategy.
               </p>
             </div>
@@ -127,9 +127,9 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold">Our Journey</h2>
           <p>
             In 2019, we began our journey from a small room at home. In 2023, we
-            officially launched Frizty—a D2C brand dedicated to upgrading India&apos;s
-            personal care experience. We are the first brand in India to launch the
-            Electric Gua Sha.
+            officially launched CrownMate—a D2C brand dedicated to upgrading
+            India&apos;s personal care experience. We are the first brand in India to
+            launch the Electric Gua Sha.
           </p>
           <blockquote className="border-l-4 border-primary pl-4 italic text-lg">
             &ldquo;Every downfall is a setup for a bigger comeback.&rdquo;

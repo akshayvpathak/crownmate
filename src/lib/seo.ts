@@ -21,7 +21,7 @@ export function generatePageMetadata({
     : `${SITE_CONFIG.name} | ${SITE_CONFIG.tagline}`;
   const pageDescription =
     description ??
-    "Shop premium personal care, wellness, and grooming products from Frizty. India's first Electric Gua Sha, scalp massagers, trimmers & more.";
+    "Shop CrownMate hair growth devices — RedLight Helmet, HF Wand & Pulse Pro Massager. Science-backed scalp care for India.";
   const url = `${SITE_CONFIG.url}${path}`;
   const ogImage = image ?? `${SITE_CONFIG.url}/og-image.jpg`;
 
@@ -64,7 +64,7 @@ export function generateProductJsonLd(product: {
     description: product.description,
     image: product.images,
     url: `${SITE_CONFIG.url}/products/${product.slug}`,
-    brand: { "@type": "Brand", name: "Frizty" },
+    brand: { "@type": "Brand", name: SITE_CONFIG.name },
     offers: {
       "@type": "Offer",
       priceCurrency: "INR",

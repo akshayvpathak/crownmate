@@ -1,236 +1,56 @@
 [
   {
-    "id": "g1",
-    "author": "Gur Simran",
+    "id": "r1",
+    "author": "Rahul M.",
     "rating": 5,
-    "content": "I never knew my skincare could feel this good. This isn't just a tool—it's my glow-up ritual. Tighter skin, soft glow, and a few minutes of peace I actually look forward to.",
-    "date": "2025-09-15",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
-    "helpful": 42
-  },
-  {
-    "id": "g2",
-    "author": "Edwina gomez",
-    "rating": 5,
-    "content": "At first, I was skeptical, but the moment I used this on one side of my face—I could literally feel the difference. It was warm, soothing, and within minutes, my skin felt tighter, smoother, and more relaxed.",
-    "date": "2025-08-22",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
-    "helpful": 38
-  },
-  {
-    "id": "g3",
-    "author": "Saurabh Dwivedi",
-    "rating": 5,
-    "content": "I had inflamed skin and dark patches that just wouldn't go away. After using this regularly, my face feels calm, and the pigmentation has started to fade. It's made a real difference in how my skin looks.",
-    "date": "2025-08-10",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
-    "helpful": 31
-  },
-  {
-    "id": "g4",
-    "author": "Pooja",
-    "rating": 5,
-    "content": "This was the first time I tried anything skincare-related—and wow. It feels like a heated massage, and within days, I noticed my jawline looking sharper. Now it's a part of my daily routine, even when I'm tired.",
-    "date": "2025-07-28",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
-    "helpful": 27
-  },
-  {
-    "id": "g5",
-    "author": "Aakash",
-    "rating": 5,
-    "content": "This was the first time I tried anything skincare-related—and wow. It feels like a heated massage, and within days, I noticed my jawline looking sharper. Now it's a part of my daily routine.",
-    "date": "2025-07-15",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
+    "content": "After regular sessions, I noticed less shedding and my routine became much more consistent.",
+    "date": "2025-09-10",
+    "productSlug": "laser-hair-growth-helmet",
     "helpful": 24
   },
   {
-    "id": "g6",
-    "author": "Preeti Nainwal",
+    "id": "r2",
+    "author": "Priya S.",
     "rating": 5,
-    "content": "I've been using this daily for a few minutes and I can already see a big difference in how my skin feels and looks. It's smoother, firmer, and I've even started skipping makeup some days.",
-    "date": "2025-07-02",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
-    "helpful": 22
-  },
-  {
-    "id": "g7",
-    "author": "Chahat Pahuja",
-    "rating": 4,
-    "content": "I have acne-prone skin, so I'm always careful with what I use. But this felt so gentle and soothing from day one. It really helped calm the redness and inflammation.",
-    "date": "2025-06-20",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
+    "content": "The multiple electrodes made it easy to use on scalp and face without changing my whole schedule.",
+    "date": "2025-08-22",
+    "productSlug": "high-frequency-wand",
     "helpful": 19
   },
   {
-    "id": "g8",
-    "author": "Vibha Khatri",
+    "id": "r3",
+    "author": "Arjun K.",
     "rating": 5,
-    "content": "This feels really relaxing on my skin—it's like a mini facial at home. It melts away dullness, stress, and puffiness so easily. My skin looks lifted and I can actually see the glow every morning.",
-    "date": "2025-06-08",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
-    "helpful": 18
+    "content": "Simple to use daily and it made applying oils and serum much more effective for me.",
+    "date": "2025-08-05",
+    "productSlug": "electric-scalp-massager",
+    "helpful": 17
   },
   {
-    "id": "g9",
-    "author": "Nishtha",
+    "id": "r4",
+    "author": "Neha R.",
     "rating": 5,
-    "content": "Before this, I was layering products with no real change. Now, everything I apply actually works. My serums absorb better, and my skin looks healthier than ever.",
-    "date": "2025-05-25",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
-    "helpful": 16
-  },
-  {
-    "id": "g10",
-    "author": "Tanya Jain",
-    "rating": 4,
-    "content": "Took a break, used this for 5 minutes—and my skin instantly felt calmer, softer, and refreshed. It's my go-to whenever my face feels dull or tired.",
-    "date": "2025-05-12",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
-    "helpful": 14
-  },
-  {
-    "id": "g11",
-    "author": "Riya Sharma",
-    "rating": 5,
-    "content": "I recently purchased the Frizty Electric Gua-Sha based on a friend's recommendation. I've been using it for the past few days, and it feels great on my skin so far.",
-    "date": "2025-04-30",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
+    "content": "The helmet fits comfortably and the 20-minute sessions are easy to stick with three times a week.",
+    "date": "2025-07-18",
+    "productSlug": "laser-hair-growth-helmet",
     "helpful": 12
   },
   {
-    "id": "g12",
-    "author": "Meera Patel",
-    "rating": 5,
-    "content": "I have been using this massager since past 1.5 weeks and honestly I have already started seeing results. You just have to be consistent with it. Good buy!!",
-    "date": "2025-04-18",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
-    "helpful": 11
-  },
-  {
-    "id": "g13",
-    "author": "Anjali Verma",
+    "id": "r5",
+    "author": "Vikram P.",
     "rating": 4,
-    "content": "Premium packaging. Build quality of the product is also great and feels solid instead of cheap plastic. Yet to use but so far so good.",
-    "date": "2025-04-05",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
+    "content": "Good build quality on the wand. Scalp sessions feel refreshing and my serum absorbs better.",
+    "date": "2025-07-02",
+    "productSlug": "high-frequency-wand",
     "helpful": 9
   },
   {
-    "id": "g14",
-    "author": "Priya Singh",
+    "id": "r6",
+    "author": "Ananya T.",
     "rating": 5,
-    "content": "The heat therapy combined with vibration is incredible. My morning puffiness is gone within minutes. Worth every rupee!",
-    "date": "2025-03-22",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
-    "helpful": 8
-  },
-  {
-    "id": "g15",
-    "author": "Kavita Rao",
-    "rating": 5,
-    "content": "Best skincare investment I've made. The red light therapy mode is my favorite. Skin texture has improved noticeably.",
-    "date": "2025-03-10",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
-    "helpful": 7
-  },
-  {
-    "id": "g16",
-    "author": "Divya Menon",
-    "rating": 4,
-    "content": "Great product overall. Battery lasts long and charging is quick. Only wish it came with a travel pouch.",
-    "date": "2025-02-28",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
-    "helpful": 6
-  },
-  {
-    "id": "g17",
-    "author": "Neha Gupta",
-    "rating": 5,
-    "content": "My dermatologist actually recommended gua sha and this electric version is so much easier. No learning curve at all.",
-    "date": "2025-02-15",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
-    "helpful": 5
-  },
-  {
-    "id": "g18",
-    "author": "Shreya Iyer",
-    "rating": 5,
-    "content": "Gifted this to my mom and she loves it. She uses it every evening while watching TV. Her skin looks so refreshed now.",
-    "date": "2025-02-01",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
-    "helpful": 4
-  },
-  {
-    "id": "g19",
-    "author": "Ishita Desai",
-    "rating": 4,
-    "content": "Solid product. The 9 modes give you lots of options. I use the gentle mode around my eyes and stronger on my jawline.",
-    "date": "2025-01-20",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
-    "helpful": 3
-  },
-  {
-    "id": "g20",
-    "author": "Tanvi Shah",
-    "rating": 5,
-    "content": "Finally a gua sha that doesn't require technique! Just glide it across your face and let the heat and vibration do the work.",
-    "date": "2025-01-08",
-    "productSlug": "frizty-electric-gua-sha-face-massager",
-    "helpful": 2
-  },
-  {
-    "id": "s1",
-    "author": "Saurabh Dwivedi",
-    "rating": 5,
-    "content": "Absolutely love this head massager! It's gentle yet effective, boosting circulation and providing deep relaxation. Even my family members are hooked on it now.",
-    "date": "2025-01-15",
-    "productSlug": "scalp-massager",
-    "helpful": 35
-  },
-  {
-    "id": "s2",
-    "author": "Vibha Khatri",
-    "rating": 5,
-    "content": "This has genuinely improved my sleep quality. I use it nightly before bed, and the soothing sensations calm my mind instantly.",
-    "date": "2025-02-20",
-    "productSlug": "scalp-massager",
-    "helpful": 28
-  },
-  {
-    "id": "s3",
-    "author": "Aakash",
-    "rating": 5,
-    "content": "I started using this head massager after long workdays, and it instantly relaxes my scalp and clears my mind. Feels like a mini spa session at home.",
-    "date": "2025-03-10",
-    "productSlug": "scalp-massager",
-    "helpful": 22
-  },
-  {
-    "id": "t1",
-    "author": "Kashish",
-    "rating": 5,
-    "content": "This product made hair removal so much easier for me. No more waxing appointments or shaving cuts! I love how fast and smooth the trimming is.",
-    "date": "2025-04-05",
-    "productSlug": "bikini-trimmer-and-shaver-for-women",
-    "helpful": 20
-  },
-  {
-    "id": "p1",
-    "author": "Tanya Bakshi",
-    "rating": 5,
-    "content": "I've always been the kind of person who wants to be organized but life gets in the way. The Frizty Pill Box changed everything for my daily supplements.",
-    "date": "2025-06-18",
-    "productSlug": "frizty-pill-organizer",
-    "helpful": 15
-  },
-  {
-    "id": "f1",
-    "author": "Ankita Deshmukh",
-    "rating": 5,
-    "content": "This feet mask is a game-changer! No scrubbing, no pain — just wear it and forget. I used it before my Goa trip and my feet looked flawless in sandals.",
-    "date": "2025-07-22",
-    "productSlug": "exfoliating-foot-peel-mask",
-    "helpful": 18
+    "content": "Waterproof massager works great in the shower. Gentle on my sensitive scalp.",
+    "date": "2025-06-20",
+    "productSlug": "electric-scalp-massager",
+    "helpful": 11
   }
 ]

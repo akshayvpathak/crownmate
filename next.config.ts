@@ -5,6 +5,11 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "www.crownmate.in",
+        pathname: "/**",
+      },
+      {
+        protocol: "https",
         hostname: "friztyretail.com",
         pathname: "/cdn/**",
       },

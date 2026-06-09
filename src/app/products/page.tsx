@@ -5,7 +5,7 @@ import { generatePageMetadata } from "@/lib/seo";
 export const metadata = generatePageMetadata({
   title: "Products",
   description:
-    "Browse all Frizty personal care, wellness, and grooming products. Massagers, trimmers, pill organizers & more.",
+    "Browse all CrownMate hair growth devices — RedLight Helmet, HF Wand, and Pulse Pro Massager.",
   path: "/products",
 });
 

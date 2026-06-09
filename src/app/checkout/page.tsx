@@ -16,6 +16,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
+import { processCheckout } from "@/services/checkout-service";
 
 export default function CheckoutPage() {
   const items = useCartStore((s) => s.items);
@@ -34,10 +35,14 @@ export default function CheckoutPage() {
     defaultValues: { paymentMethod: "cod" },
   });
 
-  const onSubmit = async (_data: CheckoutFormData) => {
-    await new Promise((r) => setTimeout(r, 1000));
-    clearCart();
-    toast.success("Order placed successfully!");
+  const onSubmit = async (data: CheckoutFormData) => {
+    const order = await processCheckout(data, items, getTotal());
+    if (order.status === "confirmed") {
+      clearCart();
+      toast.success(order.message);
+      return;
+    }
+    toast.info(order.message);
   };
 
   if (items.length === 0) {

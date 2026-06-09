@@ -10,8 +10,8 @@ export function BrandStory() {
         <div className="grid items-center gap-6 md:grid-cols-2 md:gap-10">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-secondary">
             <Image
-              src={images.marketing.expressYourself}
-              alt="Everyone should totally be able to express themselves"
+              src={images.marketing.brandStory}
+              alt="CrownMate self-care routine"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
@@ -20,8 +20,12 @@ export function BrandStory() {
           </div>
           <div className="text-center md:text-left">
             <h2 className="section-heading leading-snug">
-              Everyone should totally be able to express themselves!
+              Everyone deserves a simple, effective self-care routine.
             </h2>
+            <p className="mt-4 text-sm text-muted-foreground md:text-base">
+              CrownMate combines science and simplicity to create devices that fit into
+              your daily life.
+            </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:justify-center md:justify-start">
               <Button asChild className="min-w-[140px]">
                 <Link href="/products">SHOP NOW</Link>

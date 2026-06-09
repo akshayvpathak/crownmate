@@ -5,7 +5,7 @@ import { Mail, Phone, MapPin } from "lucide-react";
 
 export const metadata = generatePageMetadata({
   title: "Contact Us",
-  description: "Get in touch with Frizty customer support.",
+  description: "Get in touch with CrownMate customer support.",
   path: "/contact",
 });
 
@@ -15,8 +15,8 @@ export default function ContactPage() {
       <div className="container-frizty">
         <h1 className="mb-2 text-3xl font-bold md:text-4xl">Contact Us</h1>
         <p className="mb-8 text-muted-foreground">
-          Email, Call or Complete the form to learn how Frizty can solve your messaging
-          problem.
+          Email, Call or Complete the form to learn how CrownMate can solve your
+          messaging problem.
         </p>
 
         <div className="grid gap-10 lg:grid-cols-2">

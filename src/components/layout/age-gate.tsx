@@ -14,7 +14,7 @@ export function AgeGate() {
   const { showAgeGate, ageGateStep, verifyAge } = useUIStore();
 
   useEffect(() => {
-    const verified = localStorage.getItem("frizty-age-verified");
+    const verified = localStorage.getItem("crownmate-age-verified");
     if (verified === "true") {
       verifyAge(true);
     }
@@ -60,7 +60,7 @@ export function AgeGate() {
                 variant="default"
                 className="flex-1 rounded-full text-xs font-semibold uppercase"
                 onClick={() => {
-                  localStorage.setItem("frizty-age-verified", "true");
+                  localStorage.setItem("crownmate-age-verified", "true");
                   verifyAge(true);
                 }}
               >

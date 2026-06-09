@@ -5,17 +5,15 @@ import { formatPrice } from "@/lib/utils";
 
 const featured = [
   {
-    slug: "frizty-electric-gua-sha-face-massager",
-    title: "Electric Gua sha | Face Massager",
-    price: 1499,
-    compareAt: 2999,
-    image: images.products.guaSha,
+    slug: "laser-hair-growth-helmet",
+    title: "Crownmate RedLight Helmet™",
+    price: 2999,
+    image: images.products.redlightHelmet,
   },
   {
-    slug: "scalp-massager",
-    title: "Electric Scalp Massager | Head Massager",
-    price: 1099,
-    compareAt: 2199,
+    slug: "electric-scalp-massager",
+    title: "Crownmate Pulse Pro Massager™",
+    price: 799,
     image: images.products.scalpMassager,
   },
 ];
@@ -48,9 +46,6 @@ export function FeaturedShowcase() {
                 <div className="mt-1 flex flex-wrap items-baseline gap-x-2">
                   <span className="text-sm font-semibold md:text-base">
                     {formatPrice(item.price)}
-                  </span>
-                  <span className="text-xs text-muted-foreground line-through md:text-sm">
-                    {formatPrice(item.compareAt)}
                   </span>
                 </div>
               </div>

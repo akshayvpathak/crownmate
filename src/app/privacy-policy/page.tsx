@@ -15,14 +15,14 @@ export default function PrivacyPolicyPage() {
           understand how we collect, use and protect your information when you visit the
           Site and use the Products and services.
         </p>
-        <h2>What personal information does Frizty collect?</h2>
+        <h2>What personal information does CrownMate collect?</h2>
         <p>
           We may hold information relating to you that you have provided to us while
           registering with us or while placing an order. This information may include
           your name, address, telephone numbers, and information on how you use our
           products.
         </p>
-        <h2>How does Frizty use your Personal Information?</h2>
+        <h2>How does CrownMate use your Personal Information?</h2>
         <p>The information may be used for:</p>
         <ul>
           <li>Processing your orders and making deliveries</li>
@@ -33,9 +33,9 @@ export default function PrivacyPolicyPage() {
         </ul>
         <h2>Protecting your personal information</h2>
         <p>
-          Frizty Retail takes reasonable steps to ensure that personal information is
+          CrownMate Retail takes reasonable steps to ensure that personal information is
           stored in a secure environment protected from unauthorised access. Contact us
-          at info@friztyretail.com for any concerns.
+          at support@crownmate.in for any concerns.
         </p>
         <h2>Children&apos;s privacy</h2>
         <p>

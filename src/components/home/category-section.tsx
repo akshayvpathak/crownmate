@@ -38,7 +38,7 @@ export function CategorySection() {
                     {cat.title}
                   </h3>
                   <p className="text-[10px] text-muted-foreground sm:text-xs">
-                    {cat.itemCount} items
+                    {cat.itemCount} product{cat.itemCount !== 1 ? "s" : ""}
                   </p>
                 </div>
               </Link>
@@ -47,7 +47,7 @@ export function CategorySection() {
         </div>
 
         {/* Desktop: grid */}
-        <div className="hidden grid-cols-3 gap-6 lg:grid lg:grid-cols-6">
+        <div className="hidden grid-cols-3 gap-6 md:grid">
           {categoryCards.map((cat) => (
             <Link
               key={cat.id}
@@ -66,7 +66,9 @@ export function CategorySection() {
               </div>
               <div className="text-center">
                 <h3 className="text-sm font-semibold">{cat.title}</h3>
-                <p className="text-xs text-muted-foreground">{cat.itemCount} items</p>
+                <p className="text-xs text-muted-foreground">
+                  {cat.itemCount} product{cat.itemCount !== 1 ? "s" : ""}
+                </p>
               </div>
             </Link>
           ))}

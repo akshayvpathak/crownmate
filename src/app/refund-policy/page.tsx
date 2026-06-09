@@ -11,8 +11,8 @@ export default function RefundPolicyPage() {
       <div className="container-frizty max-w-3xl prose prose-sm md:prose-base">
         <h1>Refund Policy</h1>
         <p>
-          Frizty offers a 90-Day Money-Back Guarantee on all products. If you don&apos;t
-          get the results you expected, enjoy our money back guarantee.
+          CrownMate offers a 90-Day Money-Back Guarantee on all products. If you
+          don&apos;t get the results you expected, enjoy our money back guarantee.
         </p>
         <h2>Return Eligibility</h2>
         <ul>
@@ -22,7 +22,7 @@ export default function RefundPolicyPage() {
         </ul>
         <h2>How to Request a Refund</h2>
         <p>
-          Contact our customer support at info@friztyretail.com or call +91 97120 78733
+          Contact our customer support at support@crownmate.in or call +91 97120 78733
           with your order details. Our team will guide you through the return process.
         </p>
         <h2>Refund Processing</h2>
