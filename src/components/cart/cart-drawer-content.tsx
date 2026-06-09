@@ -6,7 +6,8 @@ import { Minus, Plus, Trash2 } from "lucide-react";
 import { useCartStore } from "@/store/cart-store";
 import { useUIStore } from "@/store/ui-store";
 import { formatPrice } from "@/lib/utils";
-import { COUPON_CODES, DISCOUNT_TIERS } from "@/constants/assets";
+import { DISCOUNT_TIERS } from "@/constants/assets";
+import { useActiveCoupons } from "@/hooks/use-active-coupons";
 import { getShippingLabel } from "@/lib/shipping";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -26,6 +27,7 @@ export function CartDrawerContent() {
   const getAmountToNextTier = useCartStore((s) => s.getAmountToNextTier);
   const getNextDiscountTier = useCartStore((s) => s.getNextDiscountTier);
   const [couponInput, setCouponInput] = useState("");
+  const couponCodes = useActiveCoupons();
 
   const subtotal = getSubtotal();
   const discount = getDiscount();
@@ -109,9 +111,11 @@ export function CartDrawerContent() {
 
       {items.length > 0 && (
         <>
-          <p className="mb-2 text-[10px] text-muted-foreground">
-            Coupons: {COUPON_CODES.join(", ")}
-          </p>
+          {couponCodes.length > 0 && (
+            <p className="mb-2 text-[10px] text-muted-foreground">
+              Coupons: {couponCodes.join(", ")}
+            </p>
+          )}
           <div className="mb-3 flex gap-2">
             <Input
               placeholder="Coupon code"
@@ -120,11 +124,11 @@ export function CartDrawerContent() {
             />
             <Button
               variant="outline"
-              onClick={() =>
-                applyCoupon(couponInput)
-                  ? toast.success("Applied!")
-                  : toast.error("Invalid")
-              }
+              onClick={async () => {
+                const applied = await applyCoupon(couponInput);
+                if (applied) toast.success("Applied!");
+                else toast.error("Invalid");
+              }}
             >
               Apply
             </Button>

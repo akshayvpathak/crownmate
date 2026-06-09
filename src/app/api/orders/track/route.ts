@@ -1,6 +1,9 @@
 import { NextResponse } from "next/server";
-import { findOrder } from "@/lib/order-storage";
+import { findOrderByNumberAndEmail } from "@backend/services/order.service";
+import { getStatusDescription, getStatusLabel } from "@/lib/order-status";
 import { trackOrderSchema } from "@/schemas/contact-schema";
+
+export const runtime = "nodejs";
 
 export async function POST(request: Request) {
   try {
@@ -13,7 +16,10 @@ export async function POST(request: Request) {
       );
     }
 
-    const order = await findOrder(parsed.data.orderId, parsed.data.email);
+    const order = await findOrderByNumberAndEmail(
+      parsed.data.orderId,
+      parsed.data.email,
+    );
     if (!order) {
       return NextResponse.json(
         { error: "No order found for that ID and email." },
@@ -21,14 +27,18 @@ export async function POST(request: Request) {
       );
     }
 
+    const lifecycleStatus = order.orderStatus ?? "pending_payment";
+
     return NextResponse.json({
+      order,
       orderId: order.orderId,
       status: order.status,
+      orderStatus: lifecycleStatus,
       total: order.total,
       message:
         order.status === "confirmed"
-          ? "Your order is confirmed and will ship within 24 hours."
-          : "Payment pending — complete checkout via the link sent to your email.",
+          ? `${getStatusLabel(lifecycleStatus)}. ${getStatusDescription(lifecycleStatus)}`
+          : getStatusDescription(lifecycleStatus),
     });
   } catch {
     return NextResponse.json({ error: "Failed to track order" }, { status: 500 });

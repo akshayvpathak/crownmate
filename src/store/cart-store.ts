@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import type { CartItem } from "@/types";
 import { DISCOUNT_TIERS } from "@/constants/assets";
+import { calculateOrderPricing } from "@/lib/order-pricing";
 import { getShippingCost } from "@/lib/shipping";
 
 interface CartState {
@@ -12,7 +13,7 @@ interface CartState {
   removeItem: (variantId: string) => void;
   updateQuantity: (variantId: string, quantity: number) => void;
   clearCart: () => void;
-  applyCoupon: (code: string) => boolean;
+  applyCoupon: (code: string) => Promise<boolean>;
   removeCoupon: () => void;
   getSubtotal: () => number;
   getDiscount: () => number;
@@ -22,12 +23,6 @@ interface CartState {
   getNextDiscountTier: () => (typeof DISCOUNT_TIERS)[number] | null;
   getAmountToNextTier: () => number;
 }
-
-const VALID_COUPONS: Record<string, number> = {
-  CROWNMATE5: 5,
-  CROWNMATE10: 10,
-  WELCOME: 5,
-};
 
 export const useCartStore = create<CartState>()(
   persist(
@@ -72,11 +67,26 @@ export const useCartStore = create<CartState>()(
 
       clearCart: () => set({ items: [], couponCode: null, couponDiscount: 0 }),
 
-      applyCoupon: (code) => {
-        const discount = VALID_COUPONS[code.toUpperCase()];
-        if (!discount) return false;
-        set({ couponCode: code.toUpperCase(), couponDiscount: discount });
-        return true;
+      applyCoupon: async (code) => {
+        try {
+          const response = await fetch("/api/coupons/apply", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ code }),
+          });
+          if (!response.ok) return false;
+          const data = (await response.json()) as {
+            code: string;
+            discountPercent: number;
+          };
+          set({
+            couponCode: data.code,
+            couponDiscount: data.discountPercent,
+          });
+          return true;
+        } catch {
+          return false;
+        }
       },
 
       removeCoupon: () => set({ couponCode: null, couponDiscount: 0 }),
@@ -87,17 +97,16 @@ export const useCartStore = create<CartState>()(
       getDiscount: () => {
         const subtotal = get().getSubtotal();
         const { couponDiscount } = get();
-        let tierDiscount = 0;
-        if (subtotal >= 2999) tierDiscount = 15;
-        else if (subtotal >= 1450) tierDiscount = 10;
-        else if (subtotal >= 799) tierDiscount = 5;
-        const effective = Math.max(tierDiscount, couponDiscount);
-        return (subtotal * effective) / 100;
+        return calculateOrderPricing(subtotal, couponDiscount).discount;
       },
 
       getShipping: () => getShippingCost(get().getSubtotal()),
 
-      getTotal: () => get().getSubtotal() - get().getDiscount() + get().getShipping(),
+      getTotal: () => {
+        const subtotal = get().getSubtotal();
+        const { couponDiscount } = get();
+        return calculateOrderPricing(subtotal, couponDiscount).total;
+      },
 
       getItemCount: () => get().items.reduce((sum, item) => sum + item.quantity, 0),
 

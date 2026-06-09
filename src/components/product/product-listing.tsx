@@ -46,7 +46,7 @@ export function ProductListing({ products, title, description }: ProductListingP
 
           <div className="min-w-0 flex-1">
             {filtered.length > 0 ? (
-              <div className="grid grid-cols-2 gap-2 min-[400px]:gap-3 sm:gap-4 md:grid-cols-2 md:gap-5 lg:grid-cols-2 lg:gap-6 xl:grid-cols-3 2xl:grid-cols-3">
+              <div className="grid grid-cols-2 gap-2 min-[400px]:gap-3 sm:gap-4 md:gap-5 lg:gap-6">
                 {filtered.map((product) => (
                   <ProductCard key={product.id} product={product} />
                 ))}

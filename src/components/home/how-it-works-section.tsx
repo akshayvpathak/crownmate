@@ -1,9 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import { howItWorksSteps } from "@/data/home-content";
 import { Button } from "@/components/ui/button";
 
-export function HowItWorksSection() {
+type HowItWorksStep = {
+  id: string;
+  product: string;
+  productSlug: string;
+  eyebrow: string;
+  title: string;
+  image: string;
+  features: Array<{ title: string; description: string }>;
+};
+
+export function HowItWorksSection({ steps }: { steps: HowItWorksStep[] }) {
   return (
     <section className="section-padding bg-secondary">
       <div className="container-site">
@@ -19,7 +28,7 @@ export function HowItWorksSection() {
         </div>
 
         <div className="space-y-10 md:space-y-14">
-          {howItWorksSteps.map((step, index) => (
+          {steps.map((step, index) => (
             <div
               key={step.id}
               className={`grid items-center gap-6 md:grid-cols-2 md:gap-10 ${

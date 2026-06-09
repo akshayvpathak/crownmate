@@ -12,6 +12,7 @@ import { MegaMenu } from "@/components/layout/mega-menu";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { SITE_CONFIG } from "@/constants/assets";
+import { HeaderAuth } from "@/components/layout/header-auth";
 
 export function Header() {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -118,6 +119,8 @@ export function Header() {
           ))}
         </nav>
 
+        <HeaderAuth />
+
         {/* Right icons */}
         <div className="flex w-16 items-center justify-end gap-0.5 sm:w-20 sm:gap-1 md:gap-2">
           <Button
@@ -192,6 +195,7 @@ export function Header() {
               )}
             </div>
           ))}
+          <HeaderAuth mobile />
         </nav>
       </div>
     </header>

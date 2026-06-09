@@ -9,6 +9,8 @@ import { useCartStore } from "@/store/cart-store";
 import { useOrderStore } from "@/store/order-store";
 import { formatPrice } from "@/lib/utils";
 import { getShippingLabel } from "@/lib/shipping";
+import { openRazorpayCheckout } from "@/lib/razorpay-client";
+import { SITE_CONFIG } from "@/constants/assets";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -19,15 +21,15 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "sonner";
-import { processCheckout } from "@/services/checkout-service";
+import type { CheckoutOrder } from "@/types";
 
 export default function CheckoutPage() {
   const router = useRouter();
   const items = useCartStore((s) => s.items);
+  const couponCode = useCartStore((s) => s.couponCode);
   const getTotal = useCartStore((s) => s.getTotal);
   const getSubtotal = useCartStore((s) => s.getSubtotal);
   const getDiscount = useCartStore((s) => s.getDiscount);
-  const getShipping = useCartStore((s) => s.getShipping);
   const clearCart = useCartStore((s) => s.clearCart);
   const addOrder = useOrderStore((s) => s.addOrder);
 
@@ -43,23 +45,96 @@ export default function CheckoutPage() {
     defaultValues: { paymentMethod: "cod" },
   });
 
-  const onSubmit = async (data: CheckoutFormData) => {
-    const total = getTotal();
-    const order = await processCheckout(data, items, total);
-
-    try {
-      await fetch("/api/orders", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(order),
-      });
-    } catch {
-      toast.error("Order saved locally but server sync failed.");
-    }
-
+  const completeOrder = (order: CheckoutOrder) => {
     addOrder(order);
     clearCart();
-    router.push(`/order-confirmation?orderId=${order.orderId}`);
+    router.push(
+      `/order-confirmation?orderId=${order.orderId}&email=${encodeURIComponent(order.customer.email)}`,
+    );
+  };
+
+  const onSubmit = async (data: CheckoutFormData) => {
+    try {
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          form: data,
+          items,
+          couponCode,
+        }),
+      });
+
+      const payload = (await response.json()) as {
+        order?: CheckoutOrder;
+        razorpayKeyId?: string;
+        error?: string;
+      };
+
+      if (!response.ok || !payload.order) {
+        toast.error(payload.error ?? "Checkout failed");
+        return;
+      }
+
+      const order = payload.order;
+      const isRazorpay = data.paymentMethod !== "cod";
+      const canPayOnline =
+        isRazorpay &&
+        payload.razorpayKeyId &&
+        order.paymentIntent.razorpayOrderId &&
+        !order.paymentIntent.razorpayOrderId.startsWith("order_CM-");
+
+      if (!canPayOnline) {
+        completeOrder(order);
+        return;
+      }
+
+      await openRazorpayCheckout({
+        key: payload.razorpayKeyId!,
+        amount: Math.round(order.total * 100),
+        currency: "INR",
+        order_id: order.paymentIntent.razorpayOrderId!,
+        name: SITE_CONFIG.name,
+        description: `Order ${order.orderId}`,
+        prefill: {
+          name: `${data.firstName} ${data.lastName}`,
+          email: data.email,
+          contact: data.phone,
+        },
+        handler: async (paymentResponse) => {
+          const verifyResponse = await fetch("/api/payments/verify", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              orderId: order.orderId,
+              razorpayOrderId: paymentResponse.razorpay_order_id,
+              razorpayPaymentId: paymentResponse.razorpay_payment_id,
+              razorpaySignature: paymentResponse.razorpay_signature,
+            }),
+          });
+
+          const verifyPayload = (await verifyResponse.json()) as {
+            order?: CheckoutOrder;
+            error?: string;
+          };
+
+          if (!verifyResponse.ok) {
+            toast.error(verifyPayload.error ?? "Payment verification failed");
+            return;
+          }
+
+          completeOrder(verifyPayload.order ?? { ...order, status: "confirmed" });
+        },
+        modal: {
+          ondismiss: () => {
+            toast.message("Payment cancelled. Your order is saved as pending.");
+            completeOrder(order);
+          },
+        },
+      });
+    } catch {
+      toast.error("Checkout failed. Please try again.");
+    }
   };
 
   if (items.length === 0) {
@@ -201,7 +276,7 @@ export default function CheckoutPage() {
               </div>
               {getDiscount() > 0 && (
                 <div className="flex justify-between text-success">
-                  <span>Discount</span>
+                  <span>Discount{couponCode ? ` (${couponCode})` : ""}</span>
                   <span>-{formatPrice(getDiscount())}</span>
                 </div>
               )}
@@ -214,6 +289,10 @@ export default function CheckoutPage() {
                 <span>{formatPrice(getTotal())}</span>
               </div>
             </div>
+            <p className="mt-3 text-xs text-muted-foreground">
+              Final price is calculated on our server. Razorpay only receives the
+              discounted total.
+            </p>
             <Button
               type="submit"
               className="mt-6 w-full"

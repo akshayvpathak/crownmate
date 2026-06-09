@@ -7,7 +7,6 @@ import {
   footerSupportLinks,
 } from "@/constants/navigation";
 import { NewsletterForm } from "@/components/forms/newsletter-form";
-
 export function Footer() {
   return (
     <footer className="bg-[#222222] text-white">

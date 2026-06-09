@@ -6,7 +6,8 @@ import { Minus, Plus, Trash2, X } from "lucide-react";
 import { useCartStore } from "@/store/cart-store";
 import { useUIStore } from "@/store/ui-store";
 import { formatPrice } from "@/lib/utils";
-import { COUPON_CODES, DISCOUNT_TIERS } from "@/constants/assets";
+import { DISCOUNT_TIERS } from "@/constants/assets";
+import { useActiveCoupons } from "@/hooks/use-active-coupons";
 import { getShippingLabel } from "@/lib/shipping";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -27,6 +28,7 @@ export function CartDrawer() {
   const getAmountToNextTier = useCartStore((s) => s.getAmountToNextTier);
   const getNextDiscountTier = useCartStore((s) => s.getNextDiscountTier);
   const [couponInput, setCouponInput] = useState("");
+  const couponCodes = useActiveCoupons();
 
   const subtotal = getSubtotal();
   const discount = getDiscount();
@@ -34,8 +36,9 @@ export function CartDrawer() {
   const nextTier = getNextDiscountTier();
   const amountToNext = getAmountToNextTier();
 
-  const handleApplyCoupon = () => {
-    if (applyCoupon(couponInput)) {
+  const handleApplyCoupon = async () => {
+    const applied = await applyCoupon(couponInput);
+    if (applied) {
       toast.success("Coupon applied!");
     } else {
       toast.error("Invalid coupon code");
@@ -162,7 +165,7 @@ export function CartDrawer() {
         {items.length > 0 && (
           <div className="border-t border-border p-4">
             <p className="mb-2 text-[10px] text-muted-foreground">
-              Coupons: {COUPON_CODES.join(", ")}
+              {couponCodes.length > 0 && `Coupons: ${couponCodes.join(", ")}`}
             </p>
             <div className="mb-3 flex gap-2">
               <Input

@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
+import { Share2 } from "lucide-react";
+import { toast } from "sonner";
 import {
   Carousel,
   CarouselContent,
@@ -10,11 +12,13 @@ import {
   CarouselPrevious,
   type CarouselApi,
 } from "@/components/ui/carousel";
+import { SITE_CONFIG } from "@/constants/assets";
 import { cn } from "@/lib/utils";
 
 interface ProductGalleryProps {
   images: string[];
   title: string;
+  slug: string;
   selectedIndex: number;
   onSelect: (index: number) => void;
 }
@@ -22,10 +26,33 @@ interface ProductGalleryProps {
 export function ProductGallery({
   images,
   title,
+  slug,
   selectedIndex,
   onSelect,
 }: ProductGalleryProps) {
   const [api, setApi] = useState<CarouselApi>();
+
+  async function handleShare() {
+    const origin =
+      typeof window !== "undefined" ? window.location.origin : SITE_CONFIG.url;
+    const url = `${origin}/products/${slug}`;
+
+    if (typeof navigator !== "undefined" && navigator.share) {
+      try {
+        await navigator.share({ title, url });
+        return;
+      } catch (error) {
+        if ((error as Error).name === "AbortError") return;
+      }
+    }
+
+    try {
+      await navigator.clipboard.writeText(url);
+      toast.success("Link copied to clipboard");
+    } catch {
+      toast.error("Could not share this product");
+    }
+  }
 
   const handleCarouselSelect = useCallback(() => {
     if (!api) return;
@@ -77,9 +104,18 @@ export function ProductGallery({
             ))}
           </CarouselContent>
 
+          <button
+            type="button"
+            aria-label="Share product"
+            onClick={() => void handleShare()}
+            className="absolute right-3 top-3 z-10 flex h-9 w-9 items-center justify-center rounded-full bg-black/55 text-white backdrop-blur-sm transition-colors hover:bg-black/70"
+          >
+            <Share2 className="h-4 w-4" />
+          </button>
+
           {hasMultiple && (
             <>
-              <span className="absolute right-3 top-3 z-10 rounded-full bg-black/55 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm">
+              <span className="absolute left-3 top-3 z-10 rounded-full bg-black/55 px-2.5 py-1 text-xs font-medium text-white backdrop-blur-sm">
                 {selectedIndex + 1} / {images.length}
               </span>
               <CarouselPrevious className="left-1.5 top-1/2 z-10 h-8 w-8 -translate-y-1/2 border-border bg-white/95 shadow-sm backdrop-blur-sm sm:left-3 sm:h-10 sm:w-10" />

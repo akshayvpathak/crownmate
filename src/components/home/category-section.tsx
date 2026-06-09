@@ -2,8 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { categoryCards } from "@/data/home-content";
-export function CategorySection() {
+import type { CategoryCard } from "@/types";
+
+export function CategorySection({ cards }: { cards: CategoryCard[] }) {
   return (
     <section className="section-padding bg-white">
       <div className="container-site">
@@ -15,7 +16,7 @@ export function CategorySection() {
         {/* Mobile: horizontal scroll carousel */}
         <div className="md:hidden">
           <div className="scroll-snap-x -mx-3 flex gap-2.5 overflow-x-auto px-3 pb-2 sm:-mx-4 sm:gap-3 sm:px-4">
-            {categoryCards.map((cat) => (
+            {cards.map((cat) => (
               <Link
                 key={cat.id}
                 href={`/collections/${cat.slug}`}
@@ -46,7 +47,7 @@ export function CategorySection() {
 
         {/* Desktop: grid */}
         <div className="hidden grid-cols-3 gap-6 md:grid">
-          {categoryCards.map((cat) => (
+          {cards.map((cat) => (
             <Link
               key={cat.id}
               href={`/collections/${cat.slug}`}

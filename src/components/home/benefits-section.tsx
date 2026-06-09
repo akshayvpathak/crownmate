@@ -1,5 +1,5 @@
-import { benefitFeatures } from "@/data/home-content";
 import { Shield, Lock, Truck, BadgeCheck } from "lucide-react";
+import type { Feature } from "@/types";
 
 const icons: Record<string, React.ReactNode> = {
   shield: <Shield className="h-7 w-7" />,
@@ -8,7 +8,7 @@ const icons: Record<string, React.ReactNode> = {
   badge: <BadgeCheck className="h-7 w-7" />,
 };
 
-export function BenefitsSection() {
+export function BenefitsSection({ features }: { features: Feature[] }) {
   return (
     <section className="section-padding bg-white">
       <div className="container-site">
@@ -18,8 +18,8 @@ export function BenefitsSection() {
         <h2 className="section-heading mb-8 text-center md:mb-12">
           What you get when you order
         </h2>
-        <div className="grid grid-cols-1 gap-3 min-[400px]:grid-cols-2 sm:gap-4 lg:grid-cols-4 lg:gap-6">
-          {benefitFeatures.map((feature) => (
+        <div className="grid grid-cols-1 gap-3 min-[400px]:grid-cols-2 sm:gap-4 lg:gap-6">
+          {features.map((feature) => (
             <article
               key={feature.id}
               className="flex flex-col items-center rounded-xl border border-border bg-white p-5 text-center md:p-6"

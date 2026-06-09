@@ -24,8 +24,6 @@ export const SHIPPING_CONFIG = {
   deliveryDaysMax: 7,
 } as const;
 
-export const COUPON_CODES = ["CROWNMATE5", "CROWNMATE10", "WELCOME"] as const;
-
 export const DISCOUNT_TIERS = [
   { threshold: 799, label: "5% Off", gift: false },
   { threshold: 1450, label: "10% Off", gift: false },

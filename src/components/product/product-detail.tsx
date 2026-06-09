@@ -105,6 +105,7 @@ export function ProductDetail({
             <ProductGallery
               images={product.images}
               title={product.title}
+              slug={product.slug}
               selectedIndex={selectedImageIndex}
               onSelect={setSelectedImageIndex}
             />
@@ -149,7 +150,7 @@ export function ProductDetail({
             <p className="mt-1 text-xs text-muted-foreground">Inclusive of taxes</p>
 
             {product.specs && product.specs.length > 0 && (
-              <div className="mt-5 grid grid-cols-2 gap-2 sm:grid-cols-3 sm:gap-3">
+              <div className="mt-5 grid grid-cols-2 gap-2 sm:gap-3">
                 {product.specs.map((spec) => (
                   <div
                     key={spec.label}

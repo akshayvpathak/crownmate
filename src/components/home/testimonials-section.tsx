@@ -1,6 +1,6 @@
 "use client";
 
-import { testimonials } from "@/data/home-content";
+import type { Testimonial } from "@/types";
 import { TestimonialCard } from "@/components/shared/testimonial-card";
 import {
   Carousel,
@@ -10,7 +10,7 @@ import {
   CarouselNext,
 } from "@/components/ui/carousel";
 
-export function TestimonialsSection() {
+export function TestimonialsSection({ testimonials }: { testimonials: Testimonial[] }) {
   return (
     <section className="section-padding bg-secondary">
       <div className="container-site">

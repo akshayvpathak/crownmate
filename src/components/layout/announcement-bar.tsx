@@ -18,10 +18,10 @@ export function AnnouncementBar() {
         </div>
         <div className="hidden shrink-0 items-center gap-5 text-xs md:flex">
           <Link href="/warranty-registration" className="hover:underline">
-            Register Warranty
+            Register warranty
           </Link>
           <Link href="/track-order" className="hover:underline">
-            Track Your order
+            Track order
           </Link>
         </div>
       </div>

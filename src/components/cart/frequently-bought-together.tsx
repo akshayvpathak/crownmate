@@ -38,7 +38,10 @@ export function FrequentlyBoughtTogether({
 
   const handleAdd = (product: Product) => {
     const variant = product.variants[0];
-    if (!variant) return;
+    if (!variant?.available) {
+      toast.error(`${product.title} is out of stock`);
+      return;
+    }
     addItem({
       productId: product.id,
       variantId: variant.id,
@@ -50,53 +53,65 @@ export function FrequentlyBoughtTogether({
       image: variant.image ?? product.images[0] ?? "",
     });
     toast.success("Added to cart");
+    if (compact) closeCart();
   };
 
   return (
-    <div className={compact ? "mt-4" : "border-t border-border p-4"}>
-      <p className="mb-3 text-sm font-semibold">Others also picked</p>
-      <div className="space-y-3">
+    <div className={compact ? "mb-4" : "mt-8"}>
+      <h3 className="mb-3 text-sm font-semibold">Frequently bought together</h3>
+      <div
+        className={
+          compact
+            ? "flex gap-2 overflow-x-auto pb-1"
+            : "grid gap-3 sm:grid-cols-2 lg:grid-cols-3"
+        }
+      >
         {suggestions.map((product) => {
           const variant = product.variants[0];
-          const image = variant?.image ?? product.images[0] ?? "";
-          const price = variant?.price ?? 0;
-
           return (
-            <div key={product.id} className="flex items-center gap-2">
-              <Link
-                href={`/products/${product.slug}`}
-                className="relative h-14 w-14 shrink-0 overflow-hidden rounded-lg bg-secondary"
-                onClick={closeCart}
+            <div
+              key={product.id}
+              className={
+                compact
+                  ? "flex w-28 shrink-0 flex-col rounded-lg border border-border p-2"
+                  : "flex gap-3 rounded-xl border border-border p-3"
+              }
+            >
+              <div
+                className={
+                  compact
+                    ? "relative mb-2 aspect-square w-full overflow-hidden rounded-md bg-secondary"
+                    : "relative h-16 w-16 shrink-0 overflow-hidden rounded-lg bg-secondary"
+                }
               >
-                {image && (
-                  <Image
-                    src={image}
-                    alt={product.title}
-                    fill
-                    sizes="56px"
-                    className="object-contain p-0.5"
-                  />
-                )}
-              </Link>
+                <Image
+                  src={variant?.image ?? product.images[0]}
+                  alt={product.title}
+                  fill
+                  sizes={compact ? "112px" : "64px"}
+                  className="object-contain p-1"
+                />
+              </div>
               <div className="min-w-0 flex-1">
                 <Link
                   href={`/products/${product.slug}`}
-                  className="line-clamp-2 text-xs font-medium hover:underline"
-                  onClick={closeCart}
+                  className="line-clamp-2 text-xs font-medium hover:text-primary"
                 >
                   {product.title}
                 </Link>
-                <p className="text-xs font-semibold">{formatPrice(price)}</p>
+                <p className="mt-1 text-xs font-semibold">
+                  {formatPrice(variant?.price ?? 0)}
+                </p>
+                <Button
+                  size="sm"
+                  variant="outline"
+                  className="mt-2 h-7 w-full text-xs"
+                  onClick={() => handleAdd(product)}
+                >
+                  <Plus className="mr-1 h-3 w-3" />
+                  Add
+                </Button>
               </div>
-              <Button
-                variant="outline"
-                size="icon"
-                className="h-8 w-8 shrink-0 rounded-full"
-                onClick={() => handleAdd(product)}
-                aria-label={`Add ${product.title} to cart`}
-              >
-                <Plus className="h-4 w-4" />
-              </Button>
             </div>
           );
         })}

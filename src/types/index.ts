@@ -143,9 +143,29 @@ export interface PaymentIntent {
   razorpayOrderId?: string;
 }
 
+export type OrderLifecycleStatus =
+  | "pending_payment"
+  | "paid"
+  | "failed"
+  | "processing"
+  | "shipped"
+  | "delivered"
+  | "cancelled";
+
+export interface OrderStatusEvent {
+  status: OrderLifecycleStatus;
+  at: string;
+  note?: string;
+}
+
 export interface CheckoutOrder {
   orderId: string;
   status: "pending" | "confirmed" | "failed";
+  orderStatus?: OrderLifecycleStatus;
+  paymentMethod?: PaymentMethod;
+  createdAt?: string;
+  updatedAt?: string;
+  statusHistory?: OrderStatusEvent[];
   items: CartItem[];
   customer: {
     email: string;
@@ -157,10 +177,17 @@ export interface CheckoutOrder {
     state: string;
     pincode: string;
   };
+  subtotal: number;
+  discount: number;
+  shipping: number;
+  discountPercent?: number;
+  couponCode?: string | null;
   total: number;
   paymentIntent: PaymentIntent;
   message: string;
 }
+
+export type OrderDetails = CheckoutOrder;
 
 export interface ShippingEstimate {
   method: string;

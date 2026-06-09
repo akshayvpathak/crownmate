@@ -8,20 +8,29 @@ import { BenefitsSection } from "@/components/home/benefits-section";
 import { TestimonialsSection } from "@/components/home/testimonials-section";
 import { HomeCtaSection } from "@/components/home/home-cta-section";
 import { FAQSection } from "@/components/home/faq-section";
+import {
+  benefitFeatures,
+  categoryCards,
+  faqItems,
+  heroSlides,
+  howItWorksSteps,
+  testimonials,
+  whyChooseUsFeatures,
+} from "@/data/home-content";
 
 export default function HomePage() {
   return (
     <>
-      <HeroBanner />
-      <CategorySection />
+      <HeroBanner slides={heroSlides} />
+      <CategorySection cards={categoryCards} />
       <BestSellers />
       <BrandStory />
-      <HowItWorksSection />
-      <BenefitsSection />
-      <WhyChooseUs />
-      <TestimonialsSection />
+      <HowItWorksSection steps={howItWorksSteps} />
+      <BenefitsSection features={benefitFeatures} />
+      <WhyChooseUs features={whyChooseUsFeatures} />
+      <TestimonialsSection testimonials={testimonials} />
       <HomeCtaSection />
-      <FAQSection />
+      <FAQSection items={faqItems} />
     </>
   );
 }

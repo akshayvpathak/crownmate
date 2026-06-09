@@ -16,7 +16,7 @@ export async function BestSellers() {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 gap-x-2 gap-y-5 min-[400px]:gap-x-3 sm:gap-y-6 md:grid-cols-3 md:gap-x-5 md:gap-y-8">
+        <div className="grid grid-cols-2 gap-x-2 gap-y-5 min-[400px]:gap-x-3 sm:gap-y-6 md:gap-x-5 md:gap-y-8">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

@@ -2,6 +2,7 @@ import Link from "next/link";
 import { HowItWorksSection } from "@/components/home/how-it-works-section";
 import { generatePageMetadata } from "@/lib/seo";
 import { WHATSAPP_URL } from "@/constants/assets";
+import { howItWorksSteps } from "@/data/home-content";
 import { Button } from "@/components/ui/button";
 
 export const metadata = generatePageMetadata({
@@ -23,7 +24,7 @@ export default function HowItWorksPage() {
           </p>
         </div>
       </section>
-      <HowItWorksSection />
+      <HowItWorksSection steps={howItWorksSteps} />
       <section className="section-padding bg-white">
         <div className="container-site text-center">
           <h2 className="text-xl font-bold md:text-2xl">Not sure where to start?</h2>

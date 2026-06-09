@@ -1,5 +1,5 @@
-import { whyChooseUsFeatures } from "@/data/home-content";
 import { Award, ShieldCheck, Cpu, BadgeCheck } from "lucide-react";
+import type { Feature } from "@/types";
 
 const icons: Record<string, React.ReactNode> = {
   quality: <Award className="h-6 w-6" />,
@@ -8,15 +8,15 @@ const icons: Record<string, React.ReactNode> = {
   warranty: <BadgeCheck className="h-6 w-6" />,
 };
 
-export function WhyChooseUs() {
+export function WhyChooseUs({ features }: { features: Feature[] }) {
   return (
     <section className="section-padding bg-[#834fd9] text-white">
       <div className="container-site">
         <h2 className="section-heading mb-8 text-center text-white md:mb-12">
           Why people stick with CrownMate
         </h2>
-        <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4 md:gap-8">
-          {whyChooseUsFeatures.map((feature) => (
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8">
+          {features.map((feature) => (
             <div key={feature.id} className="flex flex-col items-center text-center">
               <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-white/15 md:h-16 md:w-16">
                 {feature.icon ? icons[feature.icon] : null}

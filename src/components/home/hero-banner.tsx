@@ -11,7 +11,7 @@ import {
   Flower2,
   Eye,
 } from "lucide-react";
-import { heroSlides } from "@/data/home-content";
+import type { HeroSlide } from "@/types";
 import { Button } from "@/components/ui/button";
 import {
   Carousel,
@@ -29,7 +29,7 @@ const benefitIcons: Record<string, React.ReactNode> = {
   eye: <Eye className="h-5 w-5" />,
 };
 
-export function HeroBanner() {
+export function HeroBanner({ slides }: { slides: HeroSlide[] }) {
   return (
     <section aria-label="Hero banner" className="relative bg-[#834fd9]">
       {/* Zigzag border between header and hero */}
@@ -37,7 +37,7 @@ export function HeroBanner() {
 
       <Carousel opts={{ loop: true }}>
         <CarouselContent className="ml-0">
-          {heroSlides.map((slide) => (
+          {slides.map((slide) => (
             <CarouselItem key={slide.id} className="pl-0">
               <div className="relative bg-[#834fd9]">
                 {/* Hero image — full bleed on mobile */}

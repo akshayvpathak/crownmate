@@ -6,7 +6,8 @@ import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
 import { useCartStore } from "@/store/cart-store";
 import { formatPrice } from "@/lib/utils";
 import { getShippingLabel } from "@/lib/shipping";
-import { COUPON_CODES, DISCOUNT_TIERS } from "@/constants/assets";
+import { DISCOUNT_TIERS } from "@/constants/assets";
+import { useActiveCoupons } from "@/hooks/use-active-coupons";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { FrequentlyBoughtTogether } from "@/components/cart/frequently-bought-together";
@@ -24,6 +25,7 @@ export default function CartPage() {
   const getAmountToNextTier = useCartStore((s) => s.getAmountToNextTier);
   const getNextDiscountTier = useCartStore((s) => s.getNextDiscountTier);
   const [couponInput, setCouponInput] = useState("");
+  const couponCodes = useActiveCoupons();
 
   const subtotal = getSubtotal();
   const discount = getDiscount();
@@ -144,18 +146,20 @@ export default function CartPage() {
               <Button
                 variant="outline"
                 className="shrink-0"
-                onClick={() =>
-                  applyCoupon(couponInput)
-                    ? toast.success("Applied!")
-                    : toast.error("Invalid code")
-                }
+                onClick={async () => {
+                  const applied = await applyCoupon(couponInput);
+                  if (applied) toast.success("Applied!");
+                  else toast.error("Invalid code");
+                }}
               >
                 Apply
               </Button>
             </div>
-            <p className="mb-4 text-xs text-muted-foreground">
-              Try: {COUPON_CODES.join(", ")}
-            </p>
+            {couponCodes.length > 0 && (
+              <p className="mb-4 text-xs text-muted-foreground">
+                Try: {couponCodes.join(", ")}
+              </p>
+            )}
 
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">

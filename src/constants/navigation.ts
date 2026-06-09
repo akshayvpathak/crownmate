@@ -48,6 +48,7 @@ export const mainNavigation: NavItem[] = [
     label: "Support",
     href: "/contact",
     children: [
+      { label: "My Orders", href: "/account/orders" },
       { label: "Track Your Order", href: "/track-order" },
       { label: "Warranty Registration", href: "/warranty-registration" },
       { label: "Customer Care", href: "/contact" },
