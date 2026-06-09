@@ -81,7 +81,7 @@ export function generateOrganizationJsonLd() {
     "@type": "Organization",
     name: SITE_CONFIG.name,
     url: SITE_CONFIG.url,
-    logo: `${SITE_CONFIG.url}/logo.png`,
+    logo: `${SITE_CONFIG.url}/images/crownmate/brand/logo.png`,
     contactPoint: {
       "@type": "ContactPoint",
       telephone: SITE_CONFIG.phone,

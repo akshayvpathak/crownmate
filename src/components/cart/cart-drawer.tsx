@@ -6,7 +6,8 @@ import { Minus, Plus, Trash2, X } from "lucide-react";
 import { useCartStore } from "@/store/cart-store";
 import { useUIStore } from "@/store/ui-store";
 import { formatPrice } from "@/lib/utils";
-import { DISCOUNT_TIERS } from "@/constants/assets";
+import { COUPON_CODES, DISCOUNT_TIERS } from "@/constants/assets";
+import { getShippingLabel } from "@/lib/shipping";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -160,6 +161,9 @@ export function CartDrawer() {
 
         {items.length > 0 && (
           <div className="border-t border-border p-4">
+            <p className="mb-2 text-[10px] text-muted-foreground">
+              Coupons: {COUPON_CODES.join(", ")}
+            </p>
             <div className="mb-3 flex gap-2">
               <Input
                 placeholder="Coupon code"
@@ -186,19 +190,15 @@ export function CartDrawer() {
                   <span>-{formatPrice(discount)}</span>
                 </div>
               )}
-              <div className="flex justify-between font-bold">
+              <div className="flex justify-between text-muted-foreground">
+                <span>Shipping</span>
+                <span>{getShippingLabel(subtotal)}</span>
+              </div>
+              <div className="flex justify-between border-t border-border pt-1 font-bold">
                 <span>Total</span>
                 <span>{formatPrice(total)}</span>
               </div>
-              <p className="text-xs text-muted-foreground">Shipping: Free (3-4 days)</p>
             </div>
-
-            <p className="mt-3 text-center text-xs text-muted-foreground">
-              If you Don&apos;t Get The Results You Expected, Enjoy{" "}
-              <span className="font-semibold text-foreground">
-                Money Back Guarantee
-              </span>
-            </p>
 
             <div className="mt-4 space-y-2">
               <Button className="w-full" asChild>

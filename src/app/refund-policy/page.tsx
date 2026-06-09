@@ -1,4 +1,6 @@
+import Link from "next/link";
 import { generatePageMetadata } from "@/lib/seo";
+import { SITE_CONFIG } from "@/constants/assets";
 
 export const metadata = generatePageMetadata({
   title: "Refund Policy",
@@ -9,27 +11,38 @@ export default function RefundPolicyPage() {
   return (
     <div className="section-padding">
       <div className="container-site max-w-3xl prose prose-sm md:prose-base">
-        <h1>Refund Policy</h1>
+        <h1>Cancellation &amp; Refunds</h1>
         <p>
-          CrownMate offers a 90-Day Money-Back Guarantee on all products. If you
-          don&apos;t get the results you expected, enjoy our money back guarantee.
+          We want you to be happy with your purchase. Here&apos;s how returns and
+          refunds work.
         </p>
-        <h2>Return Eligibility</h2>
+        <h2>Damaged or defective on arrival</h2>
+        <p>
+          Report it within <strong>48 hours</strong> of delivery with photos and your
+          order ID. We&apos;ll arrange a replacement or full refund — no need to ship it
+          back in most cases.
+        </p>
+        <h2>Change of mind</h2>
         <ul>
-          <li>Products must be returned within 90 days of delivery</li>
-          <li>Items must be in original packaging with all accessories</li>
-          <li>Damaged or defective products must be reported within 48 hours</li>
+          <li>Unused items in original packaging may be returned within 7 days</li>
+          <li>Opened or used devices are not eligible unless defective</li>
+          <li>
+            Return shipping is at the customer&apos;s cost unless we sent the wrong item
+          </li>
         </ul>
-        <h2>How to Request a Refund</h2>
+        <h2>How to start a return</h2>
         <p>
-          Contact our customer support at support@crownmate.in or call +91 97120 78733
-          with your order details. Our team will guide you through the return process.
+          Email {SITE_CONFIG.email} or WhatsApp {SITE_CONFIG.phone} with your order
+          number. Support hours: {SITE_CONFIG.supportHours}.
         </p>
-        <h2>Refund Processing</h2>
+        <h2>Refund timing</h2>
         <p>
-          Refunds are processed within 7-10 business days after we receive and inspect
-          the returned product. The refund will be credited to your original payment
-          method.
+          Approved refunds are processed within 7–10 business days after we receive and
+          inspect the product. COD orders are refunded via UPI or bank transfer.
+        </p>
+        <p>
+          For shipping timelines, see our{" "}
+          <Link href="/shipping-policy">Shipping Policy</Link>.
         </p>
       </div>
     </div>

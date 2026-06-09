@@ -1,4 +1,7 @@
+import Link from "next/link";
 import { generatePageMetadata } from "@/lib/seo";
+import { SHIPPING_CONFIG, SITE_CONFIG } from "@/constants/assets";
+import { getDeliveryRangeText } from "@/lib/shipping";
 
 export const metadata = generatePageMetadata({
   title: "Terms & Conditions",
@@ -11,33 +14,36 @@ export default function TermsPage() {
       <div className="container-site max-w-3xl prose prose-sm md:prose-base">
         <h1>Terms &amp; Conditions</h1>
         <p>
-          By accessing and using the CrownMate website, you agree to be bound by these
-          Terms and Conditions.
+          By using the CrownMate website and purchasing our products, you agree to these
+          terms.
         </p>
         <h2>Products &amp; Pricing</h2>
         <p>
-          All prices are listed in Indian Rupees (INR) and include applicable taxes.
-          CrownMate reserves the right to change prices without prior notice.
+          Prices are in Indian Rupees (INR) and include applicable taxes. We may update
+          prices without prior notice.
         </p>
-        <h2>Shipping Policy</h2>
+        <h2>Shipping</h2>
         <p>
-          We provide free shipping across India. Orders are processed within 24 hours
-          and delivered within 3-4 working days depending on your location.
+          Free shipping on orders above ₹{SHIPPING_CONFIG.freeThreshold}. Below that, a
+          flat ₹{SHIPPING_CONFIG.flatRate} shipping fee applies. Orders ship within 24
+          hours on business days. Delivery typically takes {getDeliveryRangeText()}. See
+          our <Link href="/shipping-policy">Shipping Policy</Link> for details.
         </p>
         <h2>Warranty</h2>
         <p>
-          All CrownMate products come with a 1-year warranty against manufacturing
-          defects. Register your product at our Warranty Registration page.
+          All devices include a 1-year warranty against manufacturing defects. Register
+          at our <Link href="/warranty-registration">Warranty Registration</Link> page.
         </p>
         <h2>Limitation of Liability</h2>
         <p>
-          CrownMate Personal Care LLP shall not be liable for any indirect, incidental,
-          or consequential damages arising from the use of our products or website.
+          CrownMate is not liable for indirect or consequential damages from use of our
+          products or website. Devices are for personal home use as described in each
+          product&apos;s manual.
         </p>
         <h2>Governing Law</h2>
         <p>
-          These terms are governed by the laws of India. Any disputes shall be subject
-          to the jurisdiction of courts in Surat, Gujarat.
+          These terms are governed by Indian law. Disputes fall under courts in Surat,
+          Gujarat. Questions: {SITE_CONFIG.email}.
         </p>
       </div>
     </div>

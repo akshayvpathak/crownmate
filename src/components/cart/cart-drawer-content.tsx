@@ -149,10 +149,6 @@ export function CartDrawerContent() {
               <span>{formatPrice(total)}</span>
             </div>
           </div>
-          <p className="mb-3 text-center text-xs text-muted-foreground">
-            If you Don&apos;t Get The Results You Expected, Enjoy{" "}
-            <span className="font-semibold text-foreground">Money Back Guarantee</span>
-          </p>
           <Button className="w-full" asChild>
             <Link href="/checkout" onClick={closeCart}>
               Checkout
