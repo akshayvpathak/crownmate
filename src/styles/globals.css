@@ -1,0 +1,229 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme inline {
+  --color-background: #ffffff;
+  --color-foreground: #222222;
+  --color-primary: #834fd9;
+  --color-primary-foreground: #ffffff;
+  --color-secondary: #f5f5f5;
+  --color-secondary-foreground: #222222;
+  --color-muted: #f5f5f5;
+  --color-muted-foreground: #666666;
+  --color-accent: #834fd9;
+  --color-accent-foreground: #ffffff;
+  --color-destructive: #da3f3f;
+  --color-border: #eeeeee;
+  --color-input: #eeeeee;
+  --color-ring: #834fd9;
+  --color-card: #ffffff;
+  --color-card-foreground: #222222;
+  --color-hero-purple: #834fd9;
+  --color-hero-blue: #834fd9;
+  --color-sale: #222222;
+  --color-success: #22c55e;
+  --color-announcement: #834fd9;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+  --font-sans: var(--font-inter-tight), system-ui, sans-serif;
+  --font-display: var(--font-franie), Georgia, serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  font-weight: 500;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+.container-frizty {
+  width: 100%;
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: clamp(0.9375rem, 4vw, 2.5rem);
+}
+
+.section-padding {
+  padding-block: clamp(2rem, 5vw, 4rem);
+}
+
+.section-heading {
+  font-size: clamp(1.375rem, 3.5vw, 2rem);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.text-display {
+  font-family: var(--font-display);
+}
+
+.announcement-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Zigzag hero border */
+.hero-zigzag-top {
+  background-image: url("https://friztyretail.com/cdn/shop/files/zig-zag-svg.svg?v=1743527365");
+  background-repeat: repeat-x;
+  background-size: auto 12px;
+  height: 12px;
+  width: 100%;
+}
+
+/* Bottom curve for hero */
+.hero-bottom-curve {
+  background-image: url("https://friztyretail.com/cdn/shop/files/bottom-shape-curve.svg?v=1743184604");
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100% auto;
+}
+
+/* Horizontal scroll snap for mobile carousels */
+.scroll-snap-x {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.scroll-snap-x::-webkit-scrollbar {
+  display: none;
+}
+
+.scroll-snap-item {
+  scroll-snap-align: start;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ── Responsive breakpoint fixes ── */
+
+/* Safe area for notched phones */
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* 320px — smallest phones */
+@media (max-width: 359px) {
+  .container-frizty {
+    padding-inline: 0.75rem;
+  }
+
+  .section-heading {
+    font-size: 1.2rem;
+  }
+
+  .section-padding {
+    padding-block: 1.5rem;
+  }
+}
+
+/* 375–414px — standard mobile */
+@media (min-width: 360px) and (max-width: 767px) {
+  .container-frizty {
+    padding-inline: 1rem;
+  }
+}
+
+/* 768px — tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container-frizty {
+    padding-inline: 1.5rem;
+  }
+}
+
+/* 1024px+ — desktop */
+@media (min-width: 1024px) {
+  .container-frizty {
+    padding-inline: 2rem;
+  }
+}
+
+/* 1280px+ — large desktop */
+@media (min-width: 1280px) {
+  .container-frizty {
+    padding-inline: 2.5rem;
+  }
+}
+
+/* 1440px — max container */
+@media (min-width: 1440px) {
+  .container-frizty {
+    padding-inline: 2.5rem;
+  }
+}
+
+/* Prevent horizontal overflow */
+html,
+body,
+main {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+/* Flex/grid children must shrink to avoid overflow */
+.min-w-0 {
+  min-width: 0;
+}
+
+/* Mobile bottom bar clearance */
+.has-mobile-sticky-bar {
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .has-mobile-sticky-bar {
+    padding-bottom: 0;
+  }
+}
+
+/* Product page sticky add-to-cart clearance */
+.has-product-sticky-bar {
+  padding-bottom: 5.5rem;
+}
+
+@media (min-width: 1024px) {
+  .has-product-sticky-bar {
+    padding-bottom: 0;
+  }
+}
