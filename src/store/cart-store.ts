@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import type { CartItem } from "@/types";
 import { DISCOUNT_TIERS } from "@/constants/assets";
+import { getShippingCost } from "@/lib/shipping";
 
 interface CartState {
   items: CartItem[];
@@ -15,6 +16,7 @@ interface CartState {
   removeCoupon: () => void;
   getSubtotal: () => number;
   getDiscount: () => number;
+  getShipping: () => number;
   getTotal: () => number;
   getItemCount: () => number;
   getNextDiscountTier: () => (typeof DISCOUNT_TIERS)[number] | null;
@@ -93,7 +95,9 @@ export const useCartStore = create<CartState>()(
         return (subtotal * effective) / 100;
       },
 
-      getTotal: () => get().getSubtotal() - get().getDiscount(),
+      getShipping: () => getShippingCost(get().getSubtotal()),
+
+      getTotal: () => get().getSubtotal() - get().getDiscount() + get().getShipping(),
 
       getItemCount: () => get().items.reduce((sum, item) => sum + item.quantity, 0),
 

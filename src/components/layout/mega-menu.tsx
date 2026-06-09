@@ -41,11 +41,11 @@ export function MegaMenu({ item, isOpen, onClose }: MegaMenuProps) {
         aria-hidden
       />
       <div className="fixed inset-x-0 top-[72px] z-50 border-t border-border bg-white shadow-xl">
-        <div className="container-frizty py-8">
+        <div className="container-site py-8">
           <p className="mb-5 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
             {item.label}
           </p>
-          <div className="grid grid-cols-3 gap-6 md:grid-cols-5">
+          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-5 md:gap-6">
             {item.children.map((child) => (
               <Link
                 key={child.label}

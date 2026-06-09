@@ -17,15 +17,23 @@ export default function WarrantyRegistrationPage() {
     resolver: zodResolver(warrantySchema),
   });
 
-  const onSubmit = async (_data: WarrantyFormData) => {
-    await new Promise((r) => setTimeout(r, 800));
-    toast.success("Warranty registered successfully!");
+  const onSubmit = async (data: WarrantyFormData) => {
+    const res = await fetch("/api/warranty", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (!res.ok) {
+      toast.error("Registration failed — try again or email support.");
+      return;
+    }
+    toast.success("Warranty registered. Keep your order ID handy.");
     reset();
   };
 
   return (
     <div className="section-padding">
-      <div className="container-frizty max-w-lg">
+      <div className="container-site max-w-lg">
         <h1 className="mb-2 text-3xl font-bold">Warranty Registration</h1>
         <p className="mb-8 text-muted-foreground">
           Register your CrownMate product to activate your 1-year warranty.

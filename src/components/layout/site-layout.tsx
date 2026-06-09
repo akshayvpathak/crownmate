@@ -3,11 +3,11 @@
 import { AnnouncementBar } from "@/components/layout/announcement-bar";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { AgeGate } from "@/components/layout/age-gate";
 import { CartDrawer } from "@/components/cart/cart-drawer";
 import { MobileCartDrawer } from "@/components/cart/mobile-cart-drawer";
 import { ScrollToTop } from "@/components/layout/scroll-to-top";
 import { SearchDrawer } from "@/components/layout/search-drawer";
+import { WhatsAppButton } from "@/components/shared/whatsapp-button";
 import { useMediaQuery } from "@/hooks/use-media-query";
 
 export function SiteLayout({ children }: { children: React.ReactNode }) {
@@ -19,7 +19,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
       <Header />
       <main className="min-h-screen has-mobile-sticky-bar md:pb-0">{children}</main>
       <Footer />
-      <AgeGate />
+      <WhatsAppButton />
       <SearchDrawer />
       {isMobile ? <MobileCartDrawer /> : <CartDrawer />}
       <ScrollToTop />

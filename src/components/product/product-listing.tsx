@@ -28,7 +28,7 @@ export function ProductListing({ products, title, description }: ProductListingP
 
   return (
     <div className="section-padding">
-      <div className="container-frizty">
+      <div className="container-site">
         <h1 className="mb-2 text-2xl font-bold md:text-3xl lg:text-4xl">{title}</h1>
         {description && <p className="mb-4 text-muted-foreground">{description}</p>}
         <p className="mb-6 text-sm text-muted-foreground md:mb-8">

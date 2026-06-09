@@ -10,7 +10,7 @@ const pressLogos = [
 export function PressSection() {
   return (
     <section className="section-padding bg-secondary">
-      <div className="container-frizty">
+      <div className="container-site">
         <h2 className="section-heading mb-6 text-center md:mb-10">Trusted Devices</h2>
         <div className="flex flex-wrap items-center justify-center gap-5 sm:gap-8 md:gap-14">
           {pressLogos.map((logo) => (

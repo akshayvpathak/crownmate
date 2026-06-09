@@ -10,7 +10,7 @@ export function RelatedProducts({ products }: RelatedProductsProps) {
 
   return (
     <section className="section-padding border-t border-border bg-secondary/40">
-      <div className="container-frizty">
+      <div className="container-site">
         <h2 className="section-heading">Goes well with this</h2>
         <p className="mt-2 text-sm text-muted-foreground">
           Most people add one of these to round out their routine.

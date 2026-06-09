@@ -94,7 +94,7 @@ export function ProductReviews({ reviews, rating, reviewCount }: ProductReviewsP
 
   return (
     <section className="section-padding bg-secondary/50">
-      <div className="container-frizty">
+      <div className="container-site">
         <h2 className="section-heading mb-8 text-center md:mb-10">Customer Reviews</h2>
 
         <div className="mb-8 grid gap-8 md:grid-cols-[280px_1fr] lg:grid-cols-[320px_1fr]">

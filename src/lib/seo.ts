@@ -23,7 +23,7 @@ export function generatePageMetadata({
     description ??
     "Shop CrownMate hair growth devices — RedLight Helmet, HF Wand & Pulse Pro Massager. Science-backed scalp care for India.";
   const url = `${SITE_CONFIG.url}${path}`;
-  const ogImage = image ?? `${SITE_CONFIG.url}/og-image.jpg`;
+  const ogImage = image ?? "/og-image.jpg";
 
   return {
     title: pageTitle,

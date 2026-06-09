@@ -13,7 +13,7 @@ import {
 export function TestimonialsSection() {
   return (
     <section className="section-padding bg-secondary">
-      <div className="container-frizty">
+      <div className="container-site">
         <h2 className="section-heading mb-6 text-center md:mb-10">
           What customers actually say
         </h2>

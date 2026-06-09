@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export function BrandStory() {
   return (
     <section className="section-padding bg-white">
-      <div className="container-frizty">
+      <div className="container-site">
         <div className="grid items-center gap-6 md:grid-cols-2 md:gap-10">
           <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-secondary">
             <Image

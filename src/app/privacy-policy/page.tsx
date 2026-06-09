@@ -1,4 +1,5 @@
 import { generatePageMetadata } from "@/lib/seo";
+import { SITE_CONFIG } from "@/constants/assets";
 
 export const metadata = generatePageMetadata({
   title: "Privacy Policy",
@@ -8,40 +9,35 @@ export const metadata = generatePageMetadata({
 export default function PrivacyPolicyPage() {
   return (
     <div className="section-padding">
-      <div className="container-frizty max-w-3xl prose prose-sm md:prose-base">
+      <div className="container-site max-w-3xl prose prose-sm md:prose-base">
         <h1>Privacy Policy</h1>
         <p>
-          FRIZTY PERSONAL CARE LLP has created this Privacy Policy to help you
-          understand how we collect, use and protect your information when you visit the
-          Site and use the Products and services.
+          CrownMate ({SITE_CONFIG.email}) collects only the information needed to
+          process your orders, handle warranty claims, and reply to support requests.
         </p>
-        <h2>What personal information does CrownMate collect?</h2>
+        <h2>What we collect</h2>
         <p>
-          We may hold information relating to you that you have provided to us while
-          registering with us or while placing an order. This information may include
-          your name, address, telephone numbers, and information on how you use our
-          products.
+          Name, email, phone, shipping address, and order history when you buy from us
+          or contact support. We also collect basic site usage data through standard
+          analytics.
         </p>
-        <h2>How does CrownMate use your Personal Information?</h2>
-        <p>The information may be used for:</p>
+        <h2>How we use it</h2>
         <ul>
-          <li>Processing your orders and making deliveries</li>
-          <li>Verifying products purchased for warranty claims</li>
-          <li>Dealing with requests, enquiries or complaints</li>
-          <li>Carrying out market and product analysis</li>
-          <li>Contacting you about products and services</li>
+          <li>Processing orders and arranging delivery</li>
+          <li>Warranty and return requests</li>
+          <li>Responding to questions and complaints</li>
+          <li>Occasional product updates if you subscribe to our newsletter</li>
         </ul>
-        <h2>Protecting your personal information</h2>
+        <h2>How we protect it</h2>
         <p>
-          CrownMate Retail takes reasonable steps to ensure that personal information is
-          stored in a secure environment protected from unauthorised access. Contact us
-          at support@crownmate.in for any concerns.
+          Payment details are handled by Razorpay — we don&apos;t store card numbers.
+          Other data is kept on secure servers with access limited to our support and
+          operations team.
         </p>
-        <h2>Children&apos;s privacy</h2>
+        <h2>Your rights</h2>
         <p>
-          The Site is not permissible for use by individuals under the age of 13.
-          Parents/guardians must control and supervise any web-based activity conducted
-          by children under 13.
+          Email {SITE_CONFIG.email} to request a copy of your data or ask us to delete
+          it. We&apos;ll respond within 7 business days.
         </p>
       </div>
     </div>

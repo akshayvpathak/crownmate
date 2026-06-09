@@ -6,7 +6,7 @@ import { categoryCards } from "@/data/home-content";
 export function CategorySection() {
   return (
     <section className="section-padding bg-white">
-      <div className="container-frizty">
+      <div className="container-site">
         <h2 className="section-heading mb-1 text-center">Pick a device</h2>
         <p className="mb-6 text-center text-sm text-muted-foreground md:mb-10">
           Shop by Category

@@ -1,11 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { checkoutSchema, type CheckoutFormData } from "@/schemas/contact-schema";
 import { useCartStore } from "@/store/cart-store";
+import { useOrderStore } from "@/store/order-store";
 import { formatPrice } from "@/lib/utils";
+import { getShippingLabel } from "@/lib/shipping";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -19,11 +22,16 @@ import { toast } from "sonner";
 import { processCheckout } from "@/services/checkout-service";
 
 export default function CheckoutPage() {
+  const router = useRouter();
   const items = useCartStore((s) => s.items);
   const getTotal = useCartStore((s) => s.getTotal);
   const getSubtotal = useCartStore((s) => s.getSubtotal);
   const getDiscount = useCartStore((s) => s.getDiscount);
+  const getShipping = useCartStore((s) => s.getShipping);
   const clearCart = useCartStore((s) => s.clearCart);
+  const addOrder = useOrderStore((s) => s.addOrder);
+
+  const subtotal = getSubtotal();
 
   const {
     register,
@@ -36,19 +44,28 @@ export default function CheckoutPage() {
   });
 
   const onSubmit = async (data: CheckoutFormData) => {
-    const order = await processCheckout(data, items, getTotal());
-    if (order.status === "confirmed") {
-      clearCart();
-      toast.success(order.message);
-      return;
+    const total = getTotal();
+    const order = await processCheckout(data, items, total);
+
+    try {
+      await fetch("/api/orders", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(order),
+      });
+    } catch {
+      toast.error("Order saved locally but server sync failed.");
     }
-    toast.info(order.message);
+
+    addOrder(order);
+    clearCart();
+    router.push(`/order-confirmation?orderId=${order.orderId}`);
   };
 
   if (items.length === 0) {
     return (
       <div className="section-padding">
-        <div className="container-frizty text-center">
+        <div className="container-site text-center">
           <h1 className="mb-4 text-2xl font-bold">No items to checkout</h1>
           <Button asChild>
             <Link href="/products">Shop Now</Link>
@@ -60,7 +77,7 @@ export default function CheckoutPage() {
 
   return (
     <div className="section-padding">
-      <div className="container-frizty">
+      <div className="container-site">
         <h1 className="mb-8 text-2xl font-bold md:text-3xl">Checkout</h1>
 
         <form onSubmit={handleSubmit(onSubmit)} className="grid gap-8 lg:grid-cols-2">
@@ -158,14 +175,14 @@ export default function CheckoutPage() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="cod">Cash on Delivery</SelectItem>
-                  <SelectItem value="upi">UPI</SelectItem>
-                  <SelectItem value="card">Credit/Debit Card</SelectItem>
+                  <SelectItem value="upi">UPI (Razorpay)</SelectItem>
+                  <SelectItem value="card">Credit/Debit Card (Razorpay)</SelectItem>
                 </SelectContent>
               </Select>
             </section>
           </div>
 
-          <div className="rounded-xl border border-border p-6 h-fit">
+          <div className="h-fit rounded-xl border border-border p-6">
             <h2 className="mb-4 text-lg font-semibold">Order Summary</h2>
             <ul className="mb-4 space-y-2 text-sm">
               {items.map((item) => (
@@ -190,7 +207,7 @@ export default function CheckoutPage() {
               )}
               <div className="flex justify-between text-muted-foreground">
                 <span>Shipping</span>
-                <span>Free</span>
+                <span>{getShippingLabel(subtotal)}</span>
               </div>
               <div className="flex justify-between text-lg font-bold">
                 <span>Total</span>

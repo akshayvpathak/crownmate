@@ -18,9 +18,18 @@ export function ContactForm() {
     resolver: zodResolver(contactSchema),
   });
 
-  const onSubmit = async (_data: ContactFormData) => {
-    await new Promise((r) => setTimeout(r, 800));
-    toast.success("Message sent successfully!");
+  const onSubmit = async (data: ContactFormData) => {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (!res.ok) {
+      const err = await res.json();
+      toast.error(err.error ?? "Failed to send message");
+      return;
+    }
+    toast.success("Message sent — we'll reply within 24 hours.");
     reset();
   };
 

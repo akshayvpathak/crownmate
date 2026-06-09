@@ -57,7 +57,7 @@ video {
   height: auto;
 }
 
-.container-frizty {
+.container-site {
   width: 100%;
   max-width: 1440px;
   margin-inline: auto;
@@ -94,7 +94,7 @@ video {
 
 /* Zigzag hero border */
 .hero-zigzag-top {
-  background-image: url("https://friztyretail.com/cdn/shop/files/zig-zag-svg.svg?v=1743527365");
+  background-image: url("/images/decor/zig-zag.svg");
   background-repeat: repeat-x;
   background-size: auto 12px;
   height: 12px;
@@ -103,7 +103,7 @@ video {
 
 /* Bottom curve for hero */
 .hero-bottom-curve {
-  background-image: url("https://friztyretail.com/cdn/shop/files/bottom-shape-curve.svg?v=1743184604");
+  background-image: url("/images/decor/bottom-curve.svg");
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: 100% auto;
@@ -145,7 +145,7 @@ video {
 
 /* 320px — smallest phones */
 @media (max-width: 359px) {
-  .container-frizty {
+  .container-site {
     padding-inline: 0.75rem;
   }
 
@@ -160,35 +160,35 @@ video {
 
 /* 375–414px — standard mobile */
 @media (min-width: 360px) and (max-width: 767px) {
-  .container-frizty {
+  .container-site {
     padding-inline: 1rem;
   }
 }
 
 /* 768px — tablet */
 @media (min-width: 768px) and (max-width: 1023px) {
-  .container-frizty {
+  .container-site {
     padding-inline: 1.5rem;
   }
 }
 
 /* 1024px+ — desktop */
 @media (min-width: 1024px) {
-  .container-frizty {
+  .container-site {
     padding-inline: 2rem;
   }
 }
 
 /* 1280px+ — large desktop */
 @media (min-width: 1280px) {
-  .container-frizty {
+  .container-site {
     padding-inline: 2.5rem;
   }
 }
 
 /* 1440px — max container */
 @media (min-width: 1440px) {
-  .container-frizty {
+  .container-site {
     padding-inline: 2.5rem;
   }
 }

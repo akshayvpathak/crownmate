@@ -21,7 +21,7 @@ const featured = [
 export function FeaturedShowcase() {
   return (
     <section className="bg-white py-6 md:py-8">
-      <div className="container-frizty">
+      <div className="container-site">
         <div className="grid grid-cols-1 gap-2.5 min-[400px]:grid-cols-2 sm:gap-3 md:gap-6">
           {featured.map((item) => (
             <Link

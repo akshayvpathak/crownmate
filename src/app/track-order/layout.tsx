@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import { generatePageMetadata } from "@/lib/seo";
 
 export const metadata = generatePageMetadata({
@@ -6,5 +7,9 @@ export const metadata = generatePageMetadata({
 });
 
 export default function TrackOrderLayout({ children }: { children: React.ReactNode }) {
-  return children;
+  return (
+    <Suspense fallback={<div className="section-padding text-center">Loading...</div>}>
+      {children}
+    </Suspense>
+  );
 }

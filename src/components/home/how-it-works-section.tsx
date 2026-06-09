@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export function HowItWorksSection() {
   return (
     <section className="section-padding bg-secondary">
-      <div className="container-frizty">
+      <div className="container-site">
         <div className="mb-8 text-center md:mb-12">
           <p className="text-sm font-medium uppercase tracking-wider text-primary">
             How it works

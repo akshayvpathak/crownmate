@@ -11,7 +11,7 @@ const icons: Record<string, React.ReactNode> = {
 export function WhyChooseUs() {
   return (
     <section className="section-padding bg-[#834fd9] text-white">
-      <div className="container-frizty">
+      <div className="container-site">
         <h2 className="section-heading mb-8 text-center text-white md:mb-12">
           Why people stick with CrownMate
         </h2>

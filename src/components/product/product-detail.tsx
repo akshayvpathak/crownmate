@@ -16,7 +16,8 @@ import { useCartStore } from "@/store/cart-store";
 import { useProductSelectionStore } from "@/store/product-selection-store";
 import { formatPrice, calculateDiscount, cn } from "@/lib/utils";
 import { getDeliveryEstimate } from "@/lib/delivery-estimate";
-import { SITE_CONFIG } from "@/constants/assets";
+import { getDeliveryRangeText } from "@/lib/shipping";
+import { SITE_CONFIG, WHATSAPP_URL } from "@/constants/assets";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -35,10 +36,6 @@ interface ProductDetailProps {
   reviews: Review[];
   relatedProducts: Product[];
 }
-
-const WHATSAPP_URL = `https://wa.me/919712078733?text=${encodeURIComponent(
-  "Hi CrownMate, I have a question about your products.",
-)}`;
 
 export function ProductDetail({
   product,
@@ -102,7 +99,7 @@ export function ProductDetail({
 
   return (
     <div className={cn("section-padding", showStickyBar && "has-product-sticky-bar")}>
-      <div className="container-frizty">
+      <div className="container-site">
         <div className="grid min-w-0 gap-8 lg:grid-cols-2 lg:gap-12">
           <div className="min-w-0">
             <ProductGallery
@@ -308,9 +305,10 @@ export function ProductDetail({
                 <AccordionTrigger>Shipping Information</AccordionTrigger>
                 <AccordionContent>
                   <p className="text-sm leading-relaxed">
-                    We usually dispatch within 24 hours. Delivery takes 4–7 working days
-                    depending on your pin code. Tracking link goes out by SMS and email
-                    once the courier picks up.
+                    We usually dispatch within 24 hours. Delivery takes{" "}
+                    {getDeliveryRangeText()} depending on your pin code. Free above
+                    ₹499. Tracking link goes out by SMS and email once the courier picks
+                    up.
                   </p>
                 </AccordionContent>
               </AccordionItem>

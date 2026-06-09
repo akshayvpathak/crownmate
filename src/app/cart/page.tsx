@@ -5,9 +5,11 @@ import Link from "next/link";
 import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
 import { useCartStore } from "@/store/cart-store";
 import { formatPrice } from "@/lib/utils";
-import { DISCOUNT_TIERS } from "@/constants/assets";
+import { getShippingLabel } from "@/lib/shipping";
+import { COUPON_CODES, DISCOUNT_TIERS } from "@/constants/assets";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { FrequentlyBoughtTogether } from "@/components/cart/frequently-bought-together";
 import { useState } from "react";
 import { toast } from "sonner";
 
@@ -32,7 +34,7 @@ export default function CartPage() {
   if (items.length === 0) {
     return (
       <div className="section-padding">
-        <div className="container-frizty text-center">
+        <div className="container-site text-center">
           <ShoppingBag className="mx-auto mb-4 h-16 w-16 text-muted-foreground" />
           <h1 className="mb-2 text-2xl font-bold">Your cart is empty</h1>
           <p className="mb-6 text-muted-foreground">
@@ -48,13 +50,13 @@ export default function CartPage() {
 
   return (
     <div className="section-padding">
-      <div className="container-frizty">
+      <div className="container-site">
         <h1 className="mb-8 text-2xl font-bold md:text-3xl">
           Your Cart ({items.length} {items.length === 1 ? "item" : "items"})
         </h1>
 
         <div className="grid gap-8 lg:grid-cols-3">
-          <div className="lg:col-span-2 space-y-4">
+          <div className="space-y-4 lg:col-span-2">
             {items.map((item) => (
               <div
                 key={item.variantId}
@@ -110,9 +112,10 @@ export default function CartPage() {
                 </div>
               </div>
             ))}
+            <FrequentlyBoughtTogether />
           </div>
 
-          <div className="rounded-xl border border-border p-6 h-fit sticky top-24">
+          <div className="sticky top-24 h-fit rounded-xl border border-border p-6">
             {nextTier && (
               <div className="mb-4 rounded-lg bg-secondary p-3 text-sm">
                 <p>
@@ -150,6 +153,9 @@ export default function CartPage() {
                 Apply
               </Button>
             </div>
+            <p className="mb-4 text-xs text-muted-foreground">
+              Try: {COUPON_CODES.join(", ")}
+            </p>
 
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
@@ -164,7 +170,7 @@ export default function CartPage() {
               )}
               <div className="flex justify-between text-sm text-muted-foreground">
                 <span>Shipping</span>
-                <span>Free (3-4 days)</span>
+                <span>{getShippingLabel(subtotal)}</span>
               </div>
               <div className="flex justify-between border-t border-border pt-2 text-lg font-bold">
                 <span>Total</span>

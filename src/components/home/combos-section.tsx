@@ -8,7 +8,7 @@ export async function CombosSection() {
 
   return (
     <section className="section-padding bg-white">
-      <div className="container-frizty">
+      <div className="container-site">
         <div className="mb-6 text-center md:mb-10">
           <h2 className="section-heading">Complete Your CrownMate Routine</h2>
           <p className="mt-2 text-sm text-muted-foreground">

@@ -8,7 +8,7 @@ export const metadata = generatePageMetadata({
 export default function TermsPage() {
   return (
     <div className="section-padding">
-      <div className="container-frizty max-w-3xl prose prose-sm md:prose-base">
+      <div className="container-site max-w-3xl prose prose-sm md:prose-base">
         <h1>Terms &amp; Conditions</h1>
         <p>
           By accessing and using the CrownMate website, you agree to be bound by these

@@ -6,7 +6,8 @@ import { Minus, Plus, Trash2 } from "lucide-react";
 import { useCartStore } from "@/store/cart-store";
 import { useUIStore } from "@/store/ui-store";
 import { formatPrice } from "@/lib/utils";
-import { DISCOUNT_TIERS } from "@/constants/assets";
+import { COUPON_CODES, DISCOUNT_TIERS } from "@/constants/assets";
+import { getShippingLabel } from "@/lib/shipping";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
@@ -108,6 +109,9 @@ export function CartDrawerContent() {
 
       {items.length > 0 && (
         <>
+          <p className="mb-2 text-[10px] text-muted-foreground">
+            Coupons: {COUPON_CODES.join(", ")}
+          </p>
           <div className="mb-3 flex gap-2">
             <Input
               placeholder="Coupon code"
@@ -136,6 +140,10 @@ export function CartDrawerContent() {
                 <span>-{formatPrice(discount)}</span>
               </div>
             )}
+            <div className="flex justify-between text-muted-foreground">
+              <span>Shipping</span>
+              <span>{getShippingLabel(subtotal)}</span>
+            </div>
             <div className="flex justify-between font-bold">
               <span>Total</span>
               <span>{formatPrice(total)}</span>

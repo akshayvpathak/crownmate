@@ -8,7 +8,7 @@ export const metadata = generatePageMetadata({
 export default function RefundPolicyPage() {
   return (
     <div className="section-padding">
-      <div className="container-frizty max-w-3xl prose prose-sm md:prose-base">
+      <div className="container-site max-w-3xl prose prose-sm md:prose-base">
         <h1>Refund Policy</h1>
         <p>
           CrownMate offers a 90-Day Money-Back Guarantee on all products. If you

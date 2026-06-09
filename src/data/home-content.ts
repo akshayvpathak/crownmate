@@ -269,7 +269,7 @@ export const faqItems = [
     id: "4",
     question: "Shipping and returns?",
     answer:
-      "We dispatch within 24 hours on most orders. Delivery is 4–9 working days depending on your pin code. Free shipping above ₹499. Damaged on arrival? Tell us within 48 hours.",
+      "We dispatch within 24 hours on most orders. Delivery is 4–7 working days depending on your pin code. Free shipping above ₹499. Damaged on arrival? Tell us within 48 hours.",
   },
   {
     id: "5",

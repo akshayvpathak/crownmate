@@ -1,14 +1,20 @@
 import type { NavItem } from "@/types";
 import { images } from "@/data/images";
+import { WHATSAPP_URL } from "@/constants/assets";
 
 export const mainNavigation: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Shop All", href: "/products" },
   {
     label: "Shop",
     href: "/products",
     megaMenu: true,
     children: [
+      {
+        label: "All Products",
+        href: "/products",
+        image: images.categories.redlightHelmet,
+        itemCount: 3,
+      },
       {
         label: "RedLight Helmet",
         href: "/collections/redlight-helmet",
@@ -26,6 +32,12 @@ export const mainNavigation: NavItem[] = [
         href: "/collections/scalp-massager",
         image: images.categories.scalpMassager,
         itemCount: 1,
+      },
+      {
+        label: "Collections",
+        href: "/collections",
+        image: images.categories.hfWand,
+        itemCount: 5,
       },
     ],
   },
@@ -48,6 +60,7 @@ export const footerShopLinks = [
   { label: "HF Wand", href: "/collections/hf-wand" },
   { label: "Scalp Massager", href: "/collections/scalp-massager" },
   { label: "All Products", href: "/products" },
+  { label: "Collections", href: "/collections" },
 ];
 
 export const footerBrandLinks = [
@@ -58,12 +71,12 @@ export const footerBrandLinks = [
 export const footerSupportLinks = [
   { label: "FAQ", href: "/faq" },
   { label: "Track Your Order", href: "/track-order" },
-  { label: "Customer Care", href: "/contact" },
-  { label: "Contact", href: "/contact" },
+  { label: "WhatsApp", href: WHATSAPP_URL },
+  { label: "Email Us", href: "/contact" },
 ];
 
 export const footerLegalLinks = [
-  { label: "Shipping Policy", href: "/terms-and-conditions" },
+  { label: "Shipping Policy", href: "/shipping-policy" },
   { label: "Cancellation & Refunds", href: "/refund-policy" },
   { label: "Sales Policy", href: "/terms-and-conditions" },
   { label: "Privacy Policy", href: "/privacy-policy" },

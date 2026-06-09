@@ -11,7 +11,7 @@ import { NewsletterForm } from "@/components/forms/newsletter-form";
 export function Footer() {
   return (
     <footer className="bg-[#222222] text-white">
-      <div className="container-frizty section-padding">
+      <div className="container-site section-padding">
         <div className="grid grid-cols-2 gap-8 sm:gap-10 md:grid-cols-2 lg:grid-cols-5">
           <div className="col-span-2 lg:col-span-2">
             <h3 className="mb-3 text-base font-semibold">Stay Connected</h3>
@@ -81,7 +81,7 @@ function FooterColumn({
       <h3 className="mb-3 text-sm font-semibold uppercase tracking-wide">{title}</h3>
       <ul className="space-y-2">
         {links.map((link) => (
-          <li key={link.label}>
+          <li key={link.href}>
             <Link
               href={link.href}
               className="text-sm text-white/60 transition-colors hover:text-white hover:underline"

@@ -17,9 +17,17 @@ export function NewsletterForm() {
     resolver: zodResolver(newsletterSchema),
   });
 
-  const onSubmit = async (_data: NewsletterFormData) => {
-    await new Promise((r) => setTimeout(r, 500));
-    toast.success("Subscribed successfully!");
+  const onSubmit = async (data: NewsletterFormData) => {
+    const res = await fetch("/api/newsletter", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+    if (!res.ok) {
+      toast.error("Could not subscribe — try again.");
+      return;
+    }
+    toast.success("You're on the list.");
     reset();
   };
 

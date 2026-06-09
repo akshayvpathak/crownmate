@@ -1,22 +1,23 @@
 import { generatePageMetadata } from "@/lib/seo";
-import { SITE_CONFIG } from "@/constants/assets";
+import { SITE_CONFIG, WHATSAPP_URL } from "@/constants/assets";
 import { ContactForm } from "@/components/forms/contact-form";
 import { Mail, Phone, MapPin } from "lucide-react";
+import Link from "next/link";
 
 export const metadata = generatePageMetadata({
   title: "Contact Us",
-  description: "Get in touch with CrownMate customer support.",
+  description: "Reach CrownMate support by email, phone, or WhatsApp.",
   path: "/contact",
 });
 
 export default function ContactPage() {
   return (
     <div className="section-padding">
-      <div className="container-frizty">
+      <div className="container-site">
         <h1 className="mb-2 text-3xl font-bold md:text-4xl">Contact Us</h1>
         <p className="mb-8 text-muted-foreground">
-          Email, Call or Complete the form to learn how CrownMate can solve your
-          messaging problem.
+          Questions about an order, which device to buy, or warranty? Drop us a message
+          or reach out directly.
         </p>
 
         <div className="grid gap-10 lg:grid-cols-2">
@@ -32,7 +33,7 @@ export default function ContactPage() {
               <div>
                 <p className="font-semibold">Customer Support</p>
                 <p className="text-sm text-muted-foreground">
-                  Our support team is available around the clock.
+                  {SITE_CONFIG.supportHours}
                 </p>
                 <a href={`tel:${SITE_CONFIG.phone}`} className="text-sm underline">
                   {SITE_CONFIG.phone}
@@ -42,11 +43,22 @@ export default function ContactPage() {
             <div className="flex gap-3">
               <Mail className="h-5 w-5 shrink-0 text-primary" />
               <div>
-                <p className="font-semibold">Media Inquiries</p>
+                <p className="font-semibold">Email</p>
                 <a href={`mailto:${SITE_CONFIG.email}`} className="text-sm underline">
                   {SITE_CONFIG.email}
                 </a>
               </div>
+            </div>
+            <div>
+              <p className="font-semibold">WhatsApp</p>
+              <Link
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm underline"
+              >
+                Chat with us on WhatsApp
+              </Link>
             </div>
           </div>
         </div>

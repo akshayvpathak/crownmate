@@ -146,10 +146,19 @@ export function Header() {
         </div>
       </div>
 
+      {isMobileMenuOpen && (
+        <button
+          type="button"
+          className="fixed inset-0 top-14 z-20 bg-black/30 lg:hidden"
+          aria-label="Close menu"
+          onClick={closeMobileMenu}
+        />
+      )}
+
       {/* Mobile menu drawer */}
       <div
         className={cn(
-          "fixed inset-0 top-14 z-30 bg-white transition-transform duration-300 lg:hidden",
+          "fixed inset-y-0 left-0 top-14 z-30 w-[min(320px,85vw)] bg-white shadow-xl transition-transform duration-300 lg:hidden",
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full",
         )}
         aria-hidden={!isMobileMenuOpen}
