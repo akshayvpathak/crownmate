@@ -13,6 +13,11 @@ export const images = {
     serumStamp: img("serum-stamp/01-hero-shot.png"),
     brandStory: img("helmet/02-woman-wearing.png"),
   },
+  banners: {
+    helmet: img("banners/helmet-banner.png"),
+    hfWand: img("banners/hf-wand-banner.png"),
+    massager: img("banners/massager-banner.png"),
+  },
   categories: {
     redlightHelmet: img("helmet/01-hero-product-shot.png"),
     hfWand: img("hf-wand/01-hero-shot.png"),

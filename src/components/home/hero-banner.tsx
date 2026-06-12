@@ -2,118 +2,80 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import {
-  ChevronRight,
-  Brain,
-  Sparkles,
-  Heart,
-  Droplets,
-  Flower2,
-  Eye,
-} from "lucide-react";
 import type { HeroSlide } from "@/types";
-import { Button } from "@/components/ui/button";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselDots,
+  CarouselPrevious,
+  CarouselNext,
+  useCarousel,
 } from "@/components/ui/carousel";
+import { cn } from "@/lib/utils";
 
-const benefitIcons: Record<string, React.ReactNode> = {
-  brain: <Brain className="h-5 w-5" />,
-  sparkles: <Sparkles className="h-5 w-5" />,
-  heart: <Heart className="h-5 w-5" />,
-  droplet: <Droplets className="h-5 w-5" />,
-  flower: <Flower2 className="h-5 w-5" />,
-  eye: <Eye className="h-5 w-5" />,
-};
+function HeroDots() {
+  const { selectedIndex, scrollSnaps, scrollTo } = useCarousel();
+
+  return (
+    <div className="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-2 md:bottom-4">
+      {scrollSnaps.map((_, index) => (
+        <button
+          key={index}
+          type="button"
+          aria-label={`Go to slide ${index + 1}`}
+          onClick={() => scrollTo(index)}
+          className="flex h-8 w-8 items-center justify-center"
+        >
+          <span
+            className={cn(
+              "block rounded-full transition-all",
+              selectedIndex === index
+                ? "h-2.5 w-2.5 border-2 border-primary bg-transparent"
+                : "h-2 w-2 bg-primary/40",
+            )}
+          />
+        </button>
+      ))}
+    </div>
+  );
+}
 
 export function HeroBanner({ slides }: { slides: HeroSlide[] }) {
   return (
-    <section aria-label="Hero banner" className="relative bg-[#834fd9]">
-      {/* Zigzag border between header and hero */}
+    <section aria-label="Hero banner" className="relative bg-[#e8dff5]">
       <div className="hero-zigzag-top bg-white" aria-hidden />
 
-      <Carousel opts={{ loop: true }}>
+      <Carousel opts={{ loop: true }} className="relative">
         <CarouselContent className="ml-0">
-          {slides.map((slide) => (
+          {slides.map((slide, index) => (
             <CarouselItem key={slide.id} className="pl-0">
-              <div className="relative bg-[#834fd9]">
-                {/* Hero image — full bleed on mobile */}
-                <div className="relative mx-auto aspect-[4/5] w-full max-h-[70vh] md:aspect-[16/9] md:max-h-[650px]">
-                  {slide.image && (
-                    <Image
-                      src={slide.mobileImage ?? slide.image}
-                      alt={slide.title}
-                      fill
-                      priority
-                      sizes="100vw"
-                      className="object-contain object-center md:object-cover md:object-top"
-                    />
-                  )}
-                  {/* Bottom gradient overlay */}
-                  <div
-                    className="absolute inset-x-0 bottom-0 h-2/3"
-                    style={{
-                      background:
-                        "linear-gradient(to top, #834fd9 10%, rgba(131,79,217,0.85) 40%, transparent 100%)",
-                    }}
-                    aria-hidden
-                  />
-                </div>
-
-                {/* Text content overlaid at bottom */}
-                <div className="relative -mt-12 px-3 pb-8 pt-3 text-center text-white sm:-mt-16 sm:px-4 sm:pb-10 md:-mt-24 md:px-8 md:pb-16">
-                  <p className="mb-1.5 text-xs font-medium sm:mb-2 sm:text-sm md:text-base">
-                    {slide.eyebrow}
-                  </p>
-                  <h1 className="mx-auto mb-4 max-w-lg text-[1.375rem] font-semibold leading-[1.15] sm:mb-6 sm:text-[1.75rem] md:text-4xl lg:text-5xl">
-                    {slide.title}
-                  </h1>
-
-                  {slide.benefits && (
-                    <div className="mb-4 flex flex-wrap justify-center gap-3 sm:mb-6 sm:gap-4 md:mb-8 md:gap-8">
-                      {slide.benefits.map((b) => (
-                        <div
-                          key={b.label}
-                          className="flex flex-col items-center gap-1.5"
-                        >
-                          <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-foreground sm:h-10 sm:w-10 md:h-12 md:w-12">
-                            {benefitIcons[b.icon] ?? null}
-                          </div>
-                          <span className="max-w-[72px] text-[10px] font-semibold leading-tight sm:max-w-none sm:text-xs md:text-sm">
-                            {b.label}
-                          </span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-
-                  <div className="flex flex-col items-stretch gap-2.5 px-2 sm:items-center sm:gap-3 sm:px-0 sm:flex-row sm:justify-center">
-                    <Button
-                      variant="default"
-                      size="lg"
-                      className="w-full min-w-0 bg-foreground text-white hover:bg-primary sm:w-auto sm:min-w-[160px]"
-                      asChild
-                    >
-                      <Link href={slide.ctaLink}>
-                        {slide.ctaText}
-                        <ChevronRight className="h-4 w-4" />
-                      </Link>
-                    </Button>
-                    {slide.subtitle && (
-                      <p className="text-display text-sm italic text-white/90 md:text-base">
-                        {slide.subtitle}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </div>
+              <Link
+                href={slide.ctaLink}
+                className="relative block aspect-[1024/455] w-full overflow-hidden bg-[#e8dff5]"
+                aria-label={`${slide.title} — ${slide.ctaText}`}
+              >
+                <Image
+                  src={slide.image}
+                  alt={slide.title}
+                  fill
+                  priority={index === 0}
+                  sizes="100vw"
+                  className="object-cover object-center"
+                />
+              </Link>
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselDots className="absolute bottom-4 left-0 right-0 md:bottom-8" />
+
+        <CarouselPrevious
+          variant="ghost"
+          className="left-2 top-1/2 h-9 w-9 -translate-y-1/2 border-0 bg-white/80 text-foreground shadow-md hover:bg-white md:left-4 md:h-10 md:w-10"
+        />
+        <CarouselNext
+          variant="ghost"
+          className="right-2 top-1/2 h-9 w-9 -translate-y-1/2 border-0 bg-white/80 text-foreground shadow-md hover:bg-white md:right-4 md:h-10 md:w-10"
+        />
+        <HeroDots />
       </Carousel>
     </section>
   );
