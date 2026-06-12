@@ -2,7 +2,6 @@ import {
   enrichLineItemsWithCatalogSnapshot,
   validateCartItems,
 } from "@backend/lib/catalog";
-import { validateCouponCode } from "@backend/lib/coupons";
 import { loadProducts } from "@backend/lib/product-store";
 import { connectMongo, isMongoConfigured } from "@backend/lib/mongodb";
 import { generateOrderNumber } from "@backend/lib/order-number";
@@ -26,7 +25,6 @@ export type CheckoutResult =
 export async function processCheckout(input: {
   form: CheckoutFormData;
   items: CartItem[];
-  couponCode?: string | null;
   userId?: mongoose.Types.ObjectId | null;
 }): Promise<CheckoutResult> {
   const cartResult = await validateCartItems(input.items);
@@ -34,22 +32,7 @@ export async function processCheckout(input: {
     return { ok: false, error: cartResult.error, status: 400 };
   }
 
-  let couponDiscountPercent = 0;
-  let appliedCouponCode: string | null = null;
-
-  if (input.couponCode?.trim()) {
-    const couponResult = await validateCouponCode(input.couponCode);
-    if (!couponResult.valid) {
-      return { ok: false, error: "Invalid coupon code", status: 400 };
-    }
-    couponDiscountPercent = couponResult.discountPercent;
-    appliedCouponCode = couponResult.code;
-  }
-
-  const pricing = calculateOrderPricing(
-    cartResult.subtotalRupees,
-    couponDiscountPercent,
-  );
+  const pricing = calculateOrderPricing(cartResult.subtotalRupees);
   const products = await loadProducts();
   const snapshotItems = enrichLineItemsWithCatalogSnapshot(cartResult.items, products);
   const orderNumber = generateOrderNumber();
@@ -111,8 +94,7 @@ export async function processCheckout(input: {
     shippingPaise: pricing.shippingPaise,
     amountPaise: pricing.totalPaise,
     currency: "INR",
-    couponCode: appliedCouponCode ?? undefined,
-    discountPercent: pricing.effectiveDiscountPercent,
+    discountPercent: 0,
     catalogSnapshotAt: new Date(),
     customerFirstName: customerName.firstName,
     customerLastName: customerName.lastName,

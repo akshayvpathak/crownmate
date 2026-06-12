@@ -6,13 +6,8 @@ import { Minus, Plus, Trash2, X } from "lucide-react";
 import { useCartStore } from "@/store/cart-store";
 import { useUIStore } from "@/store/ui-store";
 import { formatPrice } from "@/lib/utils";
-import { DISCOUNT_TIERS } from "@/constants/assets";
-import { useActiveCoupons } from "@/hooks/use-active-coupons";
 import { getShippingLabel } from "@/lib/shipping";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { useState } from "react";
-import { toast } from "sonner";
 import { FrequentlyBoughtTogether } from "@/components/cart/frequently-bought-together";
 
 export function CartDrawer() {
@@ -20,30 +15,11 @@ export function CartDrawer() {
   const items = useCartStore((s) => s.items);
   const updateQuantity = useCartStore((s) => s.updateQuantity);
   const removeItem = useCartStore((s) => s.removeItem);
-  const applyCoupon = useCartStore((s) => s.applyCoupon);
-  const couponCode = useCartStore((s) => s.couponCode);
   const getSubtotal = useCartStore((s) => s.getSubtotal);
-  const getDiscount = useCartStore((s) => s.getDiscount);
   const getTotal = useCartStore((s) => s.getTotal);
-  const getAmountToNextTier = useCartStore((s) => s.getAmountToNextTier);
-  const getNextDiscountTier = useCartStore((s) => s.getNextDiscountTier);
-  const [couponInput, setCouponInput] = useState("");
-  const couponCodes = useActiveCoupons();
 
   const subtotal = getSubtotal();
-  const discount = getDiscount();
   const total = getTotal();
-  const nextTier = getNextDiscountTier();
-  const amountToNext = getAmountToNextTier();
-
-  const handleApplyCoupon = async () => {
-    const applied = await applyCoupon(couponInput);
-    if (applied) {
-      toast.success("Coupon applied!");
-    } else {
-      toast.error("Invalid coupon code");
-    }
-  };
 
   if (!isCartOpen) return null;
 
@@ -68,24 +44,6 @@ export function CartDrawer() {
             <X className="h-5 w-5" />
           </Button>
         </div>
-
-        {/* Discount progress */}
-        {nextTier && (
-          <div className="border-b border-border p-4">
-            <p className="mb-3 text-xs text-muted-foreground">
-              You&apos;re only {formatPrice(amountToNext)} away from {nextTier.label}.
-            </p>
-            <div className="flex justify-between gap-2 text-xs">
-              {DISCOUNT_TIERS.map((tier) => (
-                <div key={tier.threshold} className="text-center">
-                  <p className="font-bold">₹{tier.threshold}</p>
-                  <p className="text-muted-foreground">{tier.label}</p>
-                </div>
-              ))}
-            </div>
-            <p className="mt-2 text-xs">🎁 Free Gift Automatically Added at Checkout</p>
-          </div>
-        )}
 
         <div className="flex-1 overflow-y-auto p-4">
           {items.length === 0 ? (
@@ -158,41 +116,16 @@ export function CartDrawer() {
               ))}
             </ul>
           )}
-
           <FrequentlyBoughtTogether />
         </div>
 
         {items.length > 0 && (
           <div className="border-t border-border p-4">
-            <p className="mb-2 text-[10px] text-muted-foreground">
-              {couponCodes.length > 0 && `Coupons: ${couponCodes.join(", ")}`}
-            </p>
-            <div className="mb-3 flex gap-2">
-              <Input
-                placeholder="Coupon code"
-                value={couponInput}
-                onChange={(e) => setCouponInput(e.target.value)}
-                aria-label="Coupon code"
-              />
-              <Button variant="outline" onClick={handleApplyCoupon}>
-                Apply
-              </Button>
-            </div>
-            {couponCode && (
-              <p className="mb-2 text-xs text-success">Coupon {couponCode} applied</p>
-            )}
-
             <div className="space-y-1 text-sm">
               <div className="flex justify-between">
                 <span>Subtotal</span>
                 <span>{formatPrice(subtotal)}</span>
               </div>
-              {discount > 0 && (
-                <div className="flex justify-between text-success">
-                  <span>Discount</span>
-                  <span>-{formatPrice(discount)}</span>
-                </div>
-              )}
               <div className="flex justify-between text-muted-foreground">
                 <span>Shipping</span>
                 <span>{getShippingLabel(subtotal)}</span>
@@ -202,7 +135,6 @@ export function CartDrawer() {
                 <span>{formatPrice(total)}</span>
               </div>
             </div>
-
             <div className="mt-4 space-y-2">
               <Button className="w-full" asChild>
                 <Link href="/checkout" onClick={closeCart}>

@@ -6,32 +6,18 @@ import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
 import { useCartStore } from "@/store/cart-store";
 import { formatPrice } from "@/lib/utils";
 import { getShippingLabel } from "@/lib/shipping";
-import { DISCOUNT_TIERS } from "@/constants/assets";
-import { useActiveCoupons } from "@/hooks/use-active-coupons";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
 import { FrequentlyBoughtTogether } from "@/components/cart/frequently-bought-together";
-import { useState } from "react";
-import { toast } from "sonner";
 
 export default function CartPage() {
   const items = useCartStore((s) => s.items);
   const updateQuantity = useCartStore((s) => s.updateQuantity);
   const removeItem = useCartStore((s) => s.removeItem);
-  const applyCoupon = useCartStore((s) => s.applyCoupon);
   const getSubtotal = useCartStore((s) => s.getSubtotal);
-  const getDiscount = useCartStore((s) => s.getDiscount);
   const getTotal = useCartStore((s) => s.getTotal);
-  const getAmountToNextTier = useCartStore((s) => s.getAmountToNextTier);
-  const getNextDiscountTier = useCartStore((s) => s.getNextDiscountTier);
-  const [couponInput, setCouponInput] = useState("");
-  const couponCodes = useActiveCoupons();
 
   const subtotal = getSubtotal();
-  const discount = getDiscount();
   const total = getTotal();
-  const nextTier = getNextDiscountTier();
-  const amountToNext = getAmountToNextTier();
 
   if (items.length === 0) {
     return (
@@ -118,60 +104,11 @@ export default function CartPage() {
           </div>
 
           <div className="sticky top-24 h-fit rounded-xl border border-border p-6">
-            {nextTier && (
-              <div className="mb-4 rounded-lg bg-secondary p-3 text-sm">
-                <p>
-                  You&apos;re only {formatPrice(amountToNext)} away from{" "}
-                  {nextTier.label}.
-                </p>
-                <div className="mt-2 flex justify-between text-xs">
-                  {DISCOUNT_TIERS.map((t) => (
-                    <span key={t.threshold}>
-                      <strong>₹{t.threshold}</strong>
-                      <br />
-                      {t.label}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            <div className="mb-4 flex flex-col gap-2 min-[400px]:flex-row">
-              <Input
-                placeholder="Coupon code"
-                value={couponInput}
-                onChange={(e) => setCouponInput(e.target.value)}
-                className="min-w-0"
-              />
-              <Button
-                variant="outline"
-                className="shrink-0"
-                onClick={async () => {
-                  const applied = await applyCoupon(couponInput);
-                  if (applied) toast.success("Applied!");
-                  else toast.error("Invalid code");
-                }}
-              >
-                Apply
-              </Button>
-            </div>
-            {couponCodes.length > 0 && (
-              <p className="mb-4 text-xs text-muted-foreground">
-                Try: {couponCodes.join(", ")}
-              </p>
-            )}
-
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
                 <span>Subtotal</span>
                 <span>{formatPrice(subtotal)}</span>
               </div>
-              {discount > 0 && (
-                <div className="flex justify-between text-success">
-                  <span>Discount</span>
-                  <span>-{formatPrice(discount)}</span>
-                </div>
-              )}
               <div className="flex justify-between text-sm text-muted-foreground">
                 <span>Shipping</span>
                 <span>{getShippingLabel(subtotal)}</span>

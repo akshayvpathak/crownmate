@@ -114,7 +114,6 @@ export default function AccountOrdersPage() {
                       </p>
                       <p className="mt-1 text-xs text-muted-foreground">
                         {getPaymentMethodLabel(o.paymentMethod)}
-                        {o.couponCode ? ` · Coupon ${o.couponCode}` : ""}
                       </p>
                     </div>
                     <span className="rounded-full bg-muted px-3 py-1 text-xs font-semibold">

@@ -114,15 +114,6 @@ export function OrderSummary({ order }: { order: OrderDetails }) {
               <span>Subtotal</span>
               <span>{formatPrice(order.subtotal)}</span>
             </div>
-            {order.discount > 0 && (
-              <div className="flex justify-between text-success">
-                <span>
-                  Discount
-                  {order.couponCode ? ` (${order.couponCode})` : ""}
-                </span>
-                <span>-{formatPrice(order.discount)}</span>
-              </div>
-            )}
             <div className="flex justify-between text-muted-foreground">
               <span>Shipping</span>
               <span>{order.shipping === 0 ? "Free" : formatPrice(order.shipping)}</span>

@@ -1,28 +1,16 @@
-import {
-  calculateOrderPricing as calculateBackendPricing,
-  getTierDiscountPercent,
-} from "@backend/lib/pricing";
-
-export { getTierDiscountPercent };
+import { calculateOrderPricing as calculateBackendPricing } from "@backend/lib/pricing";
 
 export interface OrderPricing {
   subtotal: number;
-  discount: number;
   shipping: number;
   total: number;
-  effectiveDiscountPercent: number;
 }
 
-export function calculateOrderPricing(
-  subtotal: number,
-  couponDiscountPercent = 0,
-): OrderPricing {
-  const pricing = calculateBackendPricing(subtotal, couponDiscountPercent);
+export function calculateOrderPricing(subtotal: number): OrderPricing {
+  const pricing = calculateBackendPricing(subtotal);
   return {
     subtotal: pricing.subtotalRupees,
-    discount: pricing.discountRupees,
     shipping: pricing.shippingRupees,
     total: pricing.totalRupees,
-    effectiveDiscountPercent: pricing.effectiveDiscountPercent,
   };
 }

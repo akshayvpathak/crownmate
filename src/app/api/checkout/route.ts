@@ -22,7 +22,6 @@ const checkoutRequestSchema = z.object({
       image: z.string(),
     }),
   ),
-  couponCode: z.string().nullable().optional(),
 });
 
 export async function POST(request: Request) {
@@ -41,7 +40,6 @@ export async function POST(request: Request) {
     const result = await processCheckout({
       form: parsed.data.form,
       items: parsed.data.items as CartItem[],
-      couponCode: parsed.data.couponCode,
       userId: authUser?._mongoId ?? null,
     });
 

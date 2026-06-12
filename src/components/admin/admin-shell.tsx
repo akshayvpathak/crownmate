@@ -12,7 +12,6 @@ import {
   Mail,
   Shield,
   Users,
-  Tag,
   Boxes,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -27,7 +26,6 @@ const NAV = [
   { segment: "/newsletter", label: "Newsletter", icon: Mail },
   { segment: "/users", label: "Users", icon: Users },
   { segment: "/products", label: "Products", icon: Boxes },
-  { segment: "/coupons", label: "Coupons", icon: Tag },
 ];
 
 type AdminUser = { name: string; email: string; role: string };
