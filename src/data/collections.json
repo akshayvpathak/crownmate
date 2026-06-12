@@ -3,9 +3,9 @@
     "id": "cm-shop-all",
     "slug": "shop-all",
     "title": "All Products",
-    "description": "Helmet, wand, and massager — the full CrownMate lineup.",
+    "description": "Helmet, wand, massager, and serum stamp — the full CrownMate lineup.",
     "image": null,
-    "productCount": 3
+    "productCount": 4
   },
   {
     "id": "cm-best-sellers",
@@ -13,7 +13,7 @@
     "title": "Best Sellers",
     "description": "What most customers order first.",
     "image": null,
-    "productCount": 3
+    "productCount": 4
   },
   {
     "id": "cm-redlight-helmet",
@@ -37,6 +37,14 @@
     "title": "Scalp Massager",
     "description": "Waterproof kneading massager for daily use.",
     "image": "/images/crownmate/pro-massager/01-hero-shot.png",
+    "productCount": 1
+  },
+  {
+    "id": "cm-serum-stamp",
+    "slug": "serum-stamp",
+    "title": "Serum Stamp",
+    "description": "140-needle stamp with built-in serum delivery.",
+    "image": "/images/crownmate/serum-stamp/01-hero-shot.png",
     "productCount": 1
   }
 ]

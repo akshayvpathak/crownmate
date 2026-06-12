@@ -12,6 +12,6 @@ export async function getCollectionBySlug(slug: string): Promise<Collection | nu
 }
 
 export async function getFeaturedCollections(): Promise<Collection[]> {
-  const featured = ["redlight-helmet", "hf-wand", "scalp-massager"];
+  const featured = ["redlight-helmet", "hf-wand", "scalp-massager", "serum-stamp"];
   return collections.filter((c) => featured.includes(c.slug));
 }

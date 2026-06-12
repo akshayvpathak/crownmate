@@ -50,12 +50,30 @@ export const heroSlides: HeroSlide[] = [
       { icon: "heart", label: "Portable" },
     ],
   },
+  {
+    id: "serum-stamp",
+    eyebrow: "140 needles · built-in serum tank",
+    title: "Stamp serum in, not just on",
+    subtitle:
+      "Tiny channels + integrated delivery. Your growth serum goes where it needs to.",
+    ctaText: "SHOP NOW",
+    ctaLink: "/products/serum-stamp",
+    image: images.hero.serumStamp,
+    mobileImage: images.hero.serumStamp,
+    backgroundColor: "#834fd9",
+    benefits: [
+      { icon: "sparkles", label: "140 needles" },
+      { icon: "droplet", label: "Serum tank" },
+      { icon: "brain", label: "0.25mm depth" },
+    ],
+  },
 ];
 
 export const frequentlyBoughtTogetherSlugs = [
   "laser-hair-growth-helmet",
   "high-frequency-wand",
   "electric-scalp-massager",
+  "serum-stamp",
 ];
 
 export const categoryCards: CategoryCard[] = [
@@ -78,6 +96,13 @@ export const categoryCards: CategoryCard[] = [
     title: "Scalp Massager",
     slug: "scalp-massager",
     image: images.categories.scalpMassager,
+    itemCount: 1,
+  },
+  {
+    id: "4",
+    title: "Serum Stamp",
+    slug: "serum-stamp",
+    image: images.categories.serumStamp,
     itemCount: 1,
   },
 ];
@@ -155,6 +180,31 @@ export const howItWorksSteps = [
         title: "Prep step for everything else",
         description:
           "Massage first, then helmet or wand or serum. It's the cheapest way to make the rest of your routine work harder.",
+      },
+    ],
+  },
+  {
+    id: "04",
+    product: "Crownmate Serum Stamp™",
+    productSlug: "serum-stamp",
+    eyebrow: "140 needles · 10ml tank",
+    title: "Serum infusion stamping",
+    image: images.howItWorks.serumStamp,
+    features: [
+      {
+        title: "Micro-channels for real absorption",
+        description:
+          "Fine needles open tiny paths in the scalp so serum reaches past the surface — not just pooling in your hair.",
+      },
+      {
+        title: "Built-in delivery, no mess",
+        description:
+          "Fill the 10ml chamber, press the bottle, and stamp. Product flows through the head while you work — less waste, more even coverage.",
+      },
+      {
+        title: "Pairs with everything else",
+        description:
+          "Use once or twice a week before bed. A lot of customers stamp first, then rotate helmet or wand nights. It's the step that makes serums worth the money.",
       },
     ],
   },
@@ -244,6 +294,14 @@ export const testimonials: Testimonial[] = [
     content:
       "Keeps it in the bathroom. Quick massage before bed — helps me wind down and my scalp isn't as tight in the mornings.",
   },
+  {
+    id: "4",
+    author: "Karan D.",
+    location: "Pune",
+    product: "Serum Stamp™",
+    content:
+      "I was sceptical but my minoxidil actually soaks in now instead of running down my forehead. Once a week, takes five minutes.",
+  },
 ];
 
 export const faqItems = [
@@ -275,6 +333,6 @@ export const faqItems = [
     id: "5",
     question: "Which device should I buy first?",
     answer:
-      "Helmet if thinning/shedding is the main worry. Wand if you want scalp stimulation plus facial use. Massager if you want something cheap and daily to start with. Not sure? WhatsApp us — we'll ask two questions and point you right.",
+      "Helmet if thinning/shedding is the main worry. Wand if you want scalp stimulation plus facial use. Massager if you want something cheap and daily to start with. Serum Stamp if you already use a growth serum and want it to actually absorb. Not sure? WhatsApp us — we'll ask two questions and point you right.",
   },
 ];

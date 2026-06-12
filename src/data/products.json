@@ -227,5 +227,80 @@
     ],
     "reviewCount": 2,
     "rating": 4.6
+  },
+  {
+    "id": "cm-serum-stamp",
+    "slug": "serum-stamp",
+    "title": "Crownmate Serum Stamp\u2122",
+    "description": "140-needle stamp with a built-in serum tank. Press, stamp, done \u2014 your growth serum actually gets into the scalp.",
+    "fullDescription": "The Serum Stamp is for anyone who uses hair growth serums but feels like most of it sits on the surface. One hundred forty fine needles create tiny channels while the integrated 10ml chamber feeds product straight through \u2014 no dripping, no wasted drops. Twist on the stamp head, dial the depth up to 0.25mm, and stamp evenly across thinning areas. Most people do it once or twice a week right before bed, paired with whatever serum they already use. Rinse the head, pop the silicone plug back in, and it\u2019s ready for next time.",
+    "vendor": "CrownMate",
+    "category": "Scalp Therapy",
+    "tags": ["scalp-therapy", "serum", "microneedling"],
+    "images": [
+      "/images/crownmate/serum-stamp/01-hero-shot.png",
+      "/images/crownmate/serum-stamp/02-man-using.png",
+      "/images/crownmate/serum-stamp/03-how-it-works.png",
+      "/images/crownmate/serum-stamp/04-components.png",
+      "/images/crownmate/serum-stamp/05-how-to-use.png"
+    ],
+    "variants": [
+      {
+        "id": "cm-stamp-default",
+        "title": "Default",
+        "price": 699,
+        "compareAtPrice": null,
+        "available": true,
+        "sku": "CM-SERUM-STAMP",
+        "image": "/images/crownmate/serum-stamp/01-hero-shot.png"
+      }
+    ],
+    "options": [],
+    "specs": [
+      {
+        "label": "Needles",
+        "value": "140 Precision Tips"
+      },
+      {
+        "label": "Serum Chamber",
+        "value": "10ml Integrated Tank"
+      },
+      {
+        "label": "Depth Adjustment",
+        "value": "Up to 0.25mm"
+      },
+      {
+        "label": "Head Attachment",
+        "value": "Twist-Lock Stamp Head"
+      },
+      {
+        "label": "Usage",
+        "value": "1\u20132x Per Week"
+      }
+    ],
+    "productFaqs": [
+      {
+        "question": "Does it hurt?",
+        "answer": "You\u2019ll feel a light prickle, not pain. Start at 0.10mm for your first session and work up to 0.25mm once your scalp gets used to it. If it stings, go shallower."
+      },
+      {
+        "question": "Can I use it with any serum?",
+        "answer": "Yes \u2014 fill the chamber with whatever hair growth serum or tonic you already use. Avoid thick oils that won\u2019t flow through the needles; watery serums work best."
+      },
+      {
+        "question": "How do I clean it after use?",
+        "answer": "Rinse the stamp head under warm water, let it air dry, and put the protective cover back on. Seal leftover serum in the chamber with the silicone plug."
+      },
+      {
+        "question": "How often should I use it?",
+        "answer": "Once or twice a week is enough. More isn\u2019t better \u2014 your scalp needs time to recover between sessions."
+      },
+      {
+        "question": "Does it work with the RedLight Helmet or HF Wand?",
+        "answer": "A lot of customers stamp first, apply serum through the device, then do their helmet or wand session on other nights. It\u2019s the prep step that makes serums actually absorb."
+      }
+    ],
+    "reviewCount": 2,
+    "rating": 4.7
   }
 ]

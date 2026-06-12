@@ -14,6 +14,7 @@ const collectionImages: Record<string, string> = {
   "redlight-helmet": images.categories.redlightHelmet,
   "hf-wand": images.categories.hfWand,
   "scalp-massager": images.categories.scalpMassager,
+  "serum-stamp": images.categories.serumStamp,
   "best-sellers": images.products.redlightHelmet,
   "shop-all": images.products.scalpMassager,
 };

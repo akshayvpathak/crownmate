@@ -7,15 +7,18 @@ const COLLECTION_SLUGS: Record<string, string[]> = {
     "laser-hair-growth-helmet",
     "high-frequency-wand",
     "electric-scalp-massager",
+    "serum-stamp",
   ],
   "best-sellers": [
     "laser-hair-growth-helmet",
     "high-frequency-wand",
     "electric-scalp-massager",
+    "serum-stamp",
   ],
   "redlight-helmet": ["laser-hair-growth-helmet"],
   "hf-wand": ["high-frequency-wand"],
   "scalp-massager": ["electric-scalp-massager"],
+  "serum-stamp": ["serum-stamp"],
 };
 
 async function readProducts(): Promise<Product[]> {

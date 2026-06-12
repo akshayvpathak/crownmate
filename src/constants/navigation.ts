@@ -13,7 +13,7 @@ export const mainNavigation: NavItem[] = [
         label: "All Products",
         href: "/products",
         image: images.categories.redlightHelmet,
-        itemCount: 3,
+        itemCount: 4,
       },
       {
         label: "RedLight Helmet",
@@ -34,10 +34,16 @@ export const mainNavigation: NavItem[] = [
         itemCount: 1,
       },
       {
+        label: "Serum Stamp",
+        href: "/collections/serum-stamp",
+        image: images.categories.serumStamp,
+        itemCount: 1,
+      },
+      {
         label: "Collections",
         href: "/collections",
         image: images.categories.hfWand,
-        itemCount: 5,
+        itemCount: 6,
       },
     ],
   },
@@ -60,6 +66,7 @@ export const footerShopLinks = [
   { label: "RedLight Helmet", href: "/collections/redlight-helmet" },
   { label: "HF Wand", href: "/collections/hf-wand" },
   { label: "Scalp Massager", href: "/collections/scalp-massager" },
+  { label: "Serum Stamp", href: "/collections/serum-stamp" },
   { label: "All Products", href: "/products" },
   { label: "Collections", href: "/collections" },
 ];

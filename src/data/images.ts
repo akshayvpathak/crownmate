@@ -10,22 +10,26 @@ export const images = {
     helmet: img("helmet/01-hero-product-shot.png"),
     hfWand: img("hf-wand/01-hero-shot.png"),
     massager: img("pro-massager/01-hero-shot.png"),
+    serumStamp: img("serum-stamp/01-hero-shot.png"),
     brandStory: img("helmet/02-woman-wearing.png"),
   },
   categories: {
     redlightHelmet: img("helmet/01-hero-product-shot.png"),
     hfWand: img("hf-wand/01-hero-shot.png"),
     scalpMassager: img("pro-massager/01-hero-shot.png"),
+    serumStamp: img("serum-stamp/01-hero-shot.png"),
   },
   products: {
     redlightHelmet: img("helmet/01-hero-product-shot.png"),
     hfWand: img("hf-wand/01-hero-shot.png"),
     scalpMassager: img("pro-massager/01-hero-shot.png"),
+    serumStamp: img("serum-stamp/01-hero-shot.png"),
   },
   howItWorks: {
     helmet: img("helmet/03-key-benefit.png"),
     hfWand: img("hf-wand/03-how-it-works.png"),
     massager: img("pro-massager/03-how-it-works.png"),
+    serumStamp: img("serum-stamp/03-how-it-works.png"),
   },
   marketing: {
     brandStory: img("helmet/02-woman-wearing.png"),
@@ -68,3 +72,11 @@ export const massagerImages = [
 ] as const;
 
 export type ImageKey = keyof typeof images;
+
+export const serumStampImages = [
+  img("serum-stamp/01-hero-shot.png"),
+  img("serum-stamp/02-man-using.png"),
+  img("serum-stamp/03-how-it-works.png"),
+  img("serum-stamp/04-components.png"),
+  img("serum-stamp/05-how-to-use.png"),
+] as const;

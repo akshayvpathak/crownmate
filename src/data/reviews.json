@@ -3,7 +3,7 @@
     "id": "r1",
     "author": "Rahul M.",
     "rating": 5,
-    "content": "Six weeks in and there's noticeably less hair in the drain. I put it on during IPL matches — 20 minutes flies by.",
+    "content": "Six weeks in and there's noticeably less hair in the drain. I put it on during IPL matches \u2014 20 minutes flies by.",
     "date": "2025-09-10",
     "productSlug": "laser-hair-growth-helmet",
     "helpful": 24
@@ -21,7 +21,7 @@
     "id": "r3",
     "author": "Arjun K.",
     "rating": 5,
-    "content": "Bought this on a whim. Now it's part of my night routine — massage, then serum. Scalp feels less tight.",
+    "content": "Bought this on a whim. Now it's part of my night routine \u2014 massage, then serum. Scalp feels less tight.",
     "date": "2025-08-05",
     "productSlug": "electric-scalp-massager",
     "helpful": 17
@@ -39,7 +39,7 @@
     "id": "r5",
     "author": "Vikram P.",
     "rating": 4,
-    "content": "Solid build. Mild tingle on level 2 — start at 1 if you're new to this. Serum seems to absorb faster after a session.",
+    "content": "Solid build. Mild tingle on level 2 \u2014 start at 1 if you're new to this. Serum seems to absorb faster after a session.",
     "date": "2025-07-02",
     "productSlug": "high-frequency-wand",
     "helpful": 9
@@ -52,5 +52,23 @@
     "date": "2025-06-20",
     "productSlug": "electric-scalp-massager",
     "helpful": 11
+  },
+  {
+    "id": "r7",
+    "author": "Karan D.",
+    "rating": 5,
+    "content": "Filled it with my minoxidil, stamped my crown twice a week. No more dripping down my forehead \u2014 product stays where I put it.",
+    "date": "2025-09-28",
+    "productSlug": "serum-stamp",
+    "helpful": 15
+  },
+  {
+    "id": "r8",
+    "author": "Meera L.",
+    "rating": 4,
+    "content": "Start at the lowest depth setting. Took two sessions to get comfortable. Now I use it Sunday nights before my oil \u2014 scalp feels less flaky.",
+    "date": "2025-08-14",
+    "productSlug": "serum-stamp",
+    "helpful": 8
   }
 ]

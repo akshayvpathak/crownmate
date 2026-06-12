@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export const metadata = generatePageMetadata({
   title: "How It Works",
   description:
-    "How the RedLight Helmet, HF Wand, and Pulse Pro Massager fit into a weekly scalp routine.",
+    "How the RedLight Helmet, HF Wand, Pulse Pro Massager, and Serum Stamp fit into a weekly scalp routine.",
   path: "/how-it-works",
 });
 
@@ -20,7 +20,8 @@ export default function HowItWorksPage() {
           <h1 className="text-2xl font-bold md:text-4xl">How it works</h1>
           <p className="mx-auto mt-4 max-w-2xl text-muted-foreground">
             Short version: laser helmet for long-term follicle support, HF wand for
-            scalp stimulation, massager for daily prep. Here&apos;s the longer version.
+            scalp stimulation, massager for daily prep, serum stamp for deeper product
+            absorption. Here&apos;s the longer version.
           </p>
         </div>
       </section>
