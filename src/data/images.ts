@@ -17,6 +17,7 @@ export const images = {
     helmet: img("banners/helmet-banner.png"),
     hfWand: img("banners/hf-wand-banner.png"),
     massager: img("banners/massager-banner.png"),
+    serumStamp: img("banners/serum-stamp-banner.png"),
   },
   categories: {
     redlightHelmet: img("helmet/01-hero-product-shot.png"),

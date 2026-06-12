@@ -32,6 +32,18 @@ export const heroSlides: HeroSlide[] = [
     mobileImage: images.hero.massager,
     backgroundColor: "#e8dff5",
   },
+  {
+    id: "serum-stamp",
+    eyebrow: "Precision Scalp Care",
+    title: "Precision Scalp Care. Target Every Drop. Elevate Your Routine.",
+    subtitle:
+      "Advanced serum stamp technology designed for targeted scalp application.",
+    ctaText: "SHOP NOW",
+    ctaLink: "/products/serum-stamp",
+    image: images.banners.serumStamp,
+    mobileImage: images.hero.serumStamp,
+    backgroundColor: "#e8dff5",
+  },
 ];
 
 export const frequentlyBoughtTogetherSlugs = [
