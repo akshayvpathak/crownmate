@@ -15,7 +15,7 @@ export function OrderSummary({ order }: { order: OrderDetails }) {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-xl border border-border p-4 sm:p-6">
+      <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
             <p className="text-xs font-semibold uppercase tracking-wider text-primary">
@@ -42,14 +42,14 @@ export function OrderSummary({ order }: { order: OrderDetails }) {
         )}
       </div>
 
-      <div className="rounded-xl border border-border p-4 sm:p-6">
+      <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6">
         <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
           Tracking
         </h2>
         <OrderStatusTimeline status={lifecycleStatus} />
       </div>
 
-      <div className="rounded-xl border border-border p-4 sm:p-6">
+      <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6">
         <h2 className="mb-4 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
           Items
         </h2>
@@ -88,7 +88,7 @@ export function OrderSummary({ order }: { order: OrderDetails }) {
       </div>
 
       <div className="grid gap-6 md:grid-cols-2">
-        <div className="rounded-xl border border-border p-4 sm:p-6">
+        <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6">
           <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
             Shipping
           </h2>
@@ -105,7 +105,7 @@ export function OrderSummary({ order }: { order: OrderDetails }) {
           </p>
         </div>
 
-        <div className="rounded-xl border border-border p-4 sm:p-6">
+        <div className="rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-6">
           <h2 className="mb-3 text-sm font-semibold uppercase tracking-wide text-muted-foreground">
             Summary
           </h2>
@@ -114,6 +114,15 @@ export function OrderSummary({ order }: { order: OrderDetails }) {
               <span>Subtotal</span>
               <span>{formatPrice(order.subtotal)}</span>
             </div>
+            {order.discount > 0 && (
+              <div className="flex justify-between text-success">
+                <span>
+                  Discount
+                  {order.couponCode ? ` (${order.couponCode})` : ""}
+                </span>
+                <span>-{formatPrice(order.discount)}</span>
+              </div>
+            )}
             <div className="flex justify-between text-muted-foreground">
               <span>Shipping</span>
               <span>{order.shipping === 0 ? "Free" : formatPrice(order.shipping)}</span>

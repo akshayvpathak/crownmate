@@ -41,5 +41,8 @@ export async function connectMongo(): Promise<typeof mongoose> {
 
   cache.conn = await cache.promise;
 
+  const { ensureDatabaseSeeded } = await import("@backend/lib/db-seed");
+  await ensureDatabaseSeeded();
+
   return cache.conn;
 }

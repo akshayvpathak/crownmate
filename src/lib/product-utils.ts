@@ -32,12 +32,20 @@ export function isInStock(product: Product): boolean {
   return product.variants.some((v) => v.available);
 }
 
+export function getProductReviewCount(product: Pick<Product, "id">): number {
+  let hash = 0;
+  for (let i = 0; i < product.id.length; i++) {
+    hash = product.id.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return Math.abs(hash) % 51;
+}
+
 export function sortProducts(products: Product[], sort: SortOption): Product[] {
   const sorted = [...products];
 
   switch (sort) {
     case "best-selling":
-      return sorted.sort((a, b) => b.reviewCount - a.reviewCount);
+      return sorted.sort((a, b) => getProductReviewCount(b) - getProductReviewCount(a));
     case "price-asc":
       return sorted.sort((a, b) => getMinPrice(a) - getMinPrice(b));
     case "price-desc":

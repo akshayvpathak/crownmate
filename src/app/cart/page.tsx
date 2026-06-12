@@ -2,23 +2,32 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Minus, Plus, Trash2, ShoppingBag } from "lucide-react";
+import { Trash2, ShoppingBag } from "lucide-react";
 import { useCartStore } from "@/store/cart-store";
 import { formatPrice } from "@/lib/utils";
 import { getShippingLabel } from "@/lib/shipping";
+import { useActiveCoupons } from "@/hooks/use-active-coupons";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { FrequentlyBoughtTogether } from "@/components/cart/frequently-bought-together";
+import { QuantityStepper } from "@/components/cart/quantity-stepper";
+import { useState } from "react";
+import { toast } from "sonner";
 
 export default function CartPage() {
   const items = useCartStore((s) => s.items);
   const updateQuantity = useCartStore((s) => s.updateQuantity);
   const removeItem = useCartStore((s) => s.removeItem);
+  const applyCoupon = useCartStore((s) => s.applyCoupon);
   const getSubtotal = useCartStore((s) => s.getSubtotal);
+  const getDiscount = useCartStore((s) => s.getDiscount);
   const getTotal = useCartStore((s) => s.getTotal);
+  const [couponInput, setCouponInput] = useState("");
+  const couponCodes = useActiveCoupons();
 
   const subtotal = getSubtotal();
+  const discount = getDiscount();
   const total = getTotal();
-
   if (items.length === 0) {
     return (
       <div className="section-padding">
@@ -71,28 +80,21 @@ export default function CartPage() {
                   )}
                   <p className="font-semibold">{formatPrice(item.price)}</p>
                   <div className="mt-auto flex items-center gap-2">
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="h-8 w-8"
-                      onClick={() => updateQuantity(item.variantId, item.quantity - 1)}
-                    >
-                      <Minus className="h-3 w-3" />
-                    </Button>
-                    <span>{item.quantity}</span>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="h-8 w-8"
-                      onClick={() => updateQuantity(item.variantId, item.quantity + 1)}
-                    >
-                      <Plus className="h-3 w-3" />
-                    </Button>
+                    <QuantityStepper
+                      quantity={item.quantity}
+                      onDecrease={() =>
+                        updateQuantity(item.variantId, item.quantity - 1)
+                      }
+                      onIncrease={() =>
+                        updateQuantity(item.variantId, item.quantity + 1)
+                      }
+                    />
                     <Button
                       variant="ghost"
                       size="icon"
-                      className="ml-auto text-destructive"
+                      className="ml-auto h-8 w-8 min-h-0 min-w-0 rounded-lg text-destructive hover:bg-destructive/10"
                       onClick={() => removeItem(item.variantId)}
+                      aria-label="Remove item"
                     >
                       <Trash2 className="h-4 w-4" />
                     </Button>
@@ -104,11 +106,42 @@ export default function CartPage() {
           </div>
 
           <div className="sticky top-24 h-fit rounded-xl border border-border p-6">
+            <div className="mb-4 flex flex-col gap-2 min-[400px]:flex-row">
+              <Input
+                placeholder="Coupon code"
+                value={couponInput}
+                onChange={(e) => setCouponInput(e.target.value)}
+                className="min-w-0"
+              />
+              <Button
+                variant="outline"
+                className="shrink-0"
+                onClick={async () => {
+                  const result = await applyCoupon(couponInput);
+                  if (result.ok) toast.success("Applied!");
+                  else toast.error(result.error);
+                }}
+              >
+                Apply
+              </Button>
+            </div>
+            {couponCodes.length > 0 && (
+              <p className="mb-4 text-xs text-muted-foreground">
+                Try: {couponCodes.join(", ")}
+              </p>
+            )}
+
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
                 <span>Subtotal</span>
                 <span>{formatPrice(subtotal)}</span>
               </div>
+              {discount > 0 && (
+                <div className="flex justify-between text-success">
+                  <span>Discount</span>
+                  <span>-{formatPrice(discount)}</span>
+                </div>
+              )}
               <div className="flex justify-between text-sm text-muted-foreground">
                 <span>Shipping</span>
                 <span>{getShippingLabel(subtotal)}</span>
@@ -119,7 +152,7 @@ export default function CartPage() {
               </div>
             </div>
 
-            <Button className="mt-6 w-full" size="lg" asChild>
+            <Button className="mt-6 w-full rounded-lg" size="lg" asChild>
               <Link href="/checkout">Checkout</Link>
             </Button>
           </div>

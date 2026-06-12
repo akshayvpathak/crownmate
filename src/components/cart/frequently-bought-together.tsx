@@ -9,7 +9,6 @@ import type { Product } from "@/types";
 import { useCartStore } from "@/store/cart-store";
 import { useUIStore } from "@/store/ui-store";
 import { formatPrice } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
 const products = productsData as Product[];
@@ -102,15 +101,14 @@ export function FrequentlyBoughtTogether({
                 <p className="mt-1 text-xs font-semibold">
                   {formatPrice(variant?.price ?? 0)}
                 </p>
-                <Button
-                  size="sm"
-                  variant="outline"
-                  className="mt-2 h-7 w-full text-xs"
+                <button
+                  type="button"
                   onClick={() => handleAdd(product)}
+                  className="mt-2 flex w-full items-center justify-center gap-1 rounded-md border border-border bg-secondary/60 py-1.5 text-[11px] font-medium text-foreground transition-all hover:border-foreground hover:bg-foreground hover:text-white"
                 >
-                  <Plus className="mr-1 h-3 w-3" />
+                  <Plus className="h-3 w-3" />
                   Add
-                </Button>
+                </button>
               </div>
             </div>
           );

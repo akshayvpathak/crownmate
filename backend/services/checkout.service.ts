@@ -2,6 +2,7 @@ import {
   enrichLineItemsWithCatalogSnapshot,
   validateCartItems,
 } from "@backend/lib/catalog";
+import { validateCouponCode } from "@backend/lib/coupons";
 import { loadProducts } from "@backend/lib/product-store";
 import { connectMongo, isMongoConfigured } from "@backend/lib/mongodb";
 import { generateOrderNumber } from "@backend/lib/order-number";
@@ -25,6 +26,7 @@ export type CheckoutResult =
 export async function processCheckout(input: {
   form: CheckoutFormData;
   items: CartItem[];
+  couponCode?: string | null;
   userId?: mongoose.Types.ObjectId | null;
 }): Promise<CheckoutResult> {
   const cartResult = await validateCartItems(input.items);
@@ -32,15 +34,36 @@ export async function processCheckout(input: {
     return { ok: false, error: cartResult.error, status: 400 };
   }
 
-  const pricing = calculateOrderPricing(cartResult.subtotalRupees);
+  let couponDiscountPercent = 0;
+  let appliedCouponCode: string | null = null;
+
+  if (input.couponCode?.trim()) {
+    const couponResult = await validateCouponCode(input.couponCode);
+    if (!couponResult.valid) {
+      return {
+        ok: false,
+        error: couponResult.error ?? "Invalid coupon code",
+        status: 400,
+      };
+    }
+    couponDiscountPercent = couponResult.discountPercent;
+    appliedCouponCode = couponResult.code;
+  }
+
+  const pricing = calculateOrderPricing(
+    cartResult.subtotalRupees,
+    couponDiscountPercent,
+  );
   const products = await loadProducts();
   const snapshotItems = enrichLineItemsWithCatalogSnapshot(cartResult.items, products);
   const orderNumber = generateOrderNumber();
   const paymentMethod = input.form.paymentMethod as PaymentMethod;
+  const isCod = paymentMethod === "cod";
+
   let razorpayOrderId: string | undefined;
   let razorpayKeyId: string | undefined;
 
-  if (isRazorpayConfigured()) {
+  if (!isCod && isRazorpayConfigured()) {
     try {
       const rzOrder = await createRazorpayOrder(pricing.totalPaise, orderNumber, {
         orderNumber,
@@ -52,7 +75,7 @@ export async function processCheckout(input: {
       const message = error instanceof Error ? error.message : "Payment provider error";
       return { ok: false, error: message, status: 502 };
     }
-  } else {
+  } else if (!isCod) {
     razorpayOrderId = `order_${orderNumber}`;
   }
 
@@ -76,20 +99,24 @@ export async function processCheckout(input: {
     return { ok: false, error: message, status: 503 };
   }
 
-  const initialStatus = "pending_payment";
+  const initialStatus = isCod ? "processing" : "pending_payment";
   const doc = await OrderModel.create({
     orderNumber,
     userId: input.userId ?? undefined,
     razorpayOrderId,
     status: initialStatus,
-    statusHistory: createInitialStatusHistory(initialStatus, "Awaiting online payment"),
+    statusHistory: createInitialStatusHistory(
+      initialStatus,
+      isCod ? "Cash on delivery order placed" : "Awaiting online payment",
+    ),
     paymentMethod,
     subtotalPaise: pricing.subtotalPaise,
     discountPaise: pricing.discountPaise,
     shippingPaise: pricing.shippingPaise,
     amountPaise: pricing.totalPaise,
     currency: "INR",
-    discountPercent: 0,
+    couponCode: appliedCouponCode ?? undefined,
+    discountPercent: pricing.effectiveDiscountPercent,
     catalogSnapshotAt: new Date(),
     customerFirstName: customerName.firstName,
     customerLastName: customerName.lastName,

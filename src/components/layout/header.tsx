@@ -55,10 +55,10 @@ export function Header() {
             <Image
               src={images.brand.logo}
               alt={SITE_CONFIG.name}
-              width={100}
-              height={40}
+              width={150}
+              height={100}
               priority
-              className="h-9 w-auto"
+              className="h-14 w-auto"
             />
           </Link>
         </div>
@@ -72,10 +72,10 @@ export function Header() {
           <Image
             src={images.brand.logo}
             alt={SITE_CONFIG.name}
-            width={90}
-            height={36}
+            width={120}
+            height={80}
             priority
-            className="h-8 w-auto"
+            className="h-11 w-auto sm:h-12"
           />
         </Link>
 

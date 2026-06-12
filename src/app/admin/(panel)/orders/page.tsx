@@ -314,11 +314,21 @@ function AdminOrdersPageContent() {
                       </td>
                       <td className="px-4 py-4 align-top">
                         <p>{getPaymentMethodLabel(o.paymentMethod)}</p>
+                        {o.couponCode && (
+                          <p className="mt-1 text-xs text-success">
+                            Coupon: {o.couponCode}
+                          </p>
+                        )}
                       </td>
                       <td className="px-4 py-4 align-top">
                         <p className="font-semibold">
                           {formatPrice(o.amountPaise / 100)}
                         </p>
+                        {o.discountPaise > 0 && (
+                          <p className="text-xs text-success">
+                            -{formatPrice(o.discountPaise / 100)} discount
+                          </p>
+                        )}
                         <p className="text-xs text-muted-foreground">
                           Ship:{" "}
                           {o.shippingPaise === 0

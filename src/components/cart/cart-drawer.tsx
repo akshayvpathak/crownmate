@@ -6,8 +6,12 @@ import { Minus, Plus, Trash2, X } from "lucide-react";
 import { useCartStore } from "@/store/cart-store";
 import { useUIStore } from "@/store/ui-store";
 import { formatPrice } from "@/lib/utils";
+import { useActiveCoupons } from "@/hooks/use-active-coupons";
 import { getShippingLabel } from "@/lib/shipping";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useState } from "react";
+import { toast } from "sonner";
 import { FrequentlyBoughtTogether } from "@/components/cart/frequently-bought-together";
 
 export function CartDrawer() {
@@ -15,11 +19,25 @@ export function CartDrawer() {
   const items = useCartStore((s) => s.items);
   const updateQuantity = useCartStore((s) => s.updateQuantity);
   const removeItem = useCartStore((s) => s.removeItem);
+  const applyCoupon = useCartStore((s) => s.applyCoupon);
+  const couponCode = useCartStore((s) => s.couponCode);
   const getSubtotal = useCartStore((s) => s.getSubtotal);
+  const getDiscount = useCartStore((s) => s.getDiscount);
   const getTotal = useCartStore((s) => s.getTotal);
+  const [couponInput, setCouponInput] = useState("");
+  const couponCodes = useActiveCoupons();
 
   const subtotal = getSubtotal();
+  const discount = getDiscount();
   const total = getTotal();
+  const handleApplyCoupon = async () => {
+    const result = await applyCoupon(couponInput);
+    if (result.ok) {
+      toast.success("Coupon applied!");
+    } else {
+      toast.error(result.error);
+    }
+  };
 
   if (!isCartOpen) return null;
 
@@ -116,16 +134,41 @@ export function CartDrawer() {
               ))}
             </ul>
           )}
+
           <FrequentlyBoughtTogether />
         </div>
 
         {items.length > 0 && (
           <div className="border-t border-border p-4">
+            <p className="mb-2 text-[10px] text-muted-foreground">
+              {couponCodes.length > 0 && `Coupons: ${couponCodes.join(", ")}`}
+            </p>
+            <div className="mb-3 flex gap-2">
+              <Input
+                placeholder="Coupon code"
+                value={couponInput}
+                onChange={(e) => setCouponInput(e.target.value)}
+                aria-label="Coupon code"
+              />
+              <Button variant="outline" onClick={handleApplyCoupon}>
+                Apply
+              </Button>
+            </div>
+            {couponCode && (
+              <p className="mb-2 text-xs text-success">Coupon {couponCode} applied</p>
+            )}
+
             <div className="space-y-1 text-sm">
               <div className="flex justify-between">
                 <span>Subtotal</span>
                 <span>{formatPrice(subtotal)}</span>
               </div>
+              {discount > 0 && (
+                <div className="flex justify-between text-success">
+                  <span>Discount</span>
+                  <span>-{formatPrice(discount)}</span>
+                </div>
+              )}
               <div className="flex justify-between text-muted-foreground">
                 <span>Shipping</span>
                 <span>{getShippingLabel(subtotal)}</span>
@@ -135,6 +178,7 @@ export function CartDrawer() {
                 <span>{formatPrice(total)}</span>
               </div>
             </div>
+
             <div className="mt-4 space-y-2">
               <Button className="w-full" asChild>
                 <Link href="/checkout" onClick={closeCart}>

@@ -6,6 +6,7 @@ import { Star } from "lucide-react";
 import type { Product } from "@/types";
 import { Button } from "@/components/ui/button";
 import { formatPrice, calculateDiscount, cn } from "@/lib/utils";
+import { getProductReviewCount } from "@/lib/product-utils";
 import { useCartStore } from "@/store/cart-store";
 import { toast } from "sonner";
 
@@ -94,7 +95,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
             ))}
           </div>
           <span className="ml-0.5 hidden min-[360px]:inline">
-            {product.reviewCount} reviews
+            {getProductReviewCount(product)} reviews
           </span>
         </div>
 

@@ -15,6 +15,7 @@ import type { Product, Review } from "@/types";
 import { useCartStore } from "@/store/cart-store";
 import { useProductSelectionStore } from "@/store/product-selection-store";
 import { formatPrice, calculateDiscount, cn } from "@/lib/utils";
+import { getProductReviewCount } from "@/lib/product-utils";
 import { getDeliveryEstimate } from "@/lib/delivery-estimate";
 import { getDeliveryRangeText } from "@/lib/shipping";
 import { SITE_CONFIG, WHATSAPP_URL } from "@/constants/assets";
@@ -126,7 +127,7 @@ export function ProductDetail({
                 ))}
               </div>
               <span className="text-sm text-muted-foreground">
-                ({product.reviewCount} reviews)
+                ({getProductReviewCount(product)} reviews)
               </span>
             </div>
 
@@ -354,7 +355,7 @@ export function ProductDetail({
       <ProductReviews
         reviews={reviews}
         rating={product.rating}
-        reviewCount={reviews.length > 0 ? reviews.length : product.reviewCount}
+        reviewCount={getProductReviewCount(product)}
       />
       <RelatedProducts products={relatedProducts} />
 

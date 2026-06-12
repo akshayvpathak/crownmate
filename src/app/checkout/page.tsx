@@ -26,8 +26,10 @@ import type { CheckoutOrder } from "@/types";
 export default function CheckoutPage() {
   const router = useRouter();
   const items = useCartStore((s) => s.items);
+  const couponCode = useCartStore((s) => s.couponCode);
   const getTotal = useCartStore((s) => s.getTotal);
   const getSubtotal = useCartStore((s) => s.getSubtotal);
+  const getDiscount = useCartStore((s) => s.getDiscount);
   const clearCart = useCartStore((s) => s.clearCart);
   const addOrder = useOrderStore((s) => s.addOrder);
 
@@ -59,6 +61,7 @@ export default function CheckoutPage() {
         body: JSON.stringify({
           form: data,
           items,
+          couponCode,
         }),
       });
 
@@ -84,6 +87,8 @@ export default function CheckoutPage() {
         return;
       }
 
+      let paymentHandled = false;
+
       await openRazorpayCheckout({
         key: payload.razorpayKeyId!,
         amount: Math.round(order.total * 100),
@@ -97,6 +102,7 @@ export default function CheckoutPage() {
           contact: data.phone,
         },
         handler: async (paymentResponse) => {
+          paymentHandled = true;
           const verifyResponse = await fetch("/api/payments/verify", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
@@ -122,8 +128,8 @@ export default function CheckoutPage() {
         },
         modal: {
           ondismiss: () => {
-            toast.message("Payment cancelled. Your order is saved as pending.");
-            completeOrder(order);
+            if (paymentHandled) return;
+            toast.error("Payment cancelled. No order was placed — you can try again.");
           },
         },
       });
@@ -268,6 +274,12 @@ export default function CheckoutPage() {
                 <span>Subtotal</span>
                 <span>{formatPrice(getSubtotal())}</span>
               </div>
+              {getDiscount() > 0 && (
+                <div className="flex justify-between text-success">
+                  <span>Discount{couponCode ? ` (${couponCode})` : ""}</span>
+                  <span>-{formatPrice(getDiscount())}</span>
+                </div>
+              )}
               <div className="flex justify-between text-muted-foreground">
                 <span>Shipping</span>
                 <span>{getShippingLabel(subtotal)}</span>
@@ -278,7 +290,8 @@ export default function CheckoutPage() {
               </div>
             </div>
             <p className="mt-3 text-xs text-muted-foreground">
-              Final price is calculated on our server before payment.
+              Final price is calculated on our server. Razorpay only receives the
+              discounted total.
             </p>
             <Button
               type="submit"
