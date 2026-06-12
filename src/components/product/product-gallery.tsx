@@ -90,14 +90,14 @@ export function ProductGallery({
           <CarouselContent className="ml-0">
             {images.map((img, i) => (
               <CarouselItem key={`${img}-${i}`} className="basis-full pl-0">
-                <div className="product-gallery-slide relative h-[min(88vw,460px)] w-full overflow-hidden rounded-2xl bg-white sm:h-[min(72vw,520px)] lg:aspect-square lg:h-auto lg:max-h-[600px]">
+                <div className="product-gallery-slide relative aspect-square w-full max-h-[min(100vw,520px)] overflow-hidden rounded-2xl bg-white sm:max-h-[min(90vw,560px)] lg:aspect-square lg:h-auto lg:max-h-[600px]">
                   <Image
                     src={img}
                     alt={`${title} — image ${i + 1}`}
                     fill
                     priority={i === 0}
                     sizes="(max-width: 1024px) 100vw, 560px"
-                    className="object-contain object-center p-2 sm:p-3 lg:p-4"
+                    className="object-contain object-center p-1.5 sm:p-3 lg:p-4"
                   />
                 </div>
               </CarouselItem>

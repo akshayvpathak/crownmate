@@ -13,11 +13,16 @@ import {
 } from "@/components/ui/carousel";
 import { cn } from "@/lib/utils";
 
-function HeroDots() {
+function HeroDots({ className }: { className?: string }) {
   const { selectedIndex, scrollSnaps, scrollTo } = useCarousel();
 
   return (
-    <div className="absolute bottom-3 left-0 right-0 flex items-center justify-center gap-2 md:bottom-4">
+    <div
+      className={cn(
+        "absolute bottom-3 left-0 right-0 flex items-center justify-center gap-2 md:bottom-4",
+        className,
+      )}
+    >
       {scrollSnaps.map((_, index) => (
         <button
           key={index}
@@ -49,9 +54,44 @@ export function HeroBanner({ slides }: { slides: HeroSlide[] }) {
         <CarouselContent className="ml-0">
           {slides.map((slide, index) => (
             <CarouselItem key={slide.id} className="pl-0">
+              {/* Mobile: product image + readable HTML copy */}
               <Link
                 href={slide.ctaLink}
-                className="relative block aspect-[1024/455] w-full overflow-hidden bg-[#e8dff5]"
+                className="relative flex flex-col bg-[#e8dff5] md:hidden"
+                aria-label={`${slide.title} — ${slide.ctaText}`}
+              >
+                <div className="relative aspect-square w-full max-h-[min(72vw,340px)] overflow-hidden">
+                  <Image
+                    src={slide.mobileImage ?? slide.image}
+                    alt={slide.title}
+                    fill
+                    priority={index === 0}
+                    sizes="100vw"
+                    className="object-contain object-center p-3"
+                  />
+                </div>
+                <div className="px-4 pb-10 pt-3 text-center">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-primary">
+                    {slide.eyebrow}
+                  </p>
+                  <h2 className="mt-1.5 text-lg font-bold leading-snug text-foreground">
+                    {slide.title}
+                  </h2>
+                  {slide.subtitle && (
+                    <p className="mt-1.5 text-sm text-muted-foreground">
+                      {slide.subtitle}
+                    </p>
+                  )}
+                  <span className="mt-3 inline-flex items-center rounded-full bg-foreground px-5 py-2 text-xs font-semibold uppercase tracking-wide text-white">
+                    {slide.ctaText}
+                  </span>
+                </div>
+              </Link>
+
+              {/* Desktop: full-width designed banner */}
+              <Link
+                href={slide.ctaLink}
+                className="relative hidden aspect-[1024/455] w-full overflow-hidden bg-[#e8dff5] md:block"
                 aria-label={`${slide.title} — ${slide.ctaText}`}
               >
                 <Image
@@ -69,11 +109,11 @@ export function HeroBanner({ slides }: { slides: HeroSlide[] }) {
 
         <CarouselPrevious
           variant="ghost"
-          className="left-2 top-1/2 h-9 w-9 -translate-y-1/2 border-0 bg-white/80 text-foreground shadow-md hover:bg-white md:left-4 md:h-10 md:w-10"
+          className="left-2 top-[min(36vw,170px)] h-8 w-8 -translate-y-1/2 border-0 bg-white/80 text-foreground shadow-md hover:bg-white md:left-4 md:top-1/2 md:h-10 md:w-10"
         />
         <CarouselNext
           variant="ghost"
-          className="right-2 top-1/2 h-9 w-9 -translate-y-1/2 border-0 bg-white/80 text-foreground shadow-md hover:bg-white md:right-4 md:h-10 md:w-10"
+          className="right-2 top-[min(36vw,170px)] h-8 w-8 -translate-y-1/2 border-0 bg-white/80 text-foreground shadow-md hover:bg-white md:right-4 md:top-1/2 md:h-10 md:w-10"
         />
         <HeroDots />
       </Carousel>

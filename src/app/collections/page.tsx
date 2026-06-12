@@ -33,7 +33,7 @@ export default async function CollectionsPage() {
               href={`/collections/${collection.slug}`}
               className="group overflow-hidden rounded-2xl border border-border bg-background transition-shadow hover:shadow-lg"
             >
-              <div className="relative aspect-[16/9] bg-secondary">
+              <div className="relative aspect-[4/3] bg-secondary sm:aspect-[16/9]">
                 <Image
                   src={
                     collectionImages[collection.slug] ??
@@ -43,7 +43,7 @@ export default async function CollectionsPage() {
                   alt={collection.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 33vw"
-                  className="object-cover transition-transform group-hover:scale-105"
+                  className="object-contain sm:object-cover transition-transform group-hover:scale-105"
                   loading="lazy"
                 />
               </div>

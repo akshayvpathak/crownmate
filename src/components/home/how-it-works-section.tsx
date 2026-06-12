@@ -35,13 +35,13 @@ export function HowItWorksSection({ steps }: { steps: HowItWorksStep[] }) {
                 index % 2 === 1 ? "md:[&>div:first-child]:order-2" : ""
               }`}
             >
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-white">
+              <div className="relative aspect-square overflow-hidden rounded-2xl bg-white sm:aspect-[4/3]">
                 <Image
                   src={step.image}
                   alt={step.product}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-contain p-3"
+                  className="object-contain p-2 sm:p-3"
                   loading="lazy"
                 />
               </div>

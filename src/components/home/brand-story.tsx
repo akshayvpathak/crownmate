@@ -8,13 +8,13 @@ export function BrandStory() {
     <section className="section-padding bg-white">
       <div className="container-site">
         <div className="grid items-center gap-6 md:grid-cols-2 md:gap-10">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl bg-secondary">
+          <div className="relative aspect-square overflow-hidden rounded-2xl bg-secondary sm:aspect-[4/3]">
             <Image
               src={images.marketing.brandStory}
               alt="CrownMate self-care routine"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="object-cover"
+              className="object-contain sm:object-cover"
               loading="lazy"
             />
           </div>

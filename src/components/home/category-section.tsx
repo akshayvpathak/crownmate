@@ -46,7 +46,7 @@ export function CategorySection({ cards }: { cards: CategoryCard[] }) {
         </div>
 
         {/* Desktop: grid */}
-        <div className="hidden grid-cols-3 gap-6 md:grid">
+        <div className="hidden grid-cols-2 gap-6 md:grid lg:grid-cols-4">
           {cards.map((cat) => (
             <Link
               key={cat.id}

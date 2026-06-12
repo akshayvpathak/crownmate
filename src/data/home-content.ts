@@ -9,6 +9,7 @@ export const heroSlides: HeroSlide[] = [
     ctaText: "SHOP NOW",
     ctaLink: "/products/laser-hair-growth-helmet",
     image: images.banners.helmet,
+    mobileImage: images.hero.helmet,
     backgroundColor: "#e8dff5",
   },
   {
@@ -18,6 +19,7 @@ export const heroSlides: HeroSlide[] = [
     ctaText: "SHOP NOW",
     ctaLink: "/products/high-frequency-wand",
     image: images.banners.hfWand,
+    mobileImage: images.hero.hfWand,
     backgroundColor: "#e8dff5",
   },
   {
@@ -27,6 +29,7 @@ export const heroSlides: HeroSlide[] = [
     ctaText: "SHOP NOW",
     ctaLink: "/products/electric-scalp-massager",
     image: images.banners.massager,
+    mobileImage: images.hero.massager,
     backgroundColor: "#e8dff5",
   },
 ];

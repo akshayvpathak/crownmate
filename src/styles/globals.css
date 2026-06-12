@@ -51,10 +51,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-img,
+img:not([data-nimg]),
 video {
   max-width: 100%;
   height: auto;
+}
+
+/* Next.js fill images must fill their positioned parent */
+img[data-nimg="fill"] {
+  height: 100% !important;
+  width: 100% !important;
 }
 
 .container-site {
