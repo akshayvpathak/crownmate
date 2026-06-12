@@ -19,7 +19,7 @@ export const checkoutSchema = z.object({
   city: z.string().min(2, "City is required"),
   state: z.string().min(2, "State is required"),
   pincode: z.string().regex(/^\d{6}$/, "Please enter a valid 6-digit pincode"),
-  paymentMethod: z.enum(["cod", "upi", "card"]),
+  paymentMethod: z.enum(["upi", "card"]),
 });
 
 export type CheckoutFormData = z.infer<typeof checkoutSchema>;

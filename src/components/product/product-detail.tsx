@@ -179,7 +179,7 @@ export function ProductDetail({
                 <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0" />
                 <div>
                   <p className="font-medium">Secure checkout</p>
-                  <p className="text-xs text-muted-foreground">UPI, cards, COD</p>
+                  <p className="text-xs text-muted-foreground">UPI and cards</p>
                 </div>
               </div>
               <div className="flex items-start gap-2 rounded-xl border border-border p-3 text-sm">

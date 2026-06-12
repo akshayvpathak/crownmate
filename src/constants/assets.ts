@@ -26,4 +26,4 @@ export const SHIPPING_CONFIG = {
 
 export const ANNOUNCEMENT_MESSAGES = ["Free shipping on orders above ₹499"] as const;
 
-export const PAYMENT_METHODS = ["visa", "mastercard", "rupay", "upi", "cod"] as const;
+export const PAYMENT_METHODS = ["visa", "mastercard", "rupay", "upi"] as const;

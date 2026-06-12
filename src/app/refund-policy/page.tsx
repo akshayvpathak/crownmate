@@ -38,7 +38,7 @@ export default function RefundPolicyPage() {
         <h2>Refund timing</h2>
         <p>
           Approved refunds are processed within 7–10 business days after we receive and
-          inspect the product. COD orders are refunded via UPI or bank transfer.
+          inspect the product. Refunds are processed via UPI or bank transfer.
         </p>
         <p>
           For shipping timelines, see our{" "}

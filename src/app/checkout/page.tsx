@@ -40,7 +40,7 @@ export default function CheckoutPage() {
     formState: { errors, isSubmitting },
   } = useForm<CheckoutFormData>({
     resolver: zodResolver(checkoutSchema),
-    defaultValues: { paymentMethod: "cod" },
+    defaultValues: { paymentMethod: "upi" },
   });
 
   const completeOrder = (order: CheckoutOrder) => {
@@ -74,9 +74,7 @@ export default function CheckoutPage() {
       }
 
       const order = payload.order;
-      const isRazorpay = data.paymentMethod !== "cod";
       const canPayOnline =
-        isRazorpay &&
         payload.razorpayKeyId &&
         order.paymentIntent.razorpayOrderId &&
         !order.paymentIntent.razorpayOrderId.startsWith("order_CM-");
@@ -237,7 +235,7 @@ export default function CheckoutPage() {
             <section>
               <h2 className="mb-4 text-lg font-semibold">Payment Method</h2>
               <Select
-                defaultValue="cod"
+                defaultValue="upi"
                 onValueChange={(v) =>
                   setValue("paymentMethod", v as CheckoutFormData["paymentMethod"])
                 }
@@ -246,7 +244,6 @@ export default function CheckoutPage() {
                   <SelectValue />
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value="cod">Cash on Delivery</SelectItem>
                   <SelectItem value="upi">UPI (Razorpay)</SelectItem>
                   <SelectItem value="card">Credit/Debit Card (Razorpay)</SelectItem>
                 </SelectContent>

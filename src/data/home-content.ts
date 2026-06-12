@@ -202,7 +202,7 @@ export const benefitFeatures: Feature[] = [
   {
     id: "2",
     title: "Secure payments",
-    description: "UPI, cards, COD — whatever you prefer. Razorpay handles checkout.",
+    description: "UPI and cards via Razorpay — secure checkout.",
     icon: "lock",
   },
   {

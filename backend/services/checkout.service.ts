@@ -37,12 +37,10 @@ export async function processCheckout(input: {
   const snapshotItems = enrichLineItemsWithCatalogSnapshot(cartResult.items, products);
   const orderNumber = generateOrderNumber();
   const paymentMethod = input.form.paymentMethod as PaymentMethod;
-  const isCod = paymentMethod === "cod";
-
   let razorpayOrderId: string | undefined;
   let razorpayKeyId: string | undefined;
 
-  if (!isCod && isRazorpayConfigured()) {
+  if (isRazorpayConfigured()) {
     try {
       const rzOrder = await createRazorpayOrder(pricing.totalPaise, orderNumber, {
         orderNumber,
@@ -54,7 +52,7 @@ export async function processCheckout(input: {
       const message = error instanceof Error ? error.message : "Payment provider error";
       return { ok: false, error: message, status: 502 };
     }
-  } else if (!isCod) {
+  } else {
     razorpayOrderId = `order_${orderNumber}`;
   }
 
@@ -78,16 +76,13 @@ export async function processCheckout(input: {
     return { ok: false, error: message, status: 503 };
   }
 
-  const initialStatus = isCod ? "processing" : "pending_payment";
+  const initialStatus = "pending_payment";
   const doc = await OrderModel.create({
     orderNumber,
     userId: input.userId ?? undefined,
     razorpayOrderId,
     status: initialStatus,
-    statusHistory: createInitialStatusHistory(
-      initialStatus,
-      isCod ? "Cash on delivery order placed" : "Awaiting online payment",
-    ),
+    statusHistory: createInitialStatusHistory(initialStatus, "Awaiting online payment"),
     paymentMethod,
     subtotalPaise: pricing.subtotalPaise,
     discountPaise: pricing.discountPaise,
