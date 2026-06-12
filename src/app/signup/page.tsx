@@ -41,47 +41,84 @@ export default function SignupPage() {
 
   return (
     <AuthShell
+      variant="signup"
+      step={{ current: 1, total: 2, label: "Your details" }}
       title="Create account"
       subtitle="We'll email you a one-time code to verify your address."
     >
-      <form onSubmit={onSubmit} className="space-y-4">
+      <form onSubmit={onSubmit} className="space-y-3.5 sm:space-y-4">
         <div>
-          <label className="text-sm font-medium">Full name</label>
+          <label htmlFor="signup-name" className="text-sm font-medium">
+            Full name
+          </label>
           <Input
+            id="signup-name"
             className="mt-1.5"
             required
             value={name}
             onChange={(e) => setName(e.target.value)}
+            autoComplete="name"
+            placeholder="Your name"
           />
         </div>
         <div>
-          <label className="text-sm font-medium">Email</label>
+          <label htmlFor="signup-email" className="text-sm font-medium">
+            Email
+          </label>
           <Input
+            id="signup-email"
             className="mt-1.5"
             type="email"
             required
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             autoComplete="email"
+            placeholder="you@example.com"
           />
         </div>
         <div>
-          <label className="text-sm font-medium">Password</label>
+          <label htmlFor="signup-password" className="text-sm font-medium">
+            Password
+          </label>
           <Input
+            id="signup-password"
             className="mt-1.5"
             type="password"
             required
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             autoComplete="new-password"
+            placeholder="Create a password"
           />
-          <p className="mt-1 text-xs text-muted-foreground">
+          <p className="mt-1.5 text-xs text-muted-foreground">
             At least 8 characters, with letters and numbers.
           </p>
         </div>
-        <Button type="submit" className="w-full" disabled={loading}>
+        <Button
+          type="submit"
+          variant="primary"
+          className="mt-1 w-full"
+          disabled={loading}
+        >
           {loading ? "Sending code…" : "Continue"}
         </Button>
+        <p className="text-center text-xs leading-relaxed text-muted-foreground">
+          By creating an account, you agree to our{" "}
+          <Link
+            href="/terms-and-conditions"
+            className="font-medium text-primary hover:underline"
+          >
+            Terms
+          </Link>{" "}
+          and{" "}
+          <Link
+            href="/privacy-policy"
+            className="font-medium text-primary hover:underline"
+          >
+            Privacy Policy
+          </Link>
+          .
+        </p>
         <p className="text-center text-sm text-muted-foreground">
           Already have an account?{" "}
           <Link href="/login" className="font-medium text-primary hover:underline">

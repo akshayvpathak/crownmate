@@ -16,6 +16,8 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
   const isMobile = useMediaQuery("(max-width: 767px)");
   const pathname = usePathname();
   const isAdminRoute = matchesAdminUrlPath(pathname);
+  const isAuthRoute =
+    pathname === "/login" || pathname === "/signup" || pathname === "/verify-email";
 
   if (isAdminRoute) {
     return <main className="min-h-screen">{children}</main>;
@@ -26,7 +28,7 @@ export function SiteLayout({ children }: { children: React.ReactNode }) {
       <AnnouncementBar />
       <Header />
       <main className="min-h-screen has-mobile-sticky-bar md:pb-0">{children}</main>
-      <Footer />
+      {!isAuthRoute && <Footer />}
       <WhatsAppButton />
       <SearchDrawer />
       {isMobile ? <MobileCartDrawer /> : <CartDrawer />}

@@ -61,6 +61,8 @@ function VerifyEmailForm() {
 
   return (
     <AuthShell
+      variant="verify"
+      step={{ current: 2, total: 2, label: "Verify email" }}
       title="Verify email"
       subtitle="Enter the 6-digit code we sent to your inbox."
     >
@@ -87,7 +89,7 @@ function VerifyEmailForm() {
             onChange={(e) => setCode(e.target.value.replace(/\D/g, "").slice(0, 6))}
           />
         </div>
-        <Button type="submit" className="w-full" disabled={loading}>
+        <Button type="submit" variant="primary" className="w-full" disabled={loading}>
           {loading ? "Checking…" : "Verify"}
         </Button>
         <Button

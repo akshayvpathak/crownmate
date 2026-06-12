@@ -44,6 +44,7 @@ export default function LoginPage() {
 
   return (
     <AuthShell
+      variant="login"
       title="Welcome back"
       subtitle="Sign in to track orders and manage your account."
     >
@@ -70,7 +71,7 @@ export default function LoginPage() {
             autoComplete="current-password"
           />
         </div>
-        <Button type="submit" className="w-full" disabled={loading}>
+        <Button type="submit" variant="primary" className="w-full" disabled={loading}>
           {loading ? "Signing in…" : "Sign in"}
         </Button>
         <p className="text-center text-sm text-muted-foreground">
