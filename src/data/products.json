@@ -2,9 +2,9 @@
   {
     "id": "cm-redlight-helmet",
     "slug": "laser-hair-growth-helmet",
-    "title": "Crownmate RedLight Helmet™",
-    "description": "Home-use LLLT helmet with 40 laser diodes. Put it on, sit for 20 minutes, done — no clinic visits.",
-    "fullDescription": "The RedLight Helmet is for anyone who wants red-light scalp sessions without booking appointments or holding a device in place. Forty laser diodes at 650nm cover the whole scalp evenly. It weighs about 520g, runs hands-free, and fits into a normal evening — most people do 20 minutes, three nights a week. Plug in the adaptor or use a power bank if you're moving around the house.",
+    "title": "Crownmate RedLight Helmet\u2122",
+    "description": "Home-use LLLT helmet with 40 laser diodes. Put it on, sit for 20 minutes, done \u2014 no clinic visits.",
+    "fullDescription": "The RedLight Helmet is for anyone who wants red-light scalp sessions without booking appointments or holding a device in place. Forty laser diodes at 650nm cover the whole scalp evenly. It weighs about 520g, runs hands-free, and fits into a normal evening \u2014 most people do 20 minutes, three nights a week. Plug in the adaptor or use a power bank if you're moving around the house.",
     "vendor": "CrownMate",
     "category": "Advanced Tech",
     "tags": ["advanced-tech", "hair-growth"],
@@ -16,8 +16,7 @@
       "/images/crownmate/helmet/05-build-quality.png",
       "/images/crownmate/helmet/06-power-options.png",
       "/images/crownmate/helmet/07-results-before-after-1.png",
-      "/images/crownmate/helmet/08-results-before-after-2.png",
-      "/images/crownmate/helmet/09-size-fit-guide.png"
+      "/images/crownmate/helmet/08-size-fit-guide.png"
     ],
     "variants": [
       {
@@ -32,16 +31,31 @@
     ],
     "options": [],
     "specs": [
-      { "label": "Laser Diodes", "value": "40" },
-      { "label": "Wavelength", "value": "650nm" },
-      { "label": "Treatment Time", "value": "20 Minutes" },
-      { "label": "Frequency", "value": "3x per Week" },
-      { "label": "Weight", "value": "520g" }
+      {
+        "label": "Laser Diodes",
+        "value": "40"
+      },
+      {
+        "label": "Wavelength",
+        "value": "650nm"
+      },
+      {
+        "label": "Treatment Time",
+        "value": "20 Minutes"
+      },
+      {
+        "label": "Frequency",
+        "value": "3x per Week"
+      },
+      {
+        "label": "Weight",
+        "value": "520g"
+      }
     ],
     "productFaqs": [
       {
         "question": "How long before I see results?",
-        "answer": "Most people notice less hair in the drain around week 4–6. Thickness and new growth usually take 12–16 weeks if you're consistent — three sessions a week, no skipping."
+        "answer": "Most people notice less hair in the drain around week 4\u20136. Thickness and new growth usually take 12\u201316 weeks if you're consistent \u2014 three sessions a week, no skipping."
       },
       {
         "question": "Is LLLT safe to use at home?",
@@ -49,7 +63,7 @@
       },
       {
         "question": "How long is each session?",
-        "answer": "20 minutes. That's it. Three times a week is what we recommend — more isn't better."
+        "answer": "20 minutes. That's it. Three times a week is what we recommend \u2014 more isn't better."
       },
       {
         "question": "Can women use this too?",
@@ -57,7 +71,7 @@
       },
       {
         "question": "Does it work on a completely bald scalp?",
-        "answer": "It helps most where follicles are still there but weak. Areas that have been smooth bald for years won't respond much — LLLT isn't a hair transplant."
+        "answer": "It helps most where follicles are still there but weak. Areas that have been smooth bald for years won't respond much \u2014 LLLT isn't a hair transplant."
       }
     ],
     "reviewCount": 2,
@@ -66,9 +80,9 @@
   {
     "id": "cm-hf-wand",
     "slug": "high-frequency-wand",
-    "title": "Crownmate High Frequency Wand™",
-    "description": "4-in-1 high-frequency wand with swap-in glass electrodes. Scalp, face, neck — one tool, short sessions.",
-    "fullDescription": "The HF Wand runs a neon-gas electrode system with adjustable intensity. You get four glass heads for different zones — scalp, spot treatment, broader facial areas. Sessions are short, usually 3–5 minutes per area. A lot of customers use it right before oil or serum so the scalp feels more receptive. Good add-on if you already have a basic hair routine and want something extra without a big time commitment.",
+    "title": "Crownmate High Frequency Wand\u2122",
+    "description": "4-in-1 high-frequency wand with swap-in glass electrodes. Scalp, face, neck \u2014 one tool, short sessions.",
+    "fullDescription": "The HF Wand runs a neon-gas electrode system with adjustable intensity. You get four glass heads for different zones \u2014 scalp, spot treatment, broader facial areas. Sessions are short, usually 3\u20135 minutes per area. A lot of customers use it right before oil or serum so the scalp feels more receptive. Good add-on if you already have a basic hair routine and want something extra without a big time commitment.",
     "vendor": "CrownMate",
     "category": "Scalp Therapy",
     "tags": ["scalp-therapy", "high-frequency"],
@@ -93,16 +107,31 @@
     ],
     "options": [],
     "specs": [
-      { "label": "Technology", "value": "High-Frequency Neon Gas" },
-      { "label": "Electrodes", "value": "4 Interchangeable Heads" },
-      { "label": "Intensity", "value": "Variable Control" },
-      { "label": "Usage", "value": "3–5 Min Per Zone" },
-      { "label": "Suitable For", "value": "Scalp, Face & Neck" }
+      {
+        "label": "Technology",
+        "value": "High-Frequency Neon Gas"
+      },
+      {
+        "label": "Electrodes",
+        "value": "4 Interchangeable Heads"
+      },
+      {
+        "label": "Intensity",
+        "value": "Variable Control"
+      },
+      {
+        "label": "Usage",
+        "value": "3\u20135 Min Per Zone"
+      },
+      {
+        "label": "Suitable For",
+        "value": "Scalp, Face & Neck"
+      }
     ],
     "productFaqs": [
       {
         "question": "How often should I use it?",
-        "answer": "2–3 times a week is plenty. Keep each zone to 3–5 minutes — you'll feel a mild tingle, that's normal."
+        "answer": "2\u20133 times a week is plenty. Keep each zone to 3\u20135 minutes \u2014 you'll feel a mild tingle, that's normal."
       },
       {
         "question": "Is high-frequency safe for home use?",
@@ -110,7 +139,7 @@
       },
       {
         "question": "Which electrode should I use?",
-        "answer": "The comb-shaped one for scalp, the mushroom head for larger areas, the smaller points for spots. All four are in the box — check the manual for photos."
+        "answer": "The comb-shaped one for scalp, the mushroom head for larger areas, the smaller points for spots. All four are in the box \u2014 check the manual for photos."
       },
       {
         "question": "Can I use it with oils or serums?",
@@ -118,7 +147,7 @@
       },
       {
         "question": "Is it suitable for sensitive skin?",
-        "answer": "Start on the lowest setting for 2 minutes. If it stings, drop the intensity. Most people with sensitive skin are fine on level 1–2."
+        "answer": "Start on the lowest setting for 2 minutes. If it stings, drop the intensity. Most people with sensitive skin are fine on level 1\u20132."
       }
     ],
     "reviewCount": 2,
@@ -127,9 +156,9 @@
   {
     "id": "cm-pulse-pro",
     "slug": "electric-scalp-massager",
-    "title": "Crownmate Pulse Pro Massager™",
+    "title": "Crownmate Pulse Pro Massager\u2122",
     "description": "Rechargeable scalp massager with silicone kneading nodes. Waterproof, fits in your palm, works in the shower.",
-    "fullDescription": "Pulse Pro is the everyday piece of the lineup. Soft silicone nodes knead the scalp in a slow rotation — feels good after a long day and helps work oil or serum through the roots. IPX7 waterproof so you can use it in the shower. Charge once and it runs for several sessions. Most people do 5–10 minutes a day, either morning or before bed.",
+    "fullDescription": "Pulse Pro is the everyday piece of the lineup. Soft silicone nodes knead the scalp in a slow rotation \u2014 feels good after a long day and helps work oil or serum through the roots. IPX7 waterproof so you can use it in the shower. Charge once and it runs for several sessions. Most people do 5\u201310 minutes a day, either morning or before bed.",
     "vendor": "CrownMate",
     "category": "Scalp Care",
     "tags": ["scalp-care", "massager"],
@@ -153,20 +182,35 @@
     ],
     "options": [],
     "specs": [
-      { "label": "Material", "value": "Food-Grade Silicone" },
-      { "label": "Mode", "value": "Vibration + Kneading" },
-      { "label": "Water Resistance", "value": "IPX7 Waterproof" },
-      { "label": "Usage", "value": "5–10 Min Daily" },
-      { "label": "Suitable For", "value": "All Hair & Scalp Types" }
+      {
+        "label": "Material",
+        "value": "Food-Grade Silicone"
+      },
+      {
+        "label": "Mode",
+        "value": "Vibration + Kneading"
+      },
+      {
+        "label": "Water Resistance",
+        "value": "IPX7 Waterproof"
+      },
+      {
+        "label": "Usage",
+        "value": "5\u201310 Min Daily"
+      },
+      {
+        "label": "Suitable For",
+        "value": "All Hair & Scalp Types"
+      }
     ],
     "productFaqs": [
       {
         "question": "How long should each session be?",
-        "answer": "5–10 minutes is the sweet spot. Longer won't hurt, but you don't need to sit there for half an hour."
+        "answer": "5\u201310 minutes is the sweet spot. Longer won't hurt, but you don't need to sit there for half an hour."
       },
       {
         "question": "Is it waterproof?",
-        "answer": "Yes — IPX7. Fine in the shower. Just don't dunk the charging port underwater."
+        "answer": "Yes \u2014 IPX7. Fine in the shower. Just don't dunk the charging port underwater."
       },
       {
         "question": "Can I use it on dry or oiled hair?",

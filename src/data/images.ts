@@ -7,9 +7,9 @@ export const images = {
     loader: img("brand/logo.png"),
   },
   hero: {
-    helmet: img("banners/helmet-banner.png"),
-    hfWand: img("banners/hf-wand-banner.png"),
-    massager: img("banners/massager-banner.png"),
+    helmet: img("helmet/01-hero-product-shot.png"),
+    hfWand: img("hf-wand/01-hero-shot.png"),
+    massager: img("pro-massager/01-hero-shot.png"),
     brandStory: img("helmet/02-woman-wearing.png"),
   },
   categories: {
@@ -23,9 +23,9 @@ export const images = {
     scalpMassager: img("pro-massager/01-hero-shot.png"),
   },
   howItWorks: {
-    helmet: img("helmet/01-hero-product-shot.png"),
-    hfWand: img("hf-wand/01-hero-shot.png"),
-    massager: img("pro-massager/01-hero-shot.png"),
+    helmet: img("helmet/03-key-benefit.png"),
+    hfWand: img("hf-wand/03-how-it-works.png"),
+    massager: img("pro-massager/03-how-it-works.png"),
   },
   marketing: {
     brandStory: img("helmet/02-woman-wearing.png"),
@@ -47,8 +47,7 @@ export const helmetImages = [
   img("helmet/05-build-quality.png"),
   img("helmet/06-power-options.png"),
   img("helmet/07-results-before-after-1.png"),
-  img("helmet/08-results-before-after-2.png"),
-  img("helmet/09-size-fit-guide.png"),
+  img("helmet/08-size-fit-guide.png"),
 ] as const;
 
 export const hfWandImages = [
