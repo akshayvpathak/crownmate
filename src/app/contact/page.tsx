@@ -1,5 +1,6 @@
 import { generatePageMetadata } from "@/lib/seo";
-import { SITE_CONFIG, WHATSAPP_URL } from "@/constants/assets";
+import { SITE_CONFIG, TEL_PHONE } from "@/constants/assets";
+import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { ContactForm } from "@/components/forms/contact-form";
 import { Mail, Phone, MapPin } from "lucide-react";
 import Link from "next/link";
@@ -35,7 +36,7 @@ export default function ContactPage() {
                 <p className="text-sm text-muted-foreground">
                   {SITE_CONFIG.supportHours}
                 </p>
-                <a href={`tel:${SITE_CONFIG.phone}`} className="text-sm underline">
+                <a href={TEL_PHONE} className="text-sm underline">
                   {SITE_CONFIG.phone}
                 </a>
               </div>
@@ -51,14 +52,9 @@ export default function ContactPage() {
             </div>
             <div>
               <p className="font-semibold">WhatsApp</p>
-              <Link
-                href={WHATSAPP_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm underline"
-              >
-                Chat with us on WhatsApp
-              </Link>
+              <WhatsAppLink className="text-sm underline">
+                Chat with us on WhatsApp ({SITE_CONFIG.phone})
+              </WhatsAppLink>
             </div>
           </div>
         </div>

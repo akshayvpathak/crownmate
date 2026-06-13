@@ -18,7 +18,8 @@ import { formatPrice, calculateDiscount, cn } from "@/lib/utils";
 import { getProductReviewCount } from "@/lib/product-utils";
 import { getDeliveryEstimate } from "@/lib/delivery-estimate";
 import { getDeliveryRangeText } from "@/lib/shipping";
-import { SITE_CONFIG, WHATSAPP_URL } from "@/constants/assets";
+import { SITE_CONFIG } from "@/constants/assets";
+import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -242,10 +243,10 @@ export function ProductDetail({
                 Add to bag
               </Button>
               <Button variant="outline" size="lg" className="w-full" asChild>
-                <Link href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+                <WhatsAppLink>
                   <MessageCircle className="mr-2 h-4 w-4" />
                   Chat on WhatsApp
-                </Link>
+                </WhatsAppLink>
               </Button>
             </div>
 

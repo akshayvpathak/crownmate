@@ -14,8 +14,11 @@ export const SITE_CONFIG = {
   },
 } as const;
 
-export const WHATSAPP_URL =
-  "https://wa.me/919099948630?text=Hi%20CrownMate%2C%20I%20have%20a%20question%20about%20your%20products.";
+export const WHATSAPP_PHONE = "919099948630";
+
+export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent("Hi CrownMate, I have a question about your products.")}`;
+
+export const TEL_PHONE = `tel:+${WHATSAPP_PHONE}`;
 
 export const SHIPPING_CONFIG = {
   freeThreshold: 499,

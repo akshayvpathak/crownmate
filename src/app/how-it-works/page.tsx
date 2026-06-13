@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { HowItWorksSection } from "@/components/home/how-it-works-section";
 import { generatePageMetadata } from "@/lib/seo";
-import { WHATSAPP_URL } from "@/constants/assets";
+import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { howItWorksSteps } from "@/data/home-content";
 import { Button } from "@/components/ui/button";
 
@@ -39,9 +39,7 @@ export default function HowItWorksPage() {
               <Link href="/products">Shop Now</Link>
             </Button>
             <Button asChild variant="outline" size="lg">
-              <Link href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-                Chat on WhatsApp
-              </Link>
+              <WhatsAppLink>Chat on WhatsApp</WhatsAppLink>
             </Button>
           </div>
         </div>

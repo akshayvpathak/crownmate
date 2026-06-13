@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { WHATSAPP_URL } from "@/constants/assets";
+import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { Button } from "@/components/ui/button";
 
 export function HomeCtaSection() {
@@ -18,9 +18,7 @@ export function HomeCtaSection() {
             <Link href="/products">Shop Now</Link>
           </Button>
           <Button asChild variant="outline" size="lg">
-            <Link href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
-              Chat on WhatsApp
-            </Link>
+            <WhatsAppLink className="inline-flex">Chat on WhatsApp</WhatsAppLink>
           </Button>
         </div>
       </div>

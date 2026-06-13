@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { LegalPage } from "@/components/legal/legal-page";
 import { generatePageMetadata } from "@/lib/seo";
-import { SHIPPING_CONFIG, SITE_CONFIG, WHATSAPP_URL } from "@/constants/assets";
+import { SHIPPING_CONFIG, SITE_CONFIG } from "@/constants/assets";
+import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { getDeliveryRangeText } from "@/lib/shipping";
 
 export const metadata = generatePageMetadata({
@@ -48,8 +49,8 @@ export default function ShippingPolicyPage() {
       <h2>Questions?</h2>
       <p>
         Email <Link href={`mailto:${SITE_CONFIG.email}`}>{SITE_CONFIG.email}</Link> or{" "}
-        <Link href={WHATSAPP_URL}>WhatsApp us</Link> at {SITE_CONFIG.phone}. Support
-        hours: {SITE_CONFIG.supportHours}.
+        <WhatsAppLink className="underline">WhatsApp us</WhatsAppLink> at{" "}
+        {SITE_CONFIG.phone}. Support hours: {SITE_CONFIG.supportHours}.
       </p>
 
       <h2>Related policies</h2>

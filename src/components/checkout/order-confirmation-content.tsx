@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import { useOrderStore } from "@/store/order-store";
 import { OrderSummary } from "@/components/order/order-summary";
-import { WHATSAPP_URL } from "@/constants/assets";
+import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 import { getDeliveryRangeText } from "@/lib/shipping";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
@@ -269,10 +269,10 @@ export function OrderConfirmationContent() {
             </Button>
           )}
           <Button asChild variant="outline">
-            <Link href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer">
+            <WhatsAppLink>
               <MessageCircle className="mr-2 h-4 w-4" />
               WhatsApp support
-            </Link>
+            </WhatsAppLink>
           </Button>
           <Button asChild variant="outline">
             <Link href="/products">

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { LegalPage } from "@/components/legal/legal-page";
 import { generatePageMetadata } from "@/lib/seo";
-import { SITE_CONFIG, WHATSAPP_URL } from "@/constants/assets";
+import { SITE_CONFIG } from "@/constants/assets";
+import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 
 export const metadata = generatePageMetadata({
   title: "Refund Policy",
@@ -38,8 +39,9 @@ export default function RefundPolicyPage() {
       <h2>How to start a return</h2>
       <p>
         Email <Link href={`mailto:${SITE_CONFIG.email}`}>{SITE_CONFIG.email}</Link> or{" "}
-        <Link href={WHATSAPP_URL}>WhatsApp us</Link> at {SITE_CONFIG.phone} with your
-        order number. Support hours: {SITE_CONFIG.supportHours}.
+        <WhatsAppLink className="underline">WhatsApp us</WhatsAppLink> at{" "}
+        {SITE_CONFIG.phone} with your order number. Support hours:{" "}
+        {SITE_CONFIG.supportHours}.
       </p>
 
       <h2>Refund timing</h2>
