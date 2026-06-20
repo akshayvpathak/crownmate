@@ -19,8 +19,17 @@ export function invalidateProductCache(): void {
 }
 
 export async function saveProducts(products: Product[]): Promise<void> {
-  await fs.writeFile(PRODUCTS_FILE, `${JSON.stringify(products, null, 2)}\n`);
-  cache = products;
+  try {
+    const json = JSON.stringify(products, null, 2);
+    await fs.writeFile(PRODUCTS_FILE, `${json}\n`);
+    cache = products;
+    console.log(
+      `[product-store] Saved ${products.length} products to ${PRODUCTS_FILE}`,
+    );
+  } catch (error) {
+    console.error(`[product-store] Error saving products:`, error);
+    throw error;
+  }
 }
 
 export async function getProductById(id: string): Promise<Product | null> {
@@ -49,43 +58,61 @@ export async function updateProductById(
     Pick<Product, "title" | "description" | "category" | "vendor" | "images">
   >,
 ): Promise<{ ok: true; product: Product } | { ok: false; error: string }> {
-  const products = await loadProducts();
-  const index = products.findIndex((p) => p.id === id);
-  if (index < 0) return { ok: false, error: "Product not found" };
-
-  if (input.title !== undefined && !input.title.trim()) {
-    return { ok: false, error: "Title is required" };
-  }
-
-  const current = products[index];
-
-  let nextImages = current.images;
-  if (input.images !== undefined) {
-    const normalized = normalizeImageUrls(input.images);
-    if (!normalized) {
-      return { ok: false, error: "At least one valid image path is required" };
+  try {
+    const products = await loadProducts();
+    const index = products.findIndex((p) => p.id === id);
+    if (index < 0) {
+      console.warn(`[product-store] Product not found: ${id}`);
+      return { ok: false, error: "Product not found" };
     }
-    nextImages = normalized;
+
+    if (input.title !== undefined && !input.title.trim()) {
+      return { ok: false, error: "Title is required" };
+    }
+
+    const current = products[index];
+
+    let nextImages = current.images;
+    if (input.images !== undefined) {
+      const normalized = normalizeImageUrls(input.images);
+      if (!normalized) {
+        return { ok: false, error: "At least one valid image path is required" };
+      }
+      nextImages = normalized;
+    }
+
+    const updated: Product = {
+      ...current,
+      title: input.title?.trim() ?? current.title,
+      description: input.description?.trim() ?? current.description,
+      category: input.category?.trim() ?? current.category,
+      vendor: input.vendor?.trim() ?? current.vendor,
+      images: nextImages,
+      variants: current.variants.map((variant, i) =>
+        i === 0 && input.images !== undefined
+          ? { ...variant, image: nextImages[0] ?? variant.image }
+          : variant,
+      ),
+    };
+
+    const next = [...products];
+    next[index] = updated;
+    await saveProducts(next);
+    console.log(`[product-store] Updated product ${id}`, {
+      title: updated.title,
+      description: updated.description,
+      category: updated.category,
+      vendor: updated.vendor,
+      imageCount: updated.images.length,
+    });
+    return { ok: true, product: updated };
+  } catch (error) {
+    console.error(`[product-store] Error updating product:`, error);
+    return {
+      ok: false,
+      error: error instanceof Error ? error.message : "Unknown error",
+    };
   }
-
-  const updated: Product = {
-    ...current,
-    title: input.title?.trim() ?? current.title,
-    description: input.description?.trim() ?? current.description,
-    category: input.category?.trim() ?? current.category,
-    vendor: input.vendor?.trim() ?? current.vendor,
-    images: nextImages,
-    variants: current.variants.map((variant, i) =>
-      i === 0 && input.images !== undefined
-        ? { ...variant, image: nextImages[0] ?? variant.image }
-        : variant,
-    ),
-  };
-
-  const next = [...products];
-  next[index] = updated;
-  await saveProducts(next);
-  return { ok: true, product: updated };
 }
 
 export async function updateVariantById(
@@ -95,42 +122,68 @@ export async function updateVariantById(
     Pick<ProductVariant, "title" | "price" | "compareAtPrice" | "available" | "sku">
   >,
 ): Promise<{ ok: true; product: Product } | { ok: false; error: string }> {
-  const products = await loadProducts();
-  const productIndex = products.findIndex((p) => p.id === productId);
-  if (productIndex < 0) return { ok: false, error: "Product not found" };
+  try {
+    const products = await loadProducts();
+    const productIndex = products.findIndex((p) => p.id === productId);
+    if (productIndex < 0) {
+      console.warn(`[product-store] Product not found: ${productId}`);
+      return { ok: false, error: "Product not found" };
+    }
 
-  const product = products[productIndex];
-  const variantIndex = product.variants.findIndex((v) => v.id === variantId);
-  if (variantIndex < 0) return { ok: false, error: "Variant not found" };
+    const product = products[productIndex];
+    const variantIndex = product.variants.findIndex((v) => v.id === variantId);
+    if (variantIndex < 0) {
+      console.warn(
+        `[product-store] Variant not found: ${variantId} in product ${productId}`,
+      );
+      return { ok: false, error: "Variant not found" };
+    }
 
-  if (input.price !== undefined && (input.price < 1 || input.price > 1_000_000)) {
-    return { ok: false, error: "Price must be between ₹1 and ₹10,00,000" };
+    if (input.price !== undefined && (input.price < 1 || input.price > 1_000_000)) {
+      return { ok: false, error: "Price must be between ₹1 and ₹10,00,000" };
+    }
+
+    if (input.sku !== undefined && !input.sku.trim()) {
+      return { ok: false, error: "SKU is required" };
+    }
+
+    const current = product.variants[variantIndex];
+    const updatedVariant: ProductVariant = {
+      ...current,
+      title: input.title?.trim() ?? current.title,
+      sku: input.sku?.trim() ?? current.sku,
+      price: input.price !== undefined ? Math.round(input.price) : current.price,
+      compareAtPrice:
+        input.compareAtPrice !== undefined
+          ? input.compareAtPrice
+          : current.compareAtPrice,
+      available: input.available !== undefined ? input.available : current.available,
+    };
+
+    const updatedProduct: Product = {
+      ...product,
+      variants: product.variants.map((v, i) =>
+        i === variantIndex ? updatedVariant : v,
+      ),
+    };
+
+    const next = [...products];
+    next[productIndex] = updatedProduct;
+    await saveProducts(next);
+    console.log(
+      `[product-store] Updated variant ${variantId} in product ${productId}`,
+      {
+        price: updatedVariant.price,
+        compareAtPrice: updatedVariant.compareAtPrice,
+        sku: updatedVariant.sku,
+      },
+    );
+    return { ok: true, product: updatedProduct };
+  } catch (error) {
+    console.error(`[product-store] Error updating variant:`, error);
+    return {
+      ok: false,
+      error: error instanceof Error ? error.message : "Unknown error",
+    };
   }
-
-  if (input.sku !== undefined && !input.sku.trim()) {
-    return { ok: false, error: "SKU is required" };
-  }
-
-  const current = product.variants[variantIndex];
-  const updatedVariant: ProductVariant = {
-    ...current,
-    title: input.title?.trim() ?? current.title,
-    sku: input.sku?.trim() ?? current.sku,
-    price: input.price !== undefined ? Math.round(input.price) : current.price,
-    compareAtPrice:
-      input.compareAtPrice !== undefined
-        ? input.compareAtPrice
-        : current.compareAtPrice,
-    available: input.available !== undefined ? input.available : current.available,
-  };
-
-  const updatedProduct: Product = {
-    ...product,
-    variants: product.variants.map((v, i) => (i === variantIndex ? updatedVariant : v)),
-  };
-
-  const next = [...products];
-  next[productIndex] = updatedProduct;
-  await saveProducts(next);
-  return { ok: true, product: updatedProduct };
 }

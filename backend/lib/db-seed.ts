@@ -8,8 +8,9 @@ export async function ensureDatabaseSeeded(): Promise<void> {
   if (seeded) return;
   await connectMongo();
 
-  const couponCount = await CouponModel.countDocuments();
-  if (couponCount === 0) {
+  // Only seed coupons if database is completely empty (first-time setup)
+  const hasAnyData = await CouponModel.findOne({});
+  if (!hasAnyData) {
     await CouponModel.insertMany(SEED_COUPONS);
   }
 

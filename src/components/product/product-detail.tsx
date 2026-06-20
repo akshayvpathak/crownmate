@@ -188,7 +188,7 @@ export function ProductDetail({
                 <Truck className="mt-0.5 h-4 w-4 shrink-0" />
                 <div>
                   <p className="font-medium">Free shipping</p>
-                  <p className="text-xs text-muted-foreground">Above ₹499, pan-India</p>
+                  <p className="text-xs text-muted-foreground">All orders, pan-India</p>
                 </div>
               </div>
             </div>
@@ -309,9 +309,9 @@ export function ProductDetail({
                 <AccordionContent>
                   <p className="text-sm leading-relaxed">
                     We usually dispatch within 24 hours. Delivery takes{" "}
-                    {getDeliveryRangeText()} depending on your pin code. Free above
-                    ₹499. Tracking link goes out by SMS and email once the courier picks
-                    up.
+                    {getDeliveryRangeText()} depending on your pin code. Free on all
+                    orders. Tracking link goes out by SMS and email once the courier
+                    picks up.
                   </p>
                 </AccordionContent>
               </AccordionItem>

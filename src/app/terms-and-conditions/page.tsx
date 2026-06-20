@@ -29,10 +29,9 @@ export default function TermsPage() {
 
       <h2>Shipping</h2>
       <p>
-        Free shipping on orders above ₹{SHIPPING_CONFIG.freeThreshold}. Below that, a
-        flat ₹{SHIPPING_CONFIG.flatRate} shipping fee applies. Orders ship within 24
-        hours on business days. Delivery typically takes {getDeliveryRangeText()}. See
-        our <Link href="/shipping-policy">Shipping Policy</Link> for details.
+        Free shipping on all orders. Orders ship within 24 hours on business days.
+        Delivery typically takes {getDeliveryRangeText()}. See our{" "}
+        <Link href="/shipping-policy">Shipping Policy</Link> for details.
       </p>
 
       <h2>Warranty</h2>

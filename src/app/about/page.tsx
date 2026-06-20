@@ -83,14 +83,14 @@ export default function AboutPage() {
           <h2 className="text-2xl font-bold">The founders</h2>
           <div className="grid gap-4 sm:grid-cols-2 not-prose">
             <div className="rounded-xl border border-border p-4">
-              <h3 className="font-bold">Kishan</h3>
+              <h3 className="font-bold">Geeta</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Operations and sales. Runs fulfilment and stays close to every product
                 launch.
               </p>
             </div>
             <div className="rounded-xl border border-border p-4">
-              <h3 className="font-bold">Bhavik</h3>
+              <h3 className="font-bold">Kailash</h3>
               <p className="mt-2 text-sm text-muted-foreground">
                 Product and brand. Turns rough ideas into devices we can manufacture and
                 support at scale.

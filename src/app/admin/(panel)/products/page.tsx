@@ -126,51 +126,85 @@ export default function AdminProductsPage() {
   async function saveProduct(values: ProductFormValues) {
     if (!editingProduct) return;
     setSavingProduct(true);
-    const res = await fetchWithSessionRefresh(
-      `/api/admin/products/${editingProduct.id}`,
-      {
+    try {
+      const url = `/api/admin/products/${editingProduct.id}`;
+      console.log("[admin/products] Saving product:", { url, values });
+
+      const res = await fetchWithSessionRefresh(url, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
-      },
-    );
-    setSavingProduct(false);
+      });
 
-    if (!res.ok) {
-      const data = (await res.json()) as { error?: string };
-      toast.error(data.error || "Could not save product");
-      return;
+      console.log("[admin/products] Response status:", res.status);
+
+      if (!res.ok) {
+        let errorMsg = "Could not save product";
+        try {
+          const data = (await res.json()) as { error?: string };
+          errorMsg = data.error || errorMsg;
+          console.error("[admin/products] API error:", data);
+        } catch {
+          console.error("[admin/products] Failed to parse error response");
+        }
+        toast.error(errorMsg);
+        return;
+      }
+
+      const data = (await res.json()) as { product?: unknown };
+      console.log("[admin/products] Success! Updated product");
+      toast.success("Product updated");
+      setProductDialogOpen(false);
+      setEditingProduct(null);
+      void load();
+    } catch (error) {
+      console.error("[admin/products] Exception while saving product:", error);
+      toast.error(error instanceof Error ? error.message : "Unknown error");
+    } finally {
+      setSavingProduct(false);
     }
-
-    toast.success("Product updated");
-    setProductDialogOpen(false);
-    setEditingProduct(null);
-    void load();
   }
 
   async function saveVariant(values: VariantFormValues) {
     if (!editingVariant) return;
     setSavingVariant(true);
-    const res = await fetchWithSessionRefresh(
-      `/api/admin/products/${editingVariant.product.id}/variants/${editingVariant.variant.id}`,
-      {
+    try {
+      const url = `/api/admin/products/${editingVariant.product.id}/variants/${editingVariant.variant.id}`;
+      console.log("[admin/products] Saving variant:", { url, values });
+
+      const res = await fetchWithSessionRefresh(url, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
-      },
-    );
-    setSavingVariant(false);
+      });
 
-    if (!res.ok) {
-      const data = (await res.json()) as { error?: string };
-      toast.error(data.error || "Could not save variant");
-      return;
+      console.log("[admin/products] Response status:", res.status);
+
+      if (!res.ok) {
+        let errorMsg = "Could not save variant";
+        try {
+          const data = (await res.json()) as { error?: string };
+          errorMsg = data.error || errorMsg;
+          console.error("[admin/products] API error:", data);
+        } catch {
+          console.error("[admin/products] Failed to parse error response");
+        }
+        toast.error(errorMsg);
+        return;
+      }
+
+      const data = (await res.json()) as { product?: unknown };
+      console.log("[admin/products] Success! Updated variant");
+      toast.success("Variant updated");
+      setVariantDialogOpen(false);
+      setEditingVariant(null);
+      void load();
+    } catch (error) {
+      console.error("[admin/products] Exception while saving variant:", error);
+      toast.error(error instanceof Error ? error.message : "Unknown error");
+    } finally {
+      setSavingVariant(false);
     }
-
-    toast.success("Variant updated");
-    setVariantDialogOpen(false);
-    setEditingVariant(null);
-    void load();
   }
 
   return (

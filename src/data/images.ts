@@ -14,10 +14,10 @@ export const images = {
     brandStory: img("helmet/02-woman-wearing.png"),
   },
   banners: {
-    helmet: img("banners/helmet-banner.png"),
-    hfWand: img("banners/hf-wand-banner.png"),
-    massager: img("banners/massager-banner.png"),
-    serumStamp: img("banners/serum-stamp-banner.png"),
+    helmet: img("banners/helmet_banner_v0.2.PNG"),
+    hfWand: img("banners/HF_WAND_Banner_v0.2.png"),
+    massager: img("banners/massager_banner_v0.2.png"),
+    serumStamp: img("banners/Serum_Stamp_Banner_V0.2.png"),
   },
   categories: {
     redlightHelmet: img("helmet/01-hero-product-shot.png"),

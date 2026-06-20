@@ -66,6 +66,7 @@ export function HeroBanner({ slides }: { slides: HeroSlide[] }) {
                     alt={slide.title}
                     fill
                     priority={index === 0}
+                    quality={100}
                     sizes="100vw"
                     className="object-contain object-center p-3"
                   />
@@ -99,6 +100,7 @@ export function HeroBanner({ slides }: { slides: HeroSlide[] }) {
                   alt={slide.title}
                   fill
                   priority={index === 0}
+                  quality={100}
                   sizes="100vw"
                   className="object-cover object-center"
                 />

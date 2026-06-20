@@ -23,15 +23,9 @@ export default function ShippingPolicyPage() {
       </p>
 
       <h2>Shipping rates</h2>
-      <ul>
-        <li>
-          Orders above ₹{SHIPPING_CONFIG.freeThreshold}: <strong>free shipping</strong>
-        </li>
-        <li>
-          Orders below ₹{SHIPPING_CONFIG.freeThreshold}: flat ₹
-          {SHIPPING_CONFIG.flatRate} shipping fee
-        </li>
-      </ul>
+      <p>
+        Free shipping on all orders across India. We do not charge shipping at checkout.
+      </p>
 
       <h2>Delivery time</h2>
       <p>

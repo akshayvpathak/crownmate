@@ -2,9 +2,9 @@
   {
     "id": "cm-redlight-helmet",
     "slug": "laser-hair-growth-helmet",
-    "title": "Crownmate RedLight Helmet\u2122",
-    "description": "Home-use LLLT helmet with 40 laser diodes. Put it on, sit for 20 minutes, done \u2014 no clinic visits.",
-    "fullDescription": "The RedLight Helmet is for anyone who wants red-light scalp sessions without booking appointments or holding a device in place. Forty laser diodes at 650nm cover the whole scalp evenly. It weighs about 520g, runs hands-free, and fits into a normal evening \u2014 most people do 20 minutes, three nights a week. Plug in the adaptor or use a power bank if you're moving around the house.",
+    "title": "Crownmate RedLight Helmet™",
+    "description": "Home-use LLLT helmet with 40 laser diodes. Put it on, sit for 20 minutes, done — no clinic visits.",
+    "fullDescription": "The RedLight Helmet is for anyone who wants red-light scalp sessions without booking appointments or holding a device in place. Forty laser diodes at 650nm cover the whole scalp evenly. It weighs about 520g, runs hands-free, and fits into a normal evening — most people do 20 minutes, three nights a week. Plug in the adaptor or use a power bank if you're moving around the house.",
     "vendor": "CrownMate",
     "category": "Advanced Tech",
     "tags": ["advanced-tech", "hair-growth"],
@@ -22,8 +22,8 @@
       {
         "id": "cm-helmet-default",
         "title": "Default",
-        "price": 2999,
-        "compareAtPrice": null,
+        "price": 3999,
+        "compareAtPrice": 7999,
         "available": true,
         "sku": "CM-REDLIGHT-HELMET",
         "image": "/images/crownmate/helmet/01-hero-product-shot.png"
@@ -55,7 +55,7 @@
     "productFaqs": [
       {
         "question": "How long before I see results?",
-        "answer": "Most people notice less hair in the drain around week 4\u20136. Thickness and new growth usually take 12\u201316 weeks if you're consistent \u2014 three sessions a week, no skipping."
+        "answer": "Most people notice less hair in the drain around week 4–6. Thickness and new growth usually take 12–16 weeks if you're consistent — three sessions a week, no skipping."
       },
       {
         "question": "Is LLLT safe to use at home?",
@@ -63,7 +63,7 @@
       },
       {
         "question": "How long is each session?",
-        "answer": "20 minutes. That's it. Three times a week is what we recommend \u2014 more isn't better."
+        "answer": "20 minutes. That's it. Three times a week is what we recommend — more isn't better."
       },
       {
         "question": "Can women use this too?",
@@ -71,7 +71,7 @@
       },
       {
         "question": "Does it work on a completely bald scalp?",
-        "answer": "It helps most where follicles are still there but weak. Areas that have been smooth bald for years won't respond much \u2014 LLLT isn't a hair transplant."
+        "answer": "It helps most where follicles are still there but weak. Areas that have been smooth bald for years won't respond much — LLLT isn't a hair transplant."
       }
     ],
     "reviewCount": 40,
@@ -80,9 +80,9 @@
   {
     "id": "cm-hf-wand",
     "slug": "high-frequency-wand",
-    "title": "Crownmate High Frequency Wand\u2122",
-    "description": "4-in-1 high-frequency wand with swap-in glass electrodes. Scalp, face, neck \u2014 one tool, short sessions.",
-    "fullDescription": "The HF Wand runs a neon-gas electrode system with adjustable intensity. You get four glass heads for different zones \u2014 scalp, spot treatment, broader facial areas. Sessions are short, usually 3\u20135 minutes per area. A lot of customers use it right before oil or serum so the scalp feels more receptive. Good add-on if you already have a basic hair routine and want something extra without a big time commitment.",
+    "title": "Crownmate High Frequency Wand™",
+    "description": "4-in-1 high-frequency wand with swap-in glass electrodes. Scalp, face, neck — one tool, short sessions.",
+    "fullDescription": "The HF Wand runs a neon-gas electrode system with adjustable intensity. You get four glass heads for different zones — scalp, spot treatment, broader facial areas. Sessions are short, usually 3–5 minutes per area. A lot of customers use it right before oil or serum so the scalp feels more receptive. Good add-on if you already have a basic hair routine and want something extra without a big time commitment.",
     "vendor": "CrownMate",
     "category": "Scalp Therapy",
     "tags": ["scalp-therapy", "high-frequency"],
@@ -99,7 +99,7 @@
         "id": "cm-wand-default",
         "title": "Default",
         "price": 1450,
-        "compareAtPrice": null,
+        "compareAtPrice": 2499,
         "available": true,
         "sku": "CM-HF-WAND",
         "image": "/images/crownmate/hf-wand/01-hero-shot.png"
@@ -121,7 +121,7 @@
       },
       {
         "label": "Usage",
-        "value": "3\u20135 Min Per Zone"
+        "value": "3–5 Min Per Zone"
       },
       {
         "label": "Suitable For",
@@ -131,7 +131,7 @@
     "productFaqs": [
       {
         "question": "How often should I use it?",
-        "answer": "2\u20133 times a week is plenty. Keep each zone to 3\u20135 minutes \u2014 you'll feel a mild tingle, that's normal."
+        "answer": "2–3 times a week is plenty. Keep each zone to 3–5 minutes — you'll feel a mild tingle, that's normal."
       },
       {
         "question": "Is high-frequency safe for home use?",
@@ -139,7 +139,7 @@
       },
       {
         "question": "Which electrode should I use?",
-        "answer": "The comb-shaped one for scalp, the mushroom head for larger areas, the smaller points for spots. All four are in the box \u2014 check the manual for photos."
+        "answer": "The comb-shaped one for scalp, the mushroom head for larger areas, the smaller points for spots. All four are in the box — check the manual for photos."
       },
       {
         "question": "Can I use it with oils or serums?",
@@ -147,7 +147,7 @@
       },
       {
         "question": "Is it suitable for sensitive skin?",
-        "answer": "Start on the lowest setting for 2 minutes. If it stings, drop the intensity. Most people with sensitive skin are fine on level 1\u20132."
+        "answer": "Start on the lowest setting for 2 minutes. If it stings, drop the intensity. Most people with sensitive skin are fine on level 1–2."
       }
     ],
     "reviewCount": 18,
@@ -156,9 +156,9 @@
   {
     "id": "cm-pulse-pro",
     "slug": "electric-scalp-massager",
-    "title": "Crownmate Pulse Pro Massager\u2122",
+    "title": "Crownmate Pulse Pro Massager™",
     "description": "Rechargeable scalp massager with silicone kneading nodes. Waterproof, fits in your palm, works in the shower.",
-    "fullDescription": "Pulse Pro is the everyday piece of the lineup. Soft silicone nodes knead the scalp in a slow rotation \u2014 feels good after a long day and helps work oil or serum through the roots. IPX7 waterproof so you can use it in the shower. Charge once and it runs for several sessions. Most people do 5\u201310 minutes a day, either morning or before bed.",
+    "fullDescription": "Pulse Pro is the everyday piece of the lineup. Soft silicone nodes knead the scalp in a slow rotation — feels good after a long day and helps work oil or serum through the roots. IPX7 waterproof so you can use it in the shower. Charge once and it runs for several sessions. Most people do 5–10 minutes a day, either morning or before bed.",
     "vendor": "CrownMate",
     "category": "Scalp Care",
     "tags": ["scalp-care", "massager"],
@@ -174,7 +174,7 @@
         "id": "cm-massager-default",
         "title": "Default",
         "price": 799,
-        "compareAtPrice": null,
+        "compareAtPrice": 1399,
         "available": true,
         "sku": "CM-PULSE-PRO",
         "image": "/images/crownmate/pro-massager/01-hero-shot.png"
@@ -196,7 +196,7 @@
       },
       {
         "label": "Usage",
-        "value": "5\u201310 Min Daily"
+        "value": "5–10 Min Daily"
       },
       {
         "label": "Suitable For",
@@ -206,11 +206,11 @@
     "productFaqs": [
       {
         "question": "How long should each session be?",
-        "answer": "5\u201310 minutes is the sweet spot. Longer won't hurt, but you don't need to sit there for half an hour."
+        "answer": "5–10 minutes is the sweet spot. Longer won't hurt, but you don't need to sit there for half an hour."
       },
       {
         "question": "Is it waterproof?",
-        "answer": "Yes \u2014 IPX7. Fine in the shower. Just don't dunk the charging port underwater."
+        "answer": "Yes — IPX7. Fine in the shower. Just don't dunk the charging port underwater."
       },
       {
         "question": "Can I use it on dry or oiled hair?",
@@ -231,9 +231,9 @@
   {
     "id": "cm-serum-stamp",
     "slug": "serum-stamp",
-    "title": "Crownmate Serum Stamp\u2122",
-    "description": "140-needle stamp with a built-in serum tank. Press, stamp, done \u2014 your growth serum actually gets into the scalp.",
-    "fullDescription": "The Serum Stamp is for anyone who uses hair growth serums but feels like most of it sits on the surface. One hundred forty fine needles create tiny channels while the integrated 10ml chamber feeds product straight through \u2014 no dripping, no wasted drops. Twist on the stamp head, dial the depth up to 0.25mm, and stamp evenly across thinning areas. Most people do it once or twice a week right before bed, paired with whatever serum they already use. Rinse the head, pop the silicone plug back in, and it\u2019s ready for next time.",
+    "title": "Crownmate Serum Stamp™",
+    "description": "140-needle stamp with a built-in serum tank. Press, stamp, done — your growth serum actually gets into the scalp.",
+    "fullDescription": "The Serum Stamp is for anyone who uses hair growth serums but feels like most of it sits on the surface. One hundred forty fine needles create tiny channels while the integrated 10ml chamber feeds product straight through — no dripping, no wasted drops. Twist on the stamp head, dial the depth up to 0.25mm, and stamp evenly across thinning areas. Most people do it once or twice a week right before bed, paired with whatever serum they already use. Rinse the head, pop the silicone plug back in, and it’s ready for next time.",
     "vendor": "CrownMate",
     "category": "Scalp Therapy",
     "tags": ["scalp-therapy", "serum", "microneedling"],
@@ -249,7 +249,7 @@
         "id": "cm-stamp-default",
         "title": "Default",
         "price": 699,
-        "compareAtPrice": null,
+        "compareAtPrice": 1299,
         "available": true,
         "sku": "CM-SERUM-STAMP",
         "image": "/images/crownmate/serum-stamp/01-hero-shot.png"
@@ -275,17 +275,17 @@
       },
       {
         "label": "Usage",
-        "value": "1\u20132x Per Week"
+        "value": "1–2x Per Week"
       }
     ],
     "productFaqs": [
       {
         "question": "Does it hurt?",
-        "answer": "You\u2019ll feel a light prickle, not pain. Start at 0.10mm for your first session and work up to 0.25mm once your scalp gets used to it. If it stings, go shallower."
+        "answer": "You’ll feel a light prickle, not pain. Start at 0.10mm for your first session and work up to 0.25mm once your scalp gets used to it. If it stings, go shallower."
       },
       {
         "question": "Can I use it with any serum?",
-        "answer": "Yes \u2014 fill the chamber with whatever hair growth serum or tonic you already use. Avoid thick oils that won\u2019t flow through the needles; watery serums work best."
+        "answer": "Yes — fill the chamber with whatever hair growth serum or tonic you already use. Avoid thick oils that won’t flow through the needles; watery serums work best."
       },
       {
         "question": "How do I clean it after use?",
@@ -293,11 +293,11 @@
       },
       {
         "question": "How often should I use it?",
-        "answer": "Once or twice a week is enough. More isn\u2019t better \u2014 your scalp needs time to recover between sessions."
+        "answer": "Once or twice a week is enough. More isn’t better — your scalp needs time to recover between sessions."
       },
       {
         "question": "Does it work with the RedLight Helmet or HF Wand?",
-        "answer": "A lot of customers stamp first, apply serum through the device, then do their helmet or wand session on other nights. It\u2019s the prep step that makes serums actually absorb."
+        "answer": "A lot of customers stamp first, apply serum through the device, then do their helmet or wand session on other nights. It’s the prep step that makes serums actually absorb."
       }
     ],
     "reviewCount": 38,

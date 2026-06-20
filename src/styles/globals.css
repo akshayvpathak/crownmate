@@ -85,16 +85,17 @@ img[data-nimg="fill"] {
   font-family: var(--font-display);
 }
 
+/* Seamless Marquee Animation */
 .announcement-marquee {
-  animation: marquee 25s linear infinite;
+  animation: seamlessMarquee 45s linear infinite;
 }
 
-@keyframes marquee {
+@keyframes seamlessMarquee {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(calc(-50% - 1.5rem)); /* gap adjustment */
   }
 }
 

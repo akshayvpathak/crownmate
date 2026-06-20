@@ -235,7 +235,7 @@ export const benefitFeatures: Feature[] = [
   {
     id: "3",
     title: "Free shipping",
-    description: "On orders above ₹499. Delivered to your door across India.",
+    description: "On all orders. Delivered to your door across India.",
     icon: "truck",
   },
   {
@@ -304,7 +304,7 @@ export const faqItems = [
     id: "4",
     question: "Shipping and returns?",
     answer:
-      "We dispatch within 24 hours on most orders. Delivery is 4–7 working days depending on your pin code. Free shipping above ₹499. Damaged on arrival? Tell us within 48 hours.",
+      "We dispatch within 24 hours on most orders. Delivery is 4–7 working days depending on your pin code. Free shipping on all orders. Damaged on arrival? Tell us within 48 hours.",
   },
   {
     id: "5",

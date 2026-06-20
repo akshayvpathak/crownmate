@@ -4,7 +4,8 @@ export const SITE_CONFIG = {
   url: "https://www.crownmate.in",
   email: "support@crownmate.in",
   phone: "+91 90999 48630",
-  address: "Pan-India Shipping",
+  address: "Ahmedabad, Gujarat",
+  shippingCoverage: "Pan India",
   supportHours: "Mon–Sat, 10am–7pm IST",
   social: {
     facebook: "https://www.facebook.com/crownmate",
@@ -21,12 +22,18 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURICom
 export const TEL_PHONE = `tel:+${WHATSAPP_PHONE}`;
 
 export const SHIPPING_CONFIG = {
-  freeThreshold: 499,
+  freeThreshold: 0,
   flatRate: 49,
   deliveryDaysMin: 4,
   deliveryDaysMax: 7,
 } as const;
 
-export const ANNOUNCEMENT_MESSAGES = ["Free shipping on orders above ₹499"] as const;
+export const ANNOUNCEMENT_MESSAGES = [
+  "Your Mate for a Healthier Crown",
+  "Free Shipping Across India",
+  "5% OFF with WELCOME5",
+  "Red Light Therapy Technology",
+  "Designed for Stronger, Healthier Hair",
+] as const;
 
 export const PAYMENT_METHODS = ["visa", "mastercard", "rupay", "upi", "cod"] as const;
