@@ -35,12 +35,6 @@ export function Footer() {
                   Instagram
                 </a>
                 <a
-                  href={SITE_CONFIG.social.linkedin}
-                  className="hover:text-white hover:underline"
-                >
-                  LinkedIn
-                </a>
-                <a
                   href={SITE_CONFIG.social.youtube}
                   className="hover:text-white hover:underline"
                 >

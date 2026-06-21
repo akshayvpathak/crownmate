@@ -20,7 +20,7 @@ export function HowItWorksSection({ steps }: { steps: HowItWorksStep[] }) {
           <p className="text-sm font-medium uppercase tracking-wider text-primary">
             How it works
           </p>
-          <h2 className="section-heading mt-2">Three devices, one weekly routine</h2>
+          <h2 className="section-heading mt-2">Four devices, one weekly routine</h2>
           <p className="mx-auto mt-2 max-w-2xl text-sm text-muted-foreground">
             Pick what fits your goal. Add the others later if you want — they stack
             nicely but each works on its own.

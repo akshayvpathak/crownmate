@@ -8,10 +8,9 @@ export const SITE_CONFIG = {
   shippingCoverage: "Pan India",
   supportHours: "Mon–Sat, 10am–7pm IST",
   social: {
-    facebook: "https://www.facebook.com/crownmate",
-    instagram: "https://www.instagram.com/crownmate",
-    linkedin: "https://www.linkedin.com/company/crownmate",
-    youtube: "https://www.youtube.com/@crownmate",
+    facebook: "https://www.facebook.com/crownmate.in",
+    instagram: "https://www.instagram.com/crownmate.in",
+    youtube: "https://www.youtube.com/@CrownmateOfficial",
   },
 } as const;
 

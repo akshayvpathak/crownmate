@@ -24,7 +24,7 @@ export function BrandStory() {
             </h2>
             <p className="mt-4 text-sm text-muted-foreground md:text-base">
               We make devices you can use at home — short sessions, clear instructions,
-              no complicated setup. Started in Surat, shipping across India.
+              no complicated setup. Started in Ahmedabad, shipping across India.
             </p>
             <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:justify-center md:justify-start">
               <Button asChild className="min-w-[140px]">
