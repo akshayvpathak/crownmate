@@ -49,7 +49,7 @@ export default function TermsPage() {
 
       <h2>Governing Law</h2>
       <p>
-        These terms are governed by Indian law. Disputes fall under courts in Surat,
+        These terms are governed by Indian law. Disputes fall under courts in Ahmedabad,
         Gujarat.
       </p>
 
