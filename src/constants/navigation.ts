@@ -86,7 +86,6 @@ export const footerSupportLinks = [
 export const footerLegalLinks = [
   { label: "Shipping Policy", href: "/shipping-policy" },
   { label: "Cancellation & Refunds", href: "/refund-policy" },
-  { label: "Sales Policy", href: "/terms-and-conditions" },
   { label: "Privacy Policy", href: "/privacy-policy" },
   { label: "Terms of Service", href: "/terms-and-conditions" },
 ];
