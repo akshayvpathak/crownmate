@@ -4,7 +4,7 @@ import { SITE_CONFIG } from "@/constants/assets";
 export const metadata = generatePageMetadata({
   title: "About Us",
   description:
-    "CrownMate builds at-home scalp and hair devices — RedLight Helmet, HF Wand, and Pulse Pro Massager.",
+    "Crownmate builds at-home scalp and hair devices — RedLight Helmet, HF Wand, and Pulse Pro Massager.",
   path: "/about",
 });
 
@@ -43,7 +43,7 @@ export default function AboutPage() {
 
         <div className="prose prose-lg max-w-none space-y-6">
           <p>
-            CrownMate makes scalp and hair devices for home use — the RedLight Helmet,
+            Crownmate makes scalp and hair devices for home use — the RedLight Helmet,
             HF Wand,Serum Stamp, and Pulse Pro Massager. We launched the brand in 2024
             with a simple goal: clinic-style scalp tools without the clinic visit or
             price tag.

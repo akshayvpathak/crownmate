@@ -7,7 +7,7 @@ import { getDeliveryRangeText } from "@/lib/shipping";
 
 export const metadata = generatePageMetadata({
   title: "Shipping Policy",
-  description: "CrownMate shipping rates and delivery timelines across India.",
+  description: "Crownmate shipping rates and delivery timelines across India.",
   path: "/shipping-policy",
 });
 
@@ -15,10 +15,10 @@ export default function ShippingPolicyPage() {
   return (
     <LegalPage
       title="Shipping Policy"
-      description="Shipping rates, delivery timelines, and tracking for CrownMate orders across India."
+      description="Shipping rates, delivery timelines, and tracking for Crownmate orders across India."
     >
       <p>
-        CrownMate ships across India. Orders are packed and handed to our courier
+        Crownmate ships across India. Orders are packed and handed to our courier
         partner within 24 hours on business days.
       </p>
 

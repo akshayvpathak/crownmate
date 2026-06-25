@@ -13,10 +13,10 @@ export default function TermsPage() {
   return (
     <LegalPage
       title="Terms & Conditions"
-      description="The terms that apply when you browse crownmate.in or purchase CrownMate products."
+      description="The terms that apply when you browse crownmate.in or purchase Crownmate products."
     >
       <p>
-        By using the CrownMate website and purchasing our products, you agree to these
+        By using the Crownmate website and purchasing our products, you agree to these
         terms. If you have questions, contact{" "}
         <Link href={`mailto:${SITE_CONFIG.email}`}>{SITE_CONFIG.email}</Link>.
       </p>
@@ -42,7 +42,7 @@ export default function TermsPage() {
 
       <h2>Limitation of Liability</h2>
       <p>
-        CrownMate is not liable for indirect or consequential damages from use of our
+        Crownmate is not liable for indirect or consequential damages from use of our
         products or website. Devices are for personal home use as described in each
         product&apos;s manual.
       </p>

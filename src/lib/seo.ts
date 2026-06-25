@@ -21,7 +21,7 @@ export function generatePageMetadata({
     : `${SITE_CONFIG.name} | ${SITE_CONFIG.tagline}`;
   const pageDescription =
     description ??
-    "Shop CrownMate hair growth devices — RedLight Helmet, HF Wand & Pulse Pro Massager. Science-backed scalp care for India.";
+    "Shop Crownmate hair growth devices — RedLight Helmet, HF Wand & Pulse Pro Massager. Science-backed scalp care for India.";
   const url = `${SITE_CONFIG.url}${path}`;
   const ogImage = image ?? "/og-image.jpg";
 

@@ -1,4 +1,4 @@
-/** Local CrownMate assets under public/images/crownmate/ */
+/** Local Crownmate assets under public/images/crownmate/ */
 const img = (path: string) => `/images/crownmate/${path}`;
 
 export const images = {

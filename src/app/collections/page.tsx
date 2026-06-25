@@ -6,7 +6,7 @@ import { images } from "@/data/images";
 
 export const metadata = generatePageMetadata({
   title: "Collections",
-  description: "Browse CrownMate product collections by category.",
+  description: "Browse Crownmate product collections by category.",
   path: "/collections",
 });
 

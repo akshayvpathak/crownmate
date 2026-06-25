@@ -11,7 +11,7 @@ export function BrandStory() {
           <div className="relative aspect-square overflow-hidden rounded-2xl bg-secondary sm:aspect-[4/3]">
             <Image
               src={images.marketing.brandStory}
-              alt="CrownMate self-care routine"
+              alt="Crownmate self-care routine"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-contain sm:object-cover"

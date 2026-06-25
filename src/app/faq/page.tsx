@@ -5,7 +5,7 @@ import { generatePageMetadata } from "@/lib/seo";
 export const metadata = generatePageMetadata({
   title: "FAQ",
   description:
-    "Frequently asked questions about CrownMate products, shipping, warranty, and returns.",
+    "Frequently asked questions about Crownmate products, shipping, warranty, and returns.",
   path: "/faq",
 });
 

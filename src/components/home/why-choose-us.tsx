@@ -13,7 +13,7 @@ export function WhyChooseUs({ features }: { features: Feature[] }) {
     <section className="section-padding bg-[#834fd9] text-white">
       <div className="container-site">
         <h2 className="section-heading mb-8 text-center text-white md:mb-12">
-          Why people stick with CrownMate
+          Why people stick with Crownmate
         </h2>
         <div className="grid grid-cols-2 gap-4 sm:gap-6 md:gap-8">
           {features.map((feature) => (

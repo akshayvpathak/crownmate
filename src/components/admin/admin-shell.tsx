@@ -79,7 +79,7 @@ export function AdminShell({
               <LayoutDashboard className="h-5 w-5" />
             </div>
             <div>
-              <p className="text-sm font-semibold">CrownMate Admin</p>
+              <p className="text-sm font-semibold">Crownmate Admin</p>
               <p className="text-xs text-muted-foreground">
                 {user ? `${user.name} · ${user.email}` : "Loading…"}
               </p>

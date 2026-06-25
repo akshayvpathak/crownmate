@@ -16,19 +16,19 @@ const AUTH_PANEL_COPY: Record<
   login: {
     description: "Sign in to manage orders, track shipments, and checkout faster.",
     image: images.hero.helmet,
-    imageAlt: "CrownMate red light helmet",
+    imageAlt: "Crownmate red light helmet",
   },
   signup: {
     description:
-      "Join thousands using CrownMate at home. Create an account to track orders and save your details for faster checkout.",
+      "Join thousands using Crownmate at home. Create an account to track orders and save your details for faster checkout.",
     image: images.hero.brandStory,
-    imageAlt: "Person using a CrownMate device",
+    imageAlt: "Person using a Crownmate device",
   },
   verify: {
     description:
       "One quick step left. Verify your email so we can keep your account secure and send order updates.",
     image: images.hero.helmet,
-    imageAlt: "CrownMate red light helmet",
+    imageAlt: "Crownmate red light helmet",
   },
 };
 

@@ -1,5 +1,5 @@
 export const SITE_CONFIG = {
-  name: "CrownMate",
+  name: "Crownmate",
   tagline: "Hair growth devices for home use",
   url: "https://www.crownmate.in",
   email: "support@crownmate.in",
@@ -16,7 +16,7 @@ export const SITE_CONFIG = {
 
 export const WHATSAPP_PHONE = "919099948630";
 
-export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent("Hi CrownMate, I have a question about your products.")}`;
+export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_PHONE}?text=${encodeURIComponent("Hi Crownmate, I have a question about your products.")}`;
 
 export const TEL_PHONE = `tel:+${WHATSAPP_PHONE}`;
 

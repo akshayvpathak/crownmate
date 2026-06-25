@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: CollectionPageProps) {
   if (!collection) return {};
   return generatePageMetadata({
     title: collection.title,
-    description: collection.description || `Shop ${collection.title} at CrownMate`,
+    description: collection.description || `Shop ${collection.title} at Crownmate`,
     path: `/collections/${slug}`,
   });
 }

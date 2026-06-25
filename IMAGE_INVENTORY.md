@@ -1,6 +1,6 @@
 # IMAGE_INVENTORY.md
 
-> All CrownMate images are stored locally under `public/images/crownmate/`.
+> All Crownmate images are stored locally under `public/images/crownmate/`.
 > Paths are defined in `src/data/images.ts` and `src/data/products.json`.
 
 | Local Path                                                     | Used For                                   |

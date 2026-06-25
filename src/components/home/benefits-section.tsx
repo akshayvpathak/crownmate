@@ -13,7 +13,7 @@ export function BenefitsSection({ features }: { features: Feature[] }) {
     <section className="section-padding bg-white">
       <div className="container-site">
         <p className="mb-2 text-center text-sm font-medium uppercase tracking-wider text-primary">
-          CrownMate&apos;s Promise
+          Crownmate&apos;s Promise
         </p>
         <h2 className="section-heading mb-8 text-center md:mb-12">
           What you get when you order

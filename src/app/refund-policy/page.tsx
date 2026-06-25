@@ -13,7 +13,7 @@ export default function RefundPolicyPage() {
   return (
     <LegalPage
       title="Cancellation & Refunds"
-      description="How returns, replacements, and refunds work for CrownMate orders."
+      description="How returns, replacements, and refunds work for Crownmate orders."
     >
       <p>
         We want you to be happy with your purchase. Here&apos;s how returns and refunds

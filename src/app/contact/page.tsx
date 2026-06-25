@@ -7,7 +7,7 @@ import Link from "next/link";
 
 export const metadata = generatePageMetadata({
   title: "Contact Us",
-  description: "Reach CrownMate support by email, phone, or WhatsApp.",
+  description: "Reach Crownmate support by email, phone, or WhatsApp.",
   path: "/contact",
 });
 

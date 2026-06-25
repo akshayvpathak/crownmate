@@ -12,7 +12,7 @@ export default function PrivacyPolicyPage() {
   return (
     <LegalPage
       title="Privacy Policy"
-      description="How CrownMate collects, uses, and protects your personal information when you shop with us."
+      description="How Crownmate collects, uses, and protects your personal information when you shop with us."
     >
       <p>
         <strong>{SITE_CONFIG.name}</strong> collects only the information needed to
