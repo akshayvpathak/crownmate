@@ -15,7 +15,7 @@ export function Footer() {
           <div className="col-span-2 lg:col-span-2">
             <h3 className="mb-3 text-base font-semibold">Stay Connected</h3>
             <p className="mb-4 text-sm text-white/60">
-              Sign up for our newsletter to receive updates on Products and events from
+              Sign up for our newsletter to receive updates on Products and events from{" "}
               {SITE_CONFIG.name}.
             </p>
             <NewsletterForm />
