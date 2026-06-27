@@ -7,7 +7,8 @@ import { getDeliveryRangeText } from "@/lib/shipping";
 
 export const metadata = generatePageMetadata({
   title: "Shipping Policy",
-  description: "Crownmate shipping rates and delivery timelines across India.",
+  description:
+    "Free shipping on all Crownmate orders across India. Orders ship within 24 hours on business days with real-time tracking.",
   path: "/shipping-policy",
 });
 

@@ -6,6 +6,8 @@ import { WhatsAppLink } from "@/components/shared/whatsapp-link";
 
 export const metadata = generatePageMetadata({
   title: "Refund Policy",
+  description:
+    "Crownmate's cancellation and refund policy — easy returns, no chasing required. Defective unit? WhatsApp us and we'll sort it.",
   path: "/refund-policy",
 });
 

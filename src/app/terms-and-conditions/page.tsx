@@ -6,6 +6,8 @@ import { getDeliveryRangeText } from "@/lib/shipping";
 
 export const metadata = generatePageMetadata({
   title: "Terms & Conditions",
+  description:
+    "Terms that apply when you browse crownmate.in or purchase Crownmate hair growth devices. Governed by Indian law, based in Ahmedabad.",
   path: "/terms-and-conditions",
 });
 

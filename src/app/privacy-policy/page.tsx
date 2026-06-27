@@ -5,6 +5,8 @@ import { SITE_CONFIG } from "@/constants/assets";
 
 export const metadata = generatePageMetadata({
   title: "Privacy Policy",
+  description:
+    "How Crownmate collects, uses, and protects your personal data when you shop on crownmate.in. Your privacy matters to us.",
   path: "/privacy-policy",
 });
 
