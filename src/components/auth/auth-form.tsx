@@ -154,7 +154,7 @@ export function AuthShell({
           <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-xl bg-white/10">
             <Image
               src={panel.image}
-              alt=""
+              alt="Crownmate hair growth device"
               fill
               className="object-cover"
               sizes="56px"

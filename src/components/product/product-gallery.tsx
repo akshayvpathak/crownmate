@@ -141,7 +141,7 @@ export function ProductGallery({
             >
               <Image
                 src={img}
-                alt=""
+                alt={`${title} — thumbnail ${i + 1}`}
                 fill
                 sizes="80px"
                 className="object-contain p-1"
