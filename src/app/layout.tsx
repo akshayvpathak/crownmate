@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { AppProviders } from "@/providers/app-providers";
 import { SiteLayout } from "@/components/layout/site-layout";
-import { generatePageMetadata, generateOrganizationJsonLd } from "@/lib/seo";
+import {
+  generatePageMetadata,
+  generateOrganizationJsonLd,
+  generateLocalBusinessJsonLd,
+} from "@/lib/seo";
 import "@/styles/globals.css";
 
 const interTight = localFont({
@@ -48,6 +52,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const orgJsonLd = generateOrganizationJsonLd();
+  const localBizJsonLd = generateLocalBusinessJsonLd();
 
   return (
     <html lang="en" suppressHydrationWarning>
@@ -55,6 +60,10 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBizJsonLd) }}
         />
       </head>
       <body className={`${interTight.variable} ${franie.variable} antialiased`}>
