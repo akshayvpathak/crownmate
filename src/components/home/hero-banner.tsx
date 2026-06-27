@@ -75,9 +75,15 @@ export function HeroBanner({ slides }: { slides: HeroSlide[] }) {
                   <p className="text-xs font-semibold uppercase tracking-wider text-primary">
                     {slide.eyebrow}
                   </p>
-                  <h2 className="mt-1.5 text-lg font-bold leading-snug text-foreground">
-                    {slide.title}
-                  </h2>
+                  {index === 0 ? (
+                    <h1 className="mt-1.5 text-lg font-bold leading-snug text-foreground">
+                      {slide.title}
+                    </h1>
+                  ) : (
+                    <h2 className="mt-1.5 text-lg font-bold leading-snug text-foreground">
+                      {slide.title}
+                    </h2>
+                  )}
                   {slide.subtitle && (
                     <p className="mt-1.5 text-sm text-muted-foreground">
                       {slide.subtitle}

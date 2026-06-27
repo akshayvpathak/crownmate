@@ -4,8 +4,8 @@ import type { CategoryCard, Feature, HeroSlide, Testimonial } from "@/types";
 export const heroSlides: HeroSlide[] = [
   {
     id: "redlight-helmet",
-    eyebrow: "Red Light Therapy",
-    title: "Recharge Your Routine. Support Healthier-Looking Hair.",
+    eyebrow: "Red Light Therapy · 40 Laser Diodes",
+    title: "Red Light Therapy for Hair Growth — at Home",
     ctaText: "SHOP NOW",
     ctaLink: "/products/laser-hair-growth-helmet",
     image: images.banners.helmet,
@@ -290,7 +290,7 @@ export const faqItems = [
   },
   {
     id: "2",
-    question: "Is LLLT safe to use at home?",
+    question: "Is LLLT red light therapy safe to use at home?",
     answer:
       "Yes. It's the same low-level laser approach used in clinics, just in a helmet you wear at home. Don't exceed 20 minutes per session and skip it on irritated skin.",
   },
@@ -304,12 +304,18 @@ export const faqItems = [
     id: "4",
     question: "Shipping and returns?",
     answer:
-      "We dispatch within 24 hours on most orders. Delivery is 4–7 working days depending on your pin code. Free shipping on all orders. Damaged on arrival? Tell us within 48 hours.",
+      "We dispatch within 24 hours on most orders. Delivery is 4–7 working days depending on your pin code. Free shipping on all orders across India. Damaged on arrival? Tell us within 48 hours.",
   },
   {
     id: "5",
     question: "Which device should I buy first?",
     answer:
       "Helmet if thinning/shedding is the main worry. Wand if you want scalp stimulation plus facial use. Massager if you want something cheap and daily to start with. Serum Stamp if you already use a growth serum and want it to actually absorb. Not sure? WhatsApp us — we'll ask two questions and point you right.",
+  },
+  {
+    id: "6",
+    question: "How does Crownmate compare to iRestore or CurrentBody in India?",
+    answer:
+      "Crownmate is built for India — priced at ₹3,999, ships free across India within 24 hours, and has local support. iRestore and CurrentBody are imported brands that cost ₹30,000–₹80,000 with limited India availability. Both use similar LLLT technology at 650nm wavelength.",
   },
 ];

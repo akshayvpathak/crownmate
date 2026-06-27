@@ -1,3 +1,4 @@
+import { generatePageMetadata } from "@/lib/seo";
 import { HeroBanner } from "@/components/home/hero-banner";
 import { CategorySection } from "@/components/home/category-section";
 import { BestSellers } from "@/components/home/best-sellers";
@@ -17,6 +18,19 @@ import {
   testimonials,
   whyChooseUsFeatures,
 } from "@/data/home-content";
+
+export const metadata = generatePageMetadata({
+  title: "Red Light Therapy Helmet & Hair Growth Devices for Home Use",
+  description:
+    "Shop Crownmate red light therapy helmet, HF Wand & Scalp Massager in India. 40 laser diodes, 20-minute sessions, free shipping. Science-backed hair growth at home.",
+  path: "/",
+  keywords: [
+    "red light therapy helmet India",
+    "buy red light therapy helmet India",
+    "hair growth device India",
+    "LLLT helmet India",
+  ],
+});
 
 export default function HomePage() {
   return (
